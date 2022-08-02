@@ -99,12 +99,13 @@
 		8B7F18AE289966D500C9CBFB /* BetterSleep */ = {
 			isa = PBXGroup;
 			children = (
-				8B7F18AF289966D500C9CBFB /* AppDelegate.swift */,
-				8B7F18B1289966D500C9CBFB /* SceneDelegate.swift */,
-				8B7F18B3289966D500C9CBFB /* ViewController.swift */,
-				8B7F18B5289966D500C9CBFB /* Main.storyboard */,
-				8B7F18B8289966D700C9CBFB /* Assets.xcassets */,
-				8B7F18BA289966D700C9CBFB /* LaunchScreen.storyboard */,
+				8B7F18EB28996DC700C9CBFB /* Resources */,
+				8B7F18E428996D5F00C9CBFB /* Presentation */,
+				8B7F18E328996D4E00C9CBFB /* DataAccessLayer */,
+				8B7F18E228996D4700C9CBFB /* DTO */,
+				8B7F18E128996D3B00C9CBFB /* Common */,
+				8B7F18E028996D1D00C9CBFB /* Application */,
+				8B7F18DF28996D0400C9CBFB /* AppConfig */,
 				8B7F18BD289966D700C9CBFB /* Info.plist */,
 			);
 			path = BetterSleep;
@@ -125,6 +126,109 @@
 				8B7F18D2289966D800C9CBFB /* BetterSleepUITestsLaunchTests.swift */,
 			);
 			path = BetterSleepUITests;
+			sourceTree = "<group>";
+		};
+		8B7F18DF28996D0400C9CBFB /* AppConfig */ = {
+			isa = PBXGroup;
+			children = (
+				8B7F18B1289966D500C9CBFB /* SceneDelegate.swift */,
+				8B7F18AF289966D500C9CBFB /* AppDelegate.swift */,
+			);
+			path = AppConfig;
+			sourceTree = "<group>";
+		};
+		8B7F18E028996D1D00C9CBFB /* Application */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8B7F18E128996D3B00C9CBFB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8B7F18E228996D4700C9CBFB /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		8B7F18E328996D4E00C9CBFB /* DataAccessLayer */ = {
+			isa = PBXGroup;
+			children = (
+				8B7F18E728996D7E00C9CBFB /* PresistenceStorage */,
+				8B7F18E628996D7400C9CBFB /* Network */,
+				8B7F18E528996D6B00C9CBFB /* Repository */,
+			);
+			path = DataAccessLayer;
+			sourceTree = "<group>";
+		};
+		8B7F18E428996D5F00C9CBFB /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				8B7F18EA28996DAE00C9CBFB /* Extensions */,
+				8B7F18E928996DA400C9CBFB /* ViewController */,
+				8B7F18E828996D9D00C9CBFB /* StoryBoard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		8B7F18E528996D6B00C9CBFB /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		8B7F18E628996D7400C9CBFB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8B7F18E728996D7E00C9CBFB /* PresistenceStorage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PresistenceStorage;
+			sourceTree = "<group>";
+		};
+		8B7F18E828996D9D00C9CBFB /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				8B7F18B5289966D500C9CBFB /* Main.storyboard */,
+				8B7F18BA289966D700C9CBFB /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		8B7F18E928996DA400C9CBFB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8B7F18B3289966D500C9CBFB /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8B7F18EA28996DAE00C9CBFB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8B7F18EB28996DC700C9CBFB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8B7F18B8289966D700C9CBFB /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
