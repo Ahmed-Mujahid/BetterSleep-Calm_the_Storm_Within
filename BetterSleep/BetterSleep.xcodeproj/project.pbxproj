@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		8B7F18B0289966D500C9CBFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7F18AF289966D500C9CBFB /* AppDelegate.swift */; };
 		8B7F18B2289966D500C9CBFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7F18B1289966D500C9CBFB /* SceneDelegate.swift */; };
-		8B7F18B4289966D500C9CBFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7F18B3289966D500C9CBFB /* ViewController.swift */; };
 		8B7F18B7289966D500C9CBFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B7F18B5289966D500C9CBFB /* Main.storyboard */; };
 		8B7F18B9289966D700C9CBFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B7F18B8289966D700C9CBFB /* Assets.xcassets */; };
 		8B7F18BC289966D700C9CBFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B7F18BA289966D700C9CBFB /* LaunchScreen.storyboard */; };
 		8B7F18C7289966D800C9CBFB /* BetterSleepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7F18C6289966D800C9CBFB /* BetterSleepTests.swift */; };
 		8B7F18D1289966D800C9CBFB /* BetterSleepUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7F18D0289966D800C9CBFB /* BetterSleepUITests.swift */; };
 		8B7F18D3289966D800C9CBFB /* BetterSleepUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7F18D2289966D800C9CBFB /* BetterSleepUITestsLaunchTests.swift */; };
+		8B7F18ED28996E3800C9CBFB /* BetterSleepManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7F18EC28996E3800C9CBFB /* BetterSleepManager.swift */; };
+		8B7F18EF28996F8900C9CBFB /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7F18EE28996F8900C9CBFB /* Storyboards.swift */; };
+		8B7F18F128996FBF00C9CBFB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7F18F028996FBF00C9CBFB /* HomeViewController.swift */; };
+		8B7F18F42899A01400C9CBFB /* BS_Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7F18F32899A01400C9CBFB /* BS_Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,6 @@
 		8B7F18AC289966D500C9CBFB /* BetterSleep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterSleep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B7F18AF289966D500C9CBFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B7F18B1289966D500C9CBFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8B7F18B3289966D500C9CBFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8B7F18B6289966D500C9CBFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B7F18B8289966D700C9CBFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B7F18BB289966D700C9CBFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		8B7F18CC289966D800C9CBFB /* BetterSleepUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetterSleepUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B7F18D0289966D800C9CBFB /* BetterSleepUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterSleepUITests.swift; sourceTree = "<group>"; };
 		8B7F18D2289966D800C9CBFB /* BetterSleepUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterSleepUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8B7F18EC28996E3800C9CBFB /* BetterSleepManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterSleepManager.swift; sourceTree = "<group>"; };
+		8B7F18EE28996F8900C9CBFB /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		8B7F18F028996FBF00C9CBFB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8B7F18F32899A01400C9CBFB /* BS_Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BS_Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +137,7 @@
 		8B7F18DF28996D0400C9CBFB /* AppConfig */ = {
 			isa = PBXGroup;
 			children = (
-				8B7F18B1289966D500C9CBFB /* SceneDelegate.swift */,
-				8B7F18AF289966D500C9CBFB /* AppDelegate.swift */,
+				8B7F18EC28996E3800C9CBFB /* BetterSleepManager.swift */,
 			);
 			path = AppConfig;
 			sourceTree = "<group>";
@@ -140,6 +145,8 @@
 		8B7F18E028996D1D00C9CBFB /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				8B7F18B1289966D500C9CBFB /* SceneDelegate.swift */,
+				8B7F18AF289966D500C9CBFB /* AppDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -147,6 +154,7 @@
 		8B7F18E128996D3B00C9CBFB /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8B7F18F228999FEE00C9CBFB /* Utilities */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -204,6 +212,7 @@
 			children = (
 				8B7F18B5289966D500C9CBFB /* Main.storyboard */,
 				8B7F18BA289966D700C9CBFB /* LaunchScreen.storyboard */,
+				8B7F18EE28996F8900C9CBFB /* Storyboards.swift */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -211,7 +220,7 @@
 		8B7F18E928996DA400C9CBFB /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				8B7F18B3289966D500C9CBFB /* ViewController.swift */,
+				8B7F18F028996FBF00C9CBFB /* HomeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -229,6 +238,14 @@
 				8B7F18B8289966D700C9CBFB /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		8B7F18F228999FEE00C9CBFB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8B7F18F32899A01400C9CBFB /* BS_Colors.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,9 +379,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B7F18B4289966D500C9CBFB /* ViewController.swift in Sources */,
+				8B7F18EF28996F8900C9CBFB /* Storyboards.swift in Sources */,
+				8B7F18ED28996E3800C9CBFB /* BetterSleepManager.swift in Sources */,
 				8B7F18B0289966D500C9CBFB /* AppDelegate.swift in Sources */,
 				8B7F18B2289966D500C9CBFB /* SceneDelegate.swift in Sources */,
+				8B7F18F42899A01400C9CBFB /* BS_Colors.swift in Sources */,
+				8B7F18F128996FBF00C9CBFB /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +569,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -577,6 +598,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
