@@ -26,7 +26,6 @@ struct Color {
         return gl
      
     }()
-    
     static let BS_Gradient2: CAGradientLayer = {
         var gl = CAGradientLayer()
         guard let frame = frame else { fatalError("Set Color.frame") }
