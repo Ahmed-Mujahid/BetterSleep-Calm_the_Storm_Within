@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4OE-4A-bHd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -28,35 +28,51 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ig3-Mt-M1Z">
-                                <rect key="frame" x="20" y="64" width="238.5" height="59"/>
+                                <rect key="frame" x="20" y="44" width="238.5" height="59"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We’re here to better your sleep" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVS-bP-jNj">
-                                <rect key="frame" x="20" y="123" width="282" height="22"/>
+                                <rect key="frame" x="20" y="103" width="282" height="22"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3M-1B-MyJ" customClass="BS_Button" customModule="BetterSleep" customModuleProvider="target">
+                                <rect key="frame" x="20" y="772" width="374" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="tU4-xz-YuD"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="39.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="buttonIcon" value="facebook"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="39O-gb-TM5" secondAttribute="bottom" id="2em-FV-BS3"/>
                             <constraint firstItem="ig3-Mt-M1Z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Mz5-E0-4S4"/>
                             <constraint firstItem="39O-gb-TM5" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="PaH-f0-8Ew"/>
-                            <constraint firstItem="ig3-Mt-M1Z" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="VxC-u1-Cfn"/>
+                            <constraint firstItem="s3M-1B-MyJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="QKH-DD-m1u"/>
+                            <constraint firstItem="ig3-Mt-M1Z" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="VxC-u1-Cfn"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="s3M-1B-MyJ" secondAttribute="bottom" constant="20" id="ZFO-gs-GjO"/>
                             <constraint firstItem="bVS-bP-jNj" firstAttribute="leading" secondItem="ig3-Mt-M1Z" secondAttribute="leading" id="a2s-Np-BfB"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="s3M-1B-MyJ" secondAttribute="trailing" constant="20" id="i0j-8S-MCg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="39O-gb-TM5" secondAttribute="trailing" id="jUc-AD-EpL"/>
                             <constraint firstItem="39O-gb-TM5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="mPF-vl-nsP"/>
                             <constraint firstItem="bVS-bP-jNj" firstAttribute="top" secondItem="ig3-Mt-M1Z" secondAttribute="bottom" id="pli-3A-nkp"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Ut2-Ng-3fb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="80"/>
+            <point key="canvasLocation" x="944.92753623188412" y="79.6875"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="eJX-2C-oQq">
@@ -91,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oUS-RB-dUw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1599" y="80"/>
+            <point key="canvasLocation" x="2508.6956521739135" y="79.6875"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="rNO-bo-Xpz">
@@ -126,10 +142,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y7v-0K-7yF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="829" y="80"/>
+            <point key="canvasLocation" x="1739.1304347826087" y="79.6875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jXL-4W-0Ak">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="4OE-4A-bHd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mAT-pd-3fb">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="ypo-kK-Bf8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CkM-vM-aWo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="79.6875"/>
         </scene>
     </scenes>
     <resources>
+        <image name="facebook" width="99" height="100"/>
         <image name="welcome background" width="414" height="735"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

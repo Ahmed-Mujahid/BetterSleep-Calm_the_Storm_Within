@@ -5,7 +5,9 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Montserrat-Black.otf</string>
+		<string>Roboto-Black.ttf</string>
 		<string>Montserrat-BlackItalic.otf</string>
+		<string>Roboto-BlackItalic.ttf</string>
 		<string>Montserrat-BoldItalic.otf</string>
 		<string>Montserrat-Bold.otf</string>
 		<string>Montserrat-ExtraBoldItalic.otf</string>
@@ -38,6 +40,16 @@
 		<string>MontserratAlternates-Thin.otf</string>
 		<string>MontserratAlternates-SemiBoldItalic.otf</string>
 		<string>MontserratAlternates-ThinItalic.otf</string>
+		<string>Roboto-Bold.ttf</string>
+		<string>Roboto-BoldItalic.ttf</string>
+		<string>Roboto-Italic.ttf</string>
+		<string>Roboto-Light.ttf</string>
+		<string>Roboto-LightItalic.ttf</string>
+		<string>Roboto-Medium.ttf</string>
+		<string>Roboto-MediumItalic.ttf</string>
+		<string>Roboto-Regular.ttf</string>
+		<string>Roboto-Thin.ttf</string>
+		<string>Roboto-ThinItalic.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
@@ -53,7 +65,7 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
+					<string>Authentication</string>
 				</dict>
 			</array>
 		</dict>

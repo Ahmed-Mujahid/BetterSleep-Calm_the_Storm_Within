@@ -11,6 +11,7 @@ import Foundation
 // MARK: - Enum for Storyboard Reference
 enum StoryboardReference: String {
     case Main
+    case Authentication
 }
 
 // MARK: - View Controller Reference

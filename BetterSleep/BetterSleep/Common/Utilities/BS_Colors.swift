@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct Color {
+struct BS_Colors {
     static let BS_Blue = UIColor(named: "BS_Blue")!
     static let BS_DarkBlue =  UIColor(named: "BS_Dark_Blue")!
     static let BS_Purple = UIColor(named: "BS_Purple")!

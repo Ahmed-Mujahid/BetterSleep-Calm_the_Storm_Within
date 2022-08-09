@@ -24,8 +24,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        Color.frame = self.view.frame
-        self.view.layer.addSublayer(Color.BS_Gradient2)
+//        Color.frame = self.view.frame
+//        self.view.layer.addSublayer(Color.BS_Gradient2)
         
         // Navigation Setting
         
