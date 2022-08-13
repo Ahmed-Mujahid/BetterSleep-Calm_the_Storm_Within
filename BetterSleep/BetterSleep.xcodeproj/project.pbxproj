@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B098B9628A6DEB500E84A00 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B098B9528A6DEB500E84A00 /* WelcomeViewController.swift */; };
 		8B7F18B0289966D500C9CBFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7F18AF289966D500C9CBFB /* AppDelegate.swift */; };
 		8B7F18B2289966D500C9CBFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7F18B1289966D500C9CBFB /* SceneDelegate.swift */; };
 		8B7F18B7289966D500C9CBFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B7F18B5289966D500C9CBFB /* Main.storyboard */; };
@@ -59,8 +60,6 @@
 		8B814C5728A2FE8A000AB670 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B814C5528A2FE8A000AB670 /* CardView.swift */; };
 		8B814C5828A2FE8A000AB670 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B814C5628A2FE8A000AB670 /* DesignableView.swift */; };
 		8B814C5A28A2FF62000AB670 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B814C5928A2FF62000AB670 /* Constants.swift */; };
-		8B814C5D28A30152000AB670 /* BS_Button.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B814C5C28A30152000AB670 /* BS_Button.xib */; };
-		8B814C5F28A30176000AB670 /* BS_Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B814C5E28A30176000AB670 /* BS_Button.swift */; };
 		8B814C6C28A302F7000AB670 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B814C6028A302F6000AB670 /* Roboto-Light.ttf */; };
 		8B814C6D28A302F7000AB670 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B814C6128A302F6000AB670 /* Roboto-ThinItalic.ttf */; };
 		8B814C6E28A302F7000AB670 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B814C6228A302F6000AB670 /* Roboto-BlackItalic.ttf */; };
@@ -94,6 +93,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B098B9528A6DEB500E84A00 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		8B7F18AC289966D500C9CBFB /* BetterSleep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterSleep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B7F18AF289966D500C9CBFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B7F18B1289966D500C9CBFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,8 +150,6 @@
 		8B814C5528A2FE8A000AB670 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		8B814C5628A2FE8A000AB670 /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		8B814C5928A2FF62000AB670 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		8B814C5C28A30152000AB670 /* BS_Button.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BS_Button.xib; sourceTree = "<group>"; };
-		8B814C5E28A30176000AB670 /* BS_Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BS_Button.swift; sourceTree = "<group>"; };
 		8B814C6028A302F6000AB670 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		8B814C6128A302F6000AB670 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		8B814C6228A302F6000AB670 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -192,6 +190,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B098B9328A6DE8400E84A00 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				8B098B9428A6DE9600E84A00 /* Welcome */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		8B098B9428A6DE9600E84A00 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				8B098B9528A6DEB500E84A00 /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
 		8B7F18A3289966D500C9CBFB = {
 			isa = PBXGroup;
 			children = (
@@ -264,7 +278,6 @@
 		8B7F18E128996D3B00C9CBFB /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				8B814C5B28A30122000AB670 /* BS_Button */,
 				8B814C5428A2FE7D000AB670 /* IBDesignableView */,
 				8B7F18F228999FEE00C9CBFB /* Utilities */,
 			);
@@ -333,6 +346,7 @@
 		8B7F18E928996DA400C9CBFB /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8B098B9328A6DE8400E84A00 /* Authentication */,
 				8B7F18F028996FBF00C9CBFB /* HomeViewController.swift */,
 			);
 			path = ViewController;
@@ -426,15 +440,6 @@
 				8B814C5628A2FE8A000AB670 /* DesignableView.swift */,
 			);
 			path = IBDesignableView;
-			sourceTree = "<group>";
-		};
-		8B814C5B28A30122000AB670 /* BS_Button */ = {
-			isa = PBXGroup;
-			children = (
-				8B814C5C28A30152000AB670 /* BS_Button.xib */,
-				8B814C5E28A30176000AB670 /* BS_Button.swift */,
-			);
-			path = BS_Button;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -559,7 +564,6 @@
 				8B814C4C28A2F184000AB670 /* MontserratAlternates-BoldItalic.otf in Resources */,
 				8B814C4A28A2F184000AB670 /* MontserratAlternates-Black.otf in Resources */,
 				8B814C3728A2F184000AB670 /* Montserrat-Black.otf in Resources */,
-				8B814C5D28A30152000AB670 /* BS_Button.xib in Resources */,
 				8B814C7428A302F7000AB670 /* Roboto-BoldItalic.ttf in Resources */,
 				8B7F18B9289966D700C9CBFB /* Assets.xcassets in Resources */,
 				8B814C4828A2F184000AB670 /* Montserrat-Italic.otf in Resources */,
@@ -619,7 +623,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B814C7928A3079F000AB670 /* UIView+Extension.swift in Sources */,
-				8B814C5F28A30176000AB670 /* BS_Button.swift in Sources */,
 				8B814C5828A2FE8A000AB670 /* DesignableView.swift in Sources */,
 				8B814C5728A2FE8A000AB670 /* CardView.swift in Sources */,
 				8B7F18EF28996F8900C9CBFB /* Storyboards.swift in Sources */,
@@ -627,6 +630,7 @@
 				8B7F18B0289966D500C9CBFB /* AppDelegate.swift in Sources */,
 				8B7F18B2289966D500C9CBFB /* SceneDelegate.swift in Sources */,
 				8B7F18F42899A01400C9CBFB /* BS_Colors.swift in Sources */,
+				8B098B9628A6DEB500E84A00 /* WelcomeViewController.swift in Sources */,
 				8B7F18F128996FBF00C9CBFB /* HomeViewController.swift in Sources */,
 				8B814C5A28A2FF62000AB670 /* Constants.swift in Sources */,
 			);

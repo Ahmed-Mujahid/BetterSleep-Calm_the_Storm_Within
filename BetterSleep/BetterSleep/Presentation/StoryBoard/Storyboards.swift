@@ -20,5 +20,8 @@ enum ViewControllerReference: String {
     // MARK: - Main
     /// Main Stroyboard contain the following views
     case HomeViewController
-  
+    
+    // MARK: - Authentication
+    /// Authentication Stroyboard contain the following views
+    case WelcomeViewController
 }

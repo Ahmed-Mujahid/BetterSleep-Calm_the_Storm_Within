@@ -16,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" id="Y6W-OH-hqX" customClass="WelcomeViewController" customModule="BetterSleep" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,30 +39,18 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3M-1B-MyJ" customClass="BS_Button" customModule="BetterSleep" customModuleProvider="target">
-                                <rect key="frame" x="20" y="772" width="374" height="70"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="tU4-xz-YuD"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="39.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="buttonIcon" value="facebook"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LWY-h3-GDD">
+                                <rect key="frame" x="152" y="578" width="110" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="39O-gb-TM5" secondAttribute="bottom" id="2em-FV-BS3"/>
                             <constraint firstItem="ig3-Mt-M1Z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Mz5-E0-4S4"/>
                             <constraint firstItem="39O-gb-TM5" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="PaH-f0-8Ew"/>
-                            <constraint firstItem="s3M-1B-MyJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="QKH-DD-m1u"/>
                             <constraint firstItem="ig3-Mt-M1Z" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="VxC-u1-Cfn"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="s3M-1B-MyJ" secondAttribute="bottom" constant="20" id="ZFO-gs-GjO"/>
                             <constraint firstItem="bVS-bP-jNj" firstAttribute="leading" secondItem="ig3-Mt-M1Z" secondAttribute="leading" id="a2s-Np-BfB"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="s3M-1B-MyJ" secondAttribute="trailing" constant="20" id="i0j-8S-MCg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="39O-gb-TM5" secondAttribute="trailing" id="jUc-AD-EpL"/>
                             <constraint firstItem="39O-gb-TM5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="mPF-vl-nsP"/>
                             <constraint firstItem="bVS-bP-jNj" firstAttribute="top" secondItem="ig3-Mt-M1Z" secondAttribute="bottom" id="pli-3A-nkp"/>
@@ -164,7 +152,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="facebook" width="99" height="100"/>
         <image name="welcome background" width="414" height="735"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
