@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 // MARK: - Enum for Storyboard Reference
 enum StoryboardReference: String {
     case Main
@@ -24,4 +23,6 @@ enum ViewControllerReference: String {
     // MARK: - Authentication
     /// Authentication Stroyboard contain the following views
     case WelcomeViewController
+    case LoginViewController
+    case SignUpViewController
 }

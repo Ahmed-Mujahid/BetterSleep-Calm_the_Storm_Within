@@ -1,0 +1,6 @@
+framework module Pods_BetterSleep_BetterSleepUITests {
+  umbrella header "Pods-BetterSleep-BetterSleepUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

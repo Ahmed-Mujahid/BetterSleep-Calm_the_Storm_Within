@@ -1,0 +1,43 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'BetterSleep' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for BetterSleep
+ 
+# Pod for Reactive Programming
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxDataSources'
+  
+  # Pod for IQ Keyboard Manager Swift
+  pod 'IQKeyboardManagerSwift'
+ 
+# Pod for loading
+  pod 'MBProgressHUD'
+  
+# Pod for UI
+  pod 'FittedSheets'
+  pod 'FSCalendar'
+  pod 'MKMagneticProgress'
+
+# Pod for code beautification
+  pod 'SwiftLint'
+
+ # Pod for images
+  pod 'Kingfisher'
+  
+  # Pod for popups
+  pod 'PopupDialog'
+  target 'BetterSleepTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'BetterSleepUITests' do
+    # Pods for testing
+  end
+
+end

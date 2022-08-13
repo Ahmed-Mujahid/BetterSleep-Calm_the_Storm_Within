@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 enum Build {
     case Development
     case Production
@@ -33,7 +32,6 @@ class BetterSleepManager: NSObject {
     // App Variables
     var buildVarient: Build = .Development
    
-    
     // MARK: - Init
     override init() {
         appDelegate = UIApplication.shared.delegate as? AppDelegate

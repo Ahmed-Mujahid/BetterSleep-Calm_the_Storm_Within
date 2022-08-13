@@ -1,0 +1,72 @@
+PODS:
+  - Differentiator (5.0.0)
+  - DynamicBlurView (4.1.0)
+  - FittedSheets (2.4.2)
+  - FSCalendar (2.8.4)
+  - IQKeyboardManagerSwift (6.5.10)
+  - Kingfisher (7.2.2)
+  - MBProgressHUD (1.2.0)
+  - MKMagneticProgress (1.4)
+  - PopupDialog (1.1.1):
+    - DynamicBlurView (~> 4.0)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxDataSources (5.0.0):
+    - Differentiator (~> 5.0)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - SwiftLint (0.47.1)
+
+DEPENDENCIES:
+  - FittedSheets
+  - FSCalendar
+  - IQKeyboardManagerSwift
+  - Kingfisher
+  - MBProgressHUD
+  - MKMagneticProgress
+  - PopupDialog
+  - RxCocoa
+  - RxDataSources
+  - RxSwift
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - Differentiator
+    - DynamicBlurView
+    - FittedSheets
+    - FSCalendar
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - MBProgressHUD
+    - MKMagneticProgress
+    - PopupDialog
+    - RxCocoa
+    - RxDataSources
+    - RxRelay
+    - RxSwift
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
+  DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
+  FittedSheets: 661408776eb4ff514a31da75b3600bd7222b2b3d
+  FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
+  IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
+  Kingfisher: 184d4d1a8c36666e663caf8e08abe87898595c53
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MKMagneticProgress: 006b8c763d62986661bcde03794a3dcf56cd084a
+  PopupDialog: 720c92befd8bc23c13442254945213db5612f149
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SwiftLint: f80f1be7fa96d30e0aa68e58d45d4ea1ccaac519
+
+PODFILE CHECKSUM: 51d97ec89244f8bb2654294ddd7d2d1eefba21d2
+
+COCOAPODS: 1.11.3
