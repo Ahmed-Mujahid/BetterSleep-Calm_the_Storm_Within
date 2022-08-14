@@ -582,7 +582,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVa-DR-Lnp">
                                                 <rect key="frame" x="38" y="195.5" width="338" height="55"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Julfani@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sW2-em-F8W">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sW2-em-F8W">
                                                         <rect key="frame" x="20" y="0.0" width="298" height="55"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
@@ -609,7 +609,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eat-Fi-OrO">
                                                 <rect key="frame" x="38" y="299.5" width="338" height="55"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Julfani@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zMc-8j-Vc9">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zMc-8j-Vc9">
                                                         <rect key="frame" x="20" y="0.0" width="263" height="55"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
@@ -655,8 +655,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ojg-Zg-xsD">
                                                 <rect key="frame" x="38" y="403.5" width="338" height="55"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Julfani@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s6t-1i-YN0">
-                                                        <rect key="frame" x="20" y="0.0" width="140" height="55"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s6t-1i-YN0">
+                                                        <rect key="frame" x="20" y="0.0" width="263" height="55"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
@@ -674,6 +674,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="s6t-1i-YN0" secondAttribute="bottom" id="0I6-Dd-lRN"/>
+                                                    <constraint firstItem="vj2-nL-uet" firstAttribute="leading" secondItem="s6t-1i-YN0" secondAttribute="trailing" constant="5" id="7XF-pC-KvK"/>
                                                     <constraint firstItem="s6t-1i-YN0" firstAttribute="leading" secondItem="Ojg-Zg-xsD" secondAttribute="leading" constant="20" id="9HQ-ua-LJr"/>
                                                     <constraint firstItem="vj2-nL-uet" firstAttribute="centerY" secondItem="Ojg-Zg-xsD" secondAttribute="centerY" id="Cc8-2W-oz6"/>
                                                     <constraint firstAttribute="trailing" secondItem="vj2-nL-uet" secondAttribute="trailing" constant="15" id="aTw-Ba-kpT"/>

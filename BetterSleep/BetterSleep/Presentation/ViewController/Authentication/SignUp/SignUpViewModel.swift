@@ -17,22 +17,51 @@ class SignUpViewModel: BSBaseViewModel {
     var pasword: BehaviorRelay<String>
     var haveAccount: BehaviorRelay<NSAttributedString>
     var signup: BehaviorRelay<String>
+    var inValidCredential: BehaviorRelay<InvalidCredentials>
     
     // Variable
+    var requestDto: SignUpRequestDto
     
     // Constant
     
     // init
     override init() {
-        title = BehaviorRelay(value: "Login")
-        subTitle = BehaviorRelay(value: "Welcome we’re glad you’re back")
-        userName = BehaviorRelay(value: "Forgot Password?")
+        title = BehaviorRelay(value: "Sign Up")
+        subTitle = BehaviorRelay(value: "Let’s get started to better your sleep")
+        userName = BehaviorRelay(value: "Username")
         email = BehaviorRelay(value: "Email Address")
         pasword = BehaviorRelay(value: "Password")
         haveAccount = BehaviorRelay(value: NSAttributedString("ALREADY HAVE AN ACCOUNT?  \\LOG IN"))
         signup = BehaviorRelay(value: "SIGN UP")
+        inValidCredential = BehaviorRelay(value: .none)
+        requestDto = SignUpRequestDto()
     }
     
     // Methods
+    /// Validates if data is empty
+    /// - Returns: true if all conditions are met else return false
+    func validate() -> Bool {
+        let validation = SignUpValidator(requestDto, self)
+        inValidCredential.accept(validation.validateConditions())
+        return (inValidCredential.value == .none)
+    }
     
+    func validateCondition() -> InvalidCredentials {
+        let validation = SignUpValidator(requestDto, self)
+        return validation.validateConditions()
+    }
+    
+    func register() {
+       
+        if validate() {
+            self.isLoading.accept(true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.isLoading.accept(false)
+                self.setError("Logged In")
+            }
+            self.isSuccess.accept(true)
+        } else {
+            self.isSuccess.accept(false)
+        }
+    }
 }

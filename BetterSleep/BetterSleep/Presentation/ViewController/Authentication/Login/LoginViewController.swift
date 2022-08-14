@@ -154,6 +154,11 @@ extension LoginViewController {
         viewModel.dontHaveAccount
             .bind(to: signUpBtn.rx.bsAttributedTitle(sepratedby: "\\", .white, BSColors.BS_Purple))
             .disposed(by: disposeBag)
+        
+        // Login Button title
+        viewModel.title
+            .bind(to: loginBtn.rx.title(for: .normal))
+            .disposed(by: disposeBag)
     }
     
     func bindTF() {
@@ -178,17 +183,15 @@ extension LoginViewController {
                .observe(on: mainScheduler)
                .subscribe(onNext: { [unowned self] invalid in
                    switch invalid {
-                   case .email:
+                   case .EMAIL:
                        emailView.shake(duration: 1)
-                   case .password:
+                   case .PASSWORD:
                        passwordView.shake(duration: 1)
-                   case .none:
+                   default:
                        break
                    }
                }).disposed(by: disposeBag)
     }
-  
-    
 }
 
 // MARK: - Configure callback
@@ -220,7 +223,7 @@ extension LoginViewController {
 extension LoginViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if textField == emailTF {
-            if viewModel.validateCondition() == .email {
+            if viewModel.validateCondition() == .EMAIL {
                 checkMarkIcon.isHidden = false
                 checkMarkIcon.image = BSImages.BS_Reject
             } else {

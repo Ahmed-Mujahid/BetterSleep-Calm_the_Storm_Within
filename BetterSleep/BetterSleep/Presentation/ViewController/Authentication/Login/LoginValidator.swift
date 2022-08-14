@@ -9,8 +9,10 @@ import Foundation
 import RxRelay
 
 enum InvalidCredentials {
-    case password
-    case email
+    case PASSWORD
+    case EMAIL
+    case USER_NAME
+    case ALL_EMPTY
     case none
 }
 
@@ -34,12 +36,12 @@ class LoginValidator {
     // MARK: - Methods
     func validateConditions() -> InvalidCredentials {
         if !loginRequestDTO.email.value.isEmail() || loginRequestDTO.email.value.lowercased().trim().isEmpty {
-            invalidCredentials = .email
+            invalidCredentials = .EMAIL
             return invalidCredentials
         }
         
         if !loginRequestDTO.password.value.isPassword() || loginRequestDTO.password.value.lowercased().trim().isEmpty {
-            invalidCredentials = .password
+            invalidCredentials = .PASSWORD
             return invalidCredentials
         }
         

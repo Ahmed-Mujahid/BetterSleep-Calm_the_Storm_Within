@@ -40,6 +40,7 @@ class SignUpViewController: BSBaseViewController {
     // MARK: - Containers
     
     // MARK: - Instances
+    var viewModel = SignUpViewModel()
     
     // MARK: - Variables
     
@@ -50,8 +51,11 @@ class SignUpViewController: BSBaseViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        loginBtn.adjustFont("ALREADY HAVE AN ACCOUNT? ", "LOG IN")
+        checkMarkIcon.isHidden = true
         animateView()
+        userNameTF.delegate = self
+        emailTF.delegate = self
+        passwordTF.delegate = self
         
         // Navigation Setting
         
@@ -59,9 +63,14 @@ class SignUpViewController: BSBaseViewController {
         
         // Binding view
         bindButton()
+        bindTF()
+        bindText()
+        
+        // Subcribe Relay
+        subcribeInvalidCredentials()
         
         // Configure call back
-        
+        configureServiceCallBacks()
     }
     
     // MARK: - Navigation / IBActions
@@ -103,8 +112,123 @@ extension SignUpViewController {
         signUpBtn.rx.tap
             .`do`(onNext: { _ in
                 
-            }).subscribe(onNext: { _ in
+            }).subscribe(onNext: { [unowned self] in
+                viewModel.register()
                 
             }).disposed(by: disposeBag)
+    }
+    func bindText() {
+        
+        // Title Lable
+        viewModel.title
+            .bind(to: titleLbl.rx.text)
+            .disposed(by: disposeBag)
+        
+        // sub title Lable
+        viewModel.subTitle
+            .bind(to: subTitleLbl.rx.text)
+            .disposed(by: disposeBag)
+        
+        // email Title
+        viewModel.email
+            .bind(to: emailAddresLbl.rx.text)
+            .disposed(by: disposeBag)
+        
+        // password Title
+        viewModel.pasword
+            .bind(to: passwordLbl.rx.text)
+            .disposed(by: disposeBag)
+        
+        // dontHaveAccount attributed title
+        viewModel.haveAccount
+            .bind(to: loginBtn.rx.bsAttributedTitle(sepratedby: "\\", .white, BSColors.BS_Purple))
+            .disposed(by: disposeBag)
+        
+        viewModel.title
+            .bind(to: signUpBtn.rx.title(for: .normal))
+            .disposed(by: disposeBag)
+    }
+
+    func bindTF() {
+        // username TextFeild
+        userNameTF.rx.text
+            .orEmpty
+            .bind(to: viewModel.requestDto.userName)
+            .disposed(by: disposeBag)
+        
+        // Email TextFeild
+        emailTF.rx.text
+            .orEmpty
+            .bind(to: viewModel.requestDto.email)
+            .disposed(by: disposeBag)
+        
+        // Pasword TextFeild
+        passwordTF.rx.text
+            .orEmpty
+            .bind(to:  viewModel.requestDto.password)
+            .disposed(by: disposeBag)
+    }
+}
+// MARK: - Subcribe Relay
+extension SignUpViewController {
+    func subcribeInvalidCredentials() {
+        viewModel.inValidCredential
+               .observe(on: mainScheduler)
+               .subscribe(onNext: { [unowned self] invalid in
+                   switch invalid {
+                   case .EMAIL:
+                       emailView.shake(duration: 1)
+                   case .PASSWORD:
+                       passwordView.shake(duration: 1)
+                   case .USER_NAME:
+                       userNameView.shake(duration: 1)
+                   case .ALL_EMPTY:
+                       emailView.shake(duration: 1)
+                       passwordView.shake(duration: 1)
+                       userNameView.shake(duration: 1)
+                   default:
+                       break
+                   }
+               }).disposed(by: disposeBag)
+    }
+}
+
+// MARK: - Configure callback
+extension SignUpViewController {
+    private func configureServiceCallBacks() {
+        
+        // loading
+        viewModel.isLoading
+            .bind(to: self.view.rx.isShowHUD)
+            .disposed(by: disposeBag)
+        
+        // success
+        viewModel.isSuccess
+            .asObservable()
+            .filter { $0 }.bind { success in
+                if success {
+                    
+                }
+            }.disposed(by: disposeBag)
+        
+        viewModel.message.drive(onNext: {(_message) in
+            if let message = _message {
+                AlertHandler.show(message: message, inViewController: self)
+            }
+        }).disposed(by: disposeBag)
+    }
+}
+
+extension SignUpViewController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if textField == emailTF {
+            if viewModel.validateCondition() == .EMAIL {
+                checkMarkIcon.isHidden = false
+                checkMarkIcon.image = BSImages.BS_Reject
+            } else {
+                checkMarkIcon.isHidden = false
+                checkMarkIcon.image = BSImages.BS_CheckMark
+            }
+        }
     }
 }

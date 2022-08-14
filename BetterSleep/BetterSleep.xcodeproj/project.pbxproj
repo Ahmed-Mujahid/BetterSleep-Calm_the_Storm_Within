@@ -82,6 +82,8 @@
 		8B9C195828A91AF10094EAF7 /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C195728A91AF10094EAF7 /* AlertHandler.swift */; };
 		8B9C195A28A91B4A0094EAF7 /* TypeAliase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C195928A91B4A0094EAF7 /* TypeAliase.swift */; };
 		8B9C195C28A92F1C0094EAF7 /* BS_Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C195B28A92F1C0094EAF7 /* BS_Images.swift */; };
+		8B9C195E28A94AE50094EAF7 /* SignUpRequestDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C195D28A94AE50094EAF7 /* SignUpRequestDto.swift */; };
+		8B9C196028A94B1F0094EAF7 /* SignUpValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C195F28A94B1F0094EAF7 /* SignUpValidator.swift */; };
 		8BF0CED728A8176C00EEC2A4 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0CED628A8176C00EEC2A4 /* WelcomeViewModel.swift */; };
 		8BF0CEDA28A817AC00EEC2A4 /* Reactive+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0CED828A817AC00EEC2A4 /* Reactive+Helper.swift */; };
 		8BF0CEDB28A817AC00EEC2A4 /* RxArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0CED928A817AC00EEC2A4 /* RxArray.swift */; };
@@ -198,6 +200,8 @@
 		8B9C195728A91AF10094EAF7 /* AlertHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
 		8B9C195928A91B4A0094EAF7 /* TypeAliase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliase.swift; sourceTree = "<group>"; };
 		8B9C195B28A92F1C0094EAF7 /* BS_Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BS_Images.swift; sourceTree = "<group>"; };
+		8B9C195D28A94AE50094EAF7 /* SignUpRequestDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequestDto.swift; sourceTree = "<group>"; };
+		8B9C195F28A94B1F0094EAF7 /* SignUpValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpValidator.swift; sourceTree = "<group>"; };
 		8BF0CED628A8176C00EEC2A4 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		8BF0CED828A817AC00EEC2A4 /* Reactive+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reactive+Helper.swift"; sourceTree = "<group>"; };
 		8BF0CED928A817AC00EEC2A4 /* RxArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxArray.swift; sourceTree = "<group>"; };
@@ -561,6 +565,8 @@
 			children = (
 				8BF0CEE628A839C400EEC2A4 /* SignUpViewController.swift */,
 				8BF0CEE828A839D900EEC2A4 /* SignUpViewModel.swift */,
+				8B9C195D28A94AE50094EAF7 /* SignUpRequestDto.swift */,
+				8B9C195F28A94B1F0094EAF7 /* SignUpValidator.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -892,10 +898,12 @@
 				8B7F18F42899A01400C9CBFB /* BS_Colors.swift in Sources */,
 				8BF0CEE928A839D900EEC2A4 /* SignUpViewModel.swift in Sources */,
 				8B9C195528A913060094EAF7 /* String+Extension.swift in Sources */,
+				8B9C196028A94B1F0094EAF7 /* SignUpValidator.swift in Sources */,
 				8BF0CEDD28A817FA00EEC2A4 /* BSBaseViewModel.swift in Sources */,
 				8BF0CEE728A839C400EEC2A4 /* SignUpViewController.swift in Sources */,
 				8B9C195A28A91B4A0094EAF7 /* TypeAliase.swift in Sources */,
 				8BF0CEE028A81FC300EEC2A4 /* LoginViewController.swift in Sources */,
+				8B9C195E28A94AE50094EAF7 /* SignUpRequestDto.swift in Sources */,
 				8B098B9628A6DEB500E84A00 /* WelcomeViewController.swift in Sources */,
 				8B7F18F128996FBF00C9CBFB /* HomeViewController.swift in Sources */,
 				8B814C5A28A2FF62000AB670 /* Constants.swift in Sources */,
@@ -1083,6 +1091,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Authentication;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
@@ -1113,6 +1122,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Authentication;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
