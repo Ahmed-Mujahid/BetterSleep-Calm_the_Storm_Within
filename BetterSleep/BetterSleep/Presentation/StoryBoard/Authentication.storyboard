@@ -315,8 +315,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7JC-Jm-0e3">
                                                 <rect key="frame" x="38" y="262.5" width="338" height="55"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Julfani@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="51J-Nc-8F0">
-                                                        <rect key="frame" x="20" y="0.0" width="263" height="55"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="51J-Nc-8F0">
+                                                        <rect key="frame" x="20" y="0.0" width="258" height="55"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
@@ -337,7 +337,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="51J-Nc-8F0" secondAttribute="bottom" id="PB7-uF-PbA"/>
                                                     <constraint firstAttribute="height" constant="55" id="ZnU-Hl-g1R"/>
                                                     <constraint firstItem="51J-Nc-8F0" firstAttribute="leading" secondItem="7JC-Jm-0e3" secondAttribute="leading" constant="20" id="dlP-bn-AQy"/>
-                                                    <constraint firstItem="x4j-vc-HLk" firstAttribute="leading" secondItem="51J-Nc-8F0" secondAttribute="trailing" constant="5" id="yIX-Zm-M0M"/>
+                                                    <constraint firstItem="x4j-vc-HLk" firstAttribute="leading" secondItem="51J-Nc-8F0" secondAttribute="trailing" constant="10" id="yIX-Zm-M0M"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="alpha">
@@ -362,8 +362,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Rg-Su-QLa">
                                                 <rect key="frame" x="38" y="366.5" width="338" height="55"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Julfani@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yxR-gb-muX">
-                                                        <rect key="frame" x="20" y="0.0" width="140" height="55"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yxR-gb-muX">
+                                                        <rect key="frame" x="20" y="0.0" width="258" height="55"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
@@ -383,6 +383,7 @@
                                                     <constraint firstItem="yxR-gb-muX" firstAttribute="leading" secondItem="2Rg-Su-QLa" secondAttribute="leading" constant="20" id="1Pd-sm-avM"/>
                                                     <constraint firstAttribute="bottom" secondItem="yxR-gb-muX" secondAttribute="bottom" id="2OM-ty-nBz"/>
                                                     <constraint firstItem="jBH-fJ-I3n" firstAttribute="centerY" secondItem="2Rg-Su-QLa" secondAttribute="centerY" id="Aav-hj-04u"/>
+                                                    <constraint firstItem="jBH-fJ-I3n" firstAttribute="leading" secondItem="yxR-gb-muX" secondAttribute="trailing" constant="10" id="FCQ-4R-GOM"/>
                                                     <constraint firstAttribute="trailing" secondItem="jBH-fJ-I3n" secondAttribute="trailing" constant="15" id="Soh-vt-5t9"/>
                                                     <constraint firstItem="yxR-gb-muX" firstAttribute="top" secondItem="2Rg-Su-QLa" secondAttribute="top" id="mEd-Ve-xa1"/>
                                                 </constraints>

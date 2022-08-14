@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 import Kingfisher
-import SwiftUI
+import RxSwift
 
 extension UIButton {
     
@@ -84,4 +84,29 @@ extension UIButton {
             }
         }
     }
+}
+extension Reactive where Base: UIButton {
+
+    /// Reactive wrapper for `setAttributedTitle(_:controlState:)`
+    public func bsAttributedTitle(sepratedby seprator: String, _ color1: UIColor, _ color2: UIColor, _ fontSize: CGFloat = 12) -> Binder<NSAttributedString?> {
+        
+        return Binder(self.base) { button, bsAttributedTitle -> Void in
+            let titleAttributes: [NSAttributedString.Key: Any] = [.font: UIFont(name: "Roboto-Bold", size: fontSize) ?? UIFont.systemFont(ofSize: fontSize), .foregroundColor: color1]
+            let title2attributes: [NSAttributedString.Key: Any] = [ .font: UIFont(name: "Roboto-Bold", size: fontSize) ?? UIFont.systemFont(ofSize: fontSize), .foregroundColor: color2]
+        
+            guard let titles = bsAttributedTitle?.string.components(separatedBy: seprator) else { return }
+            
+            let title1Text = NSMutableAttributedString(string: titles[0], attributes: titleAttributes)
+            let title2text = NSMutableAttributedString(string: titles[1], attributes: title2attributes)
+            
+            // Combine
+            let combination = NSMutableAttributedString()
+            combination.append(title1Text)
+            combination.append(title2text)
+            
+            // Set title
+            button.setAttributedTitle(combination, for: .normal)
+        }
+    }
+
 }

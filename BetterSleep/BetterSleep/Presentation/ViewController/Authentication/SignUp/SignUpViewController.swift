@@ -63,6 +63,7 @@ class SignUpViewController: BSBaseViewController {
         // Configure call back
         
     }
+    
     // MARK: - Navigation / IBActions
     
     // MARK: - Custom Funtions
@@ -94,7 +95,7 @@ extension SignUpViewController {
             .`do`(onNext: { _ in
                 
             }).subscribe(onNext: { [unowned self] in
-                self.navigationController?.popToRootViewController(animated: false)
+                self.navigationController?.popToRootViewController(animated: true)
                 
             }).disposed(by: disposeBag)
         

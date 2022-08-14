@@ -38,6 +38,7 @@ class LoginViewController: BSBaseViewController {
     // MARK: - Containers
     
     // MARK: - Instances
+    var viewModel = LoginViewModel()
     
     // MARK: - Variables
     
@@ -48,8 +49,10 @@ class LoginViewController: BSBaseViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        signUpBtn.adjustFont("DON’T HAVE AN ACCOUNT? ", "SIGN UP")
         animateView()
+        emailTF.delegate = self
+        passwordTF.delegate = self
+        checkMarkIcon.isHidden = true
         
         // Navigation Setting
         
@@ -57,17 +60,26 @@ class LoginViewController: BSBaseViewController {
         
         // Binding view
         bindButton()
+        bindText()
+        bindTF()
+        
+        // Subcribe
+        subcribeInvalidCredentials()
         
         // Configure call back
+        configureServiceCallBacks()
         
     }
+    
     // MARK: - Navigation / IBActions
     
     // MARK: - Custom Funtions
     func animateView() {
         titleLbl.fadeIn()
         subTitleLbl.fadeIn()
+        emailAddresLbl.fadeIn()
         emailView.fadeIn()
+        passwordLbl.fadeIn()
         passwordView.fadeIn()
         forgotPassBtn.fadeIn()
         loginBtn.fadeIn()
@@ -75,14 +87,15 @@ class LoginViewController: BSBaseViewController {
     }
     
 }
-// MARK: - View Extensions
+
+// MARK: - Binding
 extension LoginViewController {
     func bindButton() {
         showPassBtn.rx.tap
             .`do`(onNext: { _ in
                 
-            }).subscribe(onNext: { _ in
-                
+            }).subscribe(onNext: { [unowned self] in
+                passwordTF.isSecureTextEntry = !passwordTF.isSecureTextEntry
             }).disposed(by: disposeBag)
         
         forgotPassBtn.rx.tap
@@ -95,7 +108,8 @@ extension LoginViewController {
         loginBtn.rx.tap
             .`do`(onNext: { _ in
                 
-            }).subscribe(onNext: { _ in
+            }).subscribe(onNext: { [unowned self] in
+                viewModel.authenticate()
                 
             }).disposed(by: disposeBag)
         
@@ -107,5 +121,112 @@ extension LoginViewController {
                 self.navigationController?.pushViewController(view, animated: false)
             
             }).disposed(by: disposeBag)
+    }
+    
+    func bindText() {
+        
+        // Title Lable
+        viewModel.title
+            .bind(to: titleLbl.rx.text)
+            .disposed(by: disposeBag)
+        
+        // sub title Lable
+        viewModel.subTitle
+            .bind(to: subTitleLbl.rx.text)
+            .disposed(by: disposeBag)
+        
+        // email Title
+        viewModel.email
+            .bind(to: emailAddresLbl.rx.text)
+            .disposed(by: disposeBag)
+        
+        // password Title
+        viewModel.pasword
+            .bind(to: passwordLbl.rx.text)
+            .disposed(by: disposeBag)
+        
+        // Forgot password Title
+        viewModel.forgotPassword
+            .bind(to: forgotPassBtn.rx.title(for: .normal))
+            .disposed(by: disposeBag)
+        
+        // dontHaveAccount attributed title
+        viewModel.dontHaveAccount
+            .bind(to: signUpBtn.rx.bsAttributedTitle(sepratedby: "\\", .white, BSColors.BS_Purple))
+            .disposed(by: disposeBag)
+    }
+    
+    func bindTF() {
+        // Email TextFeild
+        emailTF.rx.text
+            .orEmpty
+            .bind(to: viewModel.requestDto.email)
+            .disposed(by: disposeBag)
+        
+        // Pasword TextFeild
+        passwordTF.rx.text
+            .orEmpty
+            .bind(to:  viewModel.requestDto.password)
+            .disposed(by: disposeBag)
+    }
+
+}
+// MARK: - Subcribe Relay
+extension LoginViewController {
+    func subcribeInvalidCredentials() {
+        viewModel.inValidCredential
+               .observe(on: mainScheduler)
+               .subscribe(onNext: { [unowned self] invalid in
+                   switch invalid {
+                   case .email:
+                       emailView.shake(duration: 1)
+                   case .password:
+                       passwordView.shake(duration: 1)
+                   case .none:
+                       break
+                   }
+               }).disposed(by: disposeBag)
+    }
+  
+    
+}
+
+// MARK: - Configure callback
+extension LoginViewController {
+    private func configureServiceCallBacks() {
+        
+        // loading
+        viewModel.isLoading
+            .bind(to: self.view.rx.isShowHUD)
+            .disposed(by: disposeBag)
+        
+        // success
+        viewModel.isSuccess
+            .asObservable()
+            .filter { $0 }.bind { success in
+                if success {
+                    
+                }
+            }.disposed(by: disposeBag)
+        
+        viewModel.message.drive(onNext: {(_message) in
+            if let message = _message {
+                AlertHandler.show(message: message, inViewController: self)
+            }
+        }).disposed(by: disposeBag)
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if textField == emailTF {
+            if viewModel.validateCondition() == .email {
+                checkMarkIcon.isHidden = false
+                checkMarkIcon.image = BSImages.BS_Reject
+            } else {
+                checkMarkIcon.isHidden = false
+                checkMarkIcon.image = BSImages.BS_CheckMark
+            }
+        }
     }
 }
