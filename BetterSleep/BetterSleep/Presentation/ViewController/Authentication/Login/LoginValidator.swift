@@ -32,26 +32,13 @@ class LoginValidator {
     }
     
     // MARK: - Methods
-    func validateEmpty() -> Bool {
-        if loginRequestDTO.email.value.lowercased().trim().isEmpty {
-            viewModel.setError("Please provide email address")
-            return false
-        }
-        
-        if  loginRequestDTO.password.value.lowercased().trim().isEmpty {
-            viewModel.setError("Please provide password")
-            return false
-        }
-        return true
-    }
-    
     func validateConditions() -> InvalidCredentials {
-        if !loginRequestDTO.email.value.isEmail() {
+        if !loginRequestDTO.email.value.isEmail() || loginRequestDTO.email.value.lowercased().trim().isEmpty {
             invalidCredentials = .email
             return invalidCredentials
         }
         
-        if !loginRequestDTO.password.value.isPassword() {
+        if !loginRequestDTO.password.value.isPassword() || loginRequestDTO.password.value.lowercased().trim().isEmpty {
             invalidCredentials = .password
             return invalidCredentials
         }

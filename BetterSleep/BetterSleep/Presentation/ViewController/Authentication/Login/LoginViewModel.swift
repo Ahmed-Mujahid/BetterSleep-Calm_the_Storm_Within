@@ -41,7 +41,7 @@ class LoginViewModel: BSBaseViewModel {
     func validate() -> Bool {
         let validation = LoginValidator(requestDto, self)
         inValidCredential.accept(validation.validateConditions())
-        return validation.validateEmpty() && (inValidCredential.value == .none)
+        return (inValidCredential.value == .none)
     }
     
     func validateCondition() -> InvalidCredentials {
