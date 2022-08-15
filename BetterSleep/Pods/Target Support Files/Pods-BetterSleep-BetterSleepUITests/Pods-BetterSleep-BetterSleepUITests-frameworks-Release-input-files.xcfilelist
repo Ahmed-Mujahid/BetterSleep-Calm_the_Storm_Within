@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-BetterSleep-BetterSleepUITests/Pods-BetterSleep-BetterSleepUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework
 ${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework
 ${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework

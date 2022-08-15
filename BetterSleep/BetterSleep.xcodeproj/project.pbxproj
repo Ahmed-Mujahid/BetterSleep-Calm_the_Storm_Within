@@ -578,8 +578,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B7F18D6289966D800C9CBFB /* Build configuration list for PBXNativeTarget "BetterSleep" */;
 			buildPhases = (
-				8B098B9728A79C6300E84A00 /* SwiftLint */,
 				AC1552EC88748BA726D4ABBC /* [CP] Check Pods Manifest.lock */,
+				8B098B9728A79C6300E84A00 /* SwiftLint */,
 				8B7F18A8289966D500C9CBFB /* Sources */,
 				8B7F18A9289966D500C9CBFB /* Frameworks */,
 				8B7F18AA289966D500C9CBFB /* Resources */,

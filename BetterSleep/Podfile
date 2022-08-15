@@ -31,6 +31,10 @@ target 'BetterSleep' do
   
   # Pod for popups
   pod 'PopupDialog'
+  
+  # Pod for images
+   pod 'Alamofire'
+   
   target 'BetterSleepTests' do
     inherit! :search_paths
     # Pods for testing
