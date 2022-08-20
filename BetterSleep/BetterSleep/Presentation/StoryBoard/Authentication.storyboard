@@ -18,6 +18,9 @@
         <array key="Roboto-Bold.ttf">
             <string>Roboto-Bold</string>
         </array>
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
         <array key="Roboto-Medium.ttf">
             <string>Roboto-Medium</string>
         </array>
@@ -582,7 +585,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVa-DR-Lnp">
                                                 <rect key="frame" x="38" y="195.5" width="338" height="55"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sW2-em-F8W">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="example123" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sW2-em-F8W">
                                                         <rect key="frame" x="20" y="0.0" width="298" height="55"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
@@ -609,7 +612,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eat-Fi-OrO">
                                                 <rect key="frame" x="38" y="299.5" width="338" height="55"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zMc-8j-Vc9">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="example@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zMc-8j-Vc9">
                                                         <rect key="frame" x="20" y="0.0" width="263" height="55"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
@@ -655,7 +658,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ojg-Zg-xsD">
                                                 <rect key="frame" x="38" y="403.5" width="338" height="55"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s6t-1i-YN0">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Qwerty@123" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s6t-1i-YN0">
                                                         <rect key="frame" x="20" y="0.0" width="263" height="55"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
@@ -724,11 +727,18 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pasword Policy " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJt-la-9bK">
+                                                <rect key="frame" x="38" y="473.5" width="338" height="19"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="Ojg-Zg-xsD" firstAttribute="leading" secondItem="pXK-Xq-BhA" secondAttribute="leading" id="31o-qE-FBu"/>
                                             <constraint firstItem="ERZ-oe-r2h" firstAttribute="leading" secondItem="cnA-En-Tkl" secondAttribute="leading" constant="20" id="36M-La-RCX"/>
+                                            <constraint firstItem="hJt-la-9bK" firstAttribute="leading" secondItem="Ojg-Zg-xsD" secondAttribute="leading" id="431-9L-FgZ"/>
                                             <constraint firstAttribute="trailing" secondItem="rKQ-vW-Hbi" secondAttribute="trailing" constant="38" id="6pY-P9-vwF"/>
                                             <constraint firstItem="FVa-DR-Lnp" firstAttribute="trailing" secondItem="rKQ-vW-Hbi" secondAttribute="trailing" id="7Xx-jd-4wy"/>
                                             <constraint firstItem="Ojg-Zg-xsD" firstAttribute="trailing" secondItem="pXK-Xq-BhA" secondAttribute="trailing" id="9eD-4I-5mO"/>
@@ -750,11 +760,14 @@
                                             <constraint firstItem="Ojg-Zg-xsD" firstAttribute="height" secondItem="Eat-Fi-OrO" secondAttribute="height" id="fQd-El-WOQ"/>
                                             <constraint firstItem="rKQ-vW-Hbi" firstAttribute="leading" secondItem="cnA-En-Tkl" secondAttribute="leading" constant="38" id="gDa-1v-dOa"/>
                                             <constraint firstItem="FVa-DR-Lnp" firstAttribute="top" secondItem="rKQ-vW-Hbi" secondAttribute="bottom" constant="15" id="gN8-go-Vnh"/>
+                                            <constraint firstItem="hJt-la-9bK" firstAttribute="trailing" secondItem="Ojg-Zg-xsD" secondAttribute="trailing" id="hLf-BM-qYO"/>
                                             <constraint firstItem="zSM-0O-E7J" firstAttribute="top" secondItem="ERZ-oe-r2h" secondAttribute="bottom" id="hXM-Rd-4Yz"/>
                                             <constraint firstAttribute="trailing" secondItem="Eat-Fi-OrO" secondAttribute="trailing" constant="38" id="iZO-1d-ttH"/>
                                             <constraint firstItem="8M7-9o-A5e" firstAttribute="height" secondItem="Ojg-Zg-xsD" secondAttribute="height" id="jCl-jf-L1j"/>
+                                            <constraint firstItem="pXK-Xq-BhA" firstAttribute="top" secondItem="Eat-Fi-OrO" secondAttribute="bottom" constant="15" id="kNI-nu-74f"/>
                                             <constraint firstItem="pXK-Xq-BhA" firstAttribute="leading" secondItem="Eat-Fi-OrO" secondAttribute="leading" id="krV-u2-WEs"/>
                                             <constraint firstItem="Eat-Fi-OrO" firstAttribute="leading" secondItem="cnA-En-Tkl" secondAttribute="leading" constant="38" id="osm-A7-otf"/>
+                                            <constraint firstItem="hJt-la-9bK" firstAttribute="top" secondItem="Ojg-Zg-xsD" secondAttribute="bottom" constant="15" id="vCN-AJ-Yee"/>
                                             <constraint firstItem="8M7-9o-A5e" firstAttribute="leading" secondItem="Ojg-Zg-xsD" secondAttribute="leading" id="vS5-rx-Wi1"/>
                                             <constraint firstItem="8M7-9o-A5e" firstAttribute="trailing" secondItem="Ojg-Zg-xsD" secondAttribute="trailing" id="xWp-Vs-YUa"/>
                                             <constraint firstItem="Eat-Fi-OrO" firstAttribute="top" secondItem="Kp1-gb-4KF" secondAttribute="bottom" constant="15" id="xnv-MX-vnD"/>
@@ -788,6 +801,7 @@
                         <outlet property="emailView" destination="Eat-Fi-OrO" id="rh6-2P-fvM"/>
                         <outlet property="loginBtn" destination="VjI-Me-lLu" id="HLx-PA-vF1"/>
                         <outlet property="passwordLbl" destination="pXK-Xq-BhA" id="NDq-xn-NmV"/>
+                        <outlet property="passwordPolicy" destination="hJt-la-9bK" id="0jb-95-1Me"/>
                         <outlet property="passwordTF" destination="s6t-1i-YN0" id="Zes-Dq-6QN"/>
                         <outlet property="passwordView" destination="Ojg-Zg-xsD" id="1ps-QX-ZAM"/>
                         <outlet property="showPassBtn" destination="vj2-nL-uet" id="h95-Mo-tfg"/>
@@ -837,6 +851,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

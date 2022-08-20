@@ -221,9 +221,9 @@ extension LoginViewController {
 }
 
 extension LoginViewController: UITextFieldDelegate {
-    func textFieldDidChangeSelection(_ textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == emailTF {
-            if viewModel.validateCondition() == .EMAIL {
+            if viewModel.validateCondition() == .EMAIL_POLICY {
                 checkMarkIcon.isHidden = false
                 checkMarkIcon.image = BSImages.BS_Reject
             } else {

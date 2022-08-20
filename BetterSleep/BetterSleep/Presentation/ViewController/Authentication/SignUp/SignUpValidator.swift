@@ -43,8 +43,13 @@ class SignUpValidator {
             return invalidCredentials
         }
         
-        if !signUpRequestDTO.password.value.isPassword() || signUpRequestDTO.password.value.lowercased().trim().isEmpty {
+        if signUpRequestDTO.password.value.lowercased().trim().isEmpty {
             invalidCredentials = .PASSWORD
+            return invalidCredentials
+        }
+        
+        if !signUpRequestDTO.password.value.isPassword()  {
+            invalidCredentials = .PASSWORD_POLICY
             return invalidCredentials
         }
         

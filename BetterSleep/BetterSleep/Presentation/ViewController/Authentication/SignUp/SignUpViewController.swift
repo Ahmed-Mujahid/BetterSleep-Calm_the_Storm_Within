@@ -37,6 +37,9 @@ class SignUpViewController: BSBaseViewController {
     // SignUp
     @IBOutlet weak var signUpBtn: UIButton!
     
+    // Password Policy
+    @IBOutlet weak var passwordPolicy: UILabel!
+    
     // MARK: - Containers
     
     // MARK: - Instances
@@ -56,6 +59,7 @@ class SignUpViewController: BSBaseViewController {
         userNameTF.delegate = self
         emailTF.delegate = self
         passwordTF.delegate = self
+        passwordPolicy.isHidden = true
         
         // Navigation Setting
         
@@ -144,11 +148,17 @@ extension SignUpViewController {
             .bind(to: loginBtn.rx.bsAttributedTitle(sepratedby: "\\", .white, BSColors.BS_Purple))
             .disposed(by: disposeBag)
         
+        // Button title
         viewModel.title
             .bind(to: signUpBtn.rx.title(for: .normal))
             .disposed(by: disposeBag)
+        
+        // Password Policy
+        viewModel.passwordPolicy
+            .bind(to: passwordPolicy.rx.text)
+            .disposed(by: disposeBag)
     }
-
+    
     func bindTF() {
         // username TextFeild
         userNameTF.rx.text
@@ -173,23 +183,31 @@ extension SignUpViewController {
 extension SignUpViewController {
     func subcribeInvalidCredentials() {
         viewModel.inValidCredential
-               .observe(on: mainScheduler)
-               .subscribe(onNext: { [unowned self] invalid in
-                   switch invalid {
-                   case .EMAIL:
-                       emailView.shake(duration: 1)
-                   case .PASSWORD:
-                       passwordView.shake(duration: 1)
-                   case .USER_NAME:
-                       userNameView.shake(duration: 1)
-                   case .ALL_EMPTY:
-                       emailView.shake(duration: 1)
-                       passwordView.shake(duration: 1)
-                       userNameView.shake(duration: 1)
-                   default:
-                       break
-                   }
-               }).disposed(by: disposeBag)
+            .observe(on: mainScheduler)
+            .subscribe(onNext: { [unowned self] invalid in
+                switch invalid {
+                case .EMAIL:
+                    emailView.shake(duration: 1)
+                    
+                case .PASSWORD:
+                    passwordView.shake(duration: 1)
+                    
+                case .USER_NAME:
+                    userNameView.shake(duration: 1)
+                    
+                case .ALL_EMPTY:
+                    emailView.shake(duration: 1)
+                    passwordView.shake(duration: 1)
+                    userNameView.shake(duration: 1)
+                    
+                case .PASSWORD_POLICY:
+                    passwordPolicy.isHidden = !passwordPolicy.isHidden
+                    
+                default:
+                    passwordPolicy.isHidden = true
+                    
+                }
+            }).disposed(by: disposeBag)
     }
 }
 

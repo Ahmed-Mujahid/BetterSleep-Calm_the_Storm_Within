@@ -18,6 +18,7 @@ class SignUpViewModel: BSBaseViewModel {
     var haveAccount: BehaviorRelay<NSAttributedString>
     var signup: BehaviorRelay<String>
     var inValidCredential: BehaviorRelay<InvalidCredentials>
+    var passwordPolicy: BehaviorRelay<String>
     
     // Variable
     var requestDto: SignUpRequestDto
@@ -33,6 +34,7 @@ class SignUpViewModel: BSBaseViewModel {
         pasword = BehaviorRelay(value: "Password")
         haveAccount = BehaviorRelay(value: NSAttributedString("ALREADY HAVE AN ACCOUNT?  \\LOG IN"))
         signup = BehaviorRelay(value: "SIGN UP")
+        passwordPolicy = BehaviorRelay(value: "Password should contain Atleast one Captial Letter, special character (!@#$%^&*()_+) and digit (0 - 9)")
         inValidCredential = BehaviorRelay(value: .none)
         requestDto = SignUpRequestDto()
     }
