@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		624E55464E646562CF717D7E /* Pods_BetterSleepTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3411B1CDBC073EB39256AD /* Pods_BetterSleepTests.framework */; };
+		8B0913DC28B0CE550076B9F1 /* BsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0913DB28B0CE550076B9F1 /* BsTabViewController.swift */; };
 		8B098B9628A6DEB500E84A00 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B098B9528A6DEB500E84A00 /* WelcomeViewController.swift */; };
 		8B098B9928A79C9200E84A00 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8B098B9828A79C9200E84A00 /* .swiftlint.yml */; };
 		8B7F18B0289966D500C9CBFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7F18AF289966D500C9CBFB /* AppDelegate.swift */; };
@@ -122,6 +123,7 @@
 		704985678AEFFEE58BAD7DDC /* Pods-BetterSleep-BetterSleepUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterSleep-BetterSleepUITests.debug.xcconfig"; path = "Target Support Files/Pods-BetterSleep-BetterSleepUITests/Pods-BetterSleep-BetterSleepUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7EA5D3CB010C050D4874DFF9 /* Pods_BetterSleep_BetterSleepUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetterSleep_BetterSleepUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		808C07FB7BAF090C23CAE48D /* Pods-BetterSleep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterSleep.debug.xcconfig"; path = "Target Support Files/Pods-BetterSleep/Pods-BetterSleep.debug.xcconfig"; sourceTree = "<group>"; };
+		8B0913DB28B0CE550076B9F1 /* BsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BsTabViewController.swift; sourceTree = "<group>"; };
 		8B098B9528A6DEB500E84A00 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		8B098B9828A79C9200E84A00 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		8B7F18AC289966D500C9CBFB /* BetterSleep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterSleep.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,6 +266,14 @@
 				F598246ED180B75906A401DE /* Pods-BetterSleepTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8B0913DA28B0CE360076B9F1 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				8B0913DB28B0CE550076B9F1 /* BsTabViewController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		8B098B9328A6DE8400E84A00 /* Authentication */ = {
@@ -430,6 +440,7 @@
 		8B7F18E928996DA400C9CBFB /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8B0913DA28B0CE360076B9F1 /* TabBar */,
 				8B098B9328A6DE8400E84A00 /* Authentication */,
 				8B7F18F028996FBF00C9CBFB /* HomeViewController.swift */,
 				8B94651328A7A67800D3C457 /* BSBaseViewController.swift */,
@@ -888,6 +899,7 @@
 				8B814C5728A2FE8A000AB670 /* CardView.swift in Sources */,
 				8B9C195828A91AF10094EAF7 /* AlertHandler.swift in Sources */,
 				8B7F18EF28996F8900C9CBFB /* Storyboards.swift in Sources */,
+				8B0913DC28B0CE550076B9F1 /* BsTabViewController.swift in Sources */,
 				8BF0CEDB28A817AC00EEC2A4 /* RxArray.swift in Sources */,
 				8B94651428A7A67800D3C457 /* BSBaseViewController.swift in Sources */,
 				8BF0CEE228A81FDB00EEC2A4 /* LoginViewModel.swift in Sources */,

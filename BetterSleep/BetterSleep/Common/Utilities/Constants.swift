@@ -11,12 +11,12 @@ import UIKit
 struct Constants {
     
     // General App Constants
-    
     static let appName = "Better Sleep"
     static let footerSize: CGFloat = 200
     static let success = "Success"
     static let appCornerRadius: CGFloat = 0
     static let firstAction = 0
+    static let tabBarHeight = 75
     
     // General Strings
     

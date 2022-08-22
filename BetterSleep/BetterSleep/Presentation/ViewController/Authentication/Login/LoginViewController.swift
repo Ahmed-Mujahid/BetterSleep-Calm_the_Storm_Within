@@ -208,7 +208,8 @@ extension LoginViewController {
             .asObservable()
             .filter { $0 }.bind { success in
                 if success {
-                    
+                    guard let view = BetterSleepManager.shared.navigateView(viewRef: .BsTabViewController, storyboard: .Main) as? BsTabViewController else { return }
+                    self.navigationController?.pushViewController(view, animated: true)
                 }
             }.disposed(by: disposeBag)
         

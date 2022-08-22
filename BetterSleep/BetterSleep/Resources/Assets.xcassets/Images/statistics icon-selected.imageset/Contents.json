@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "statistics icon.png",
+      "filename" : "statistics icon-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "statistics icon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "statistics icon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

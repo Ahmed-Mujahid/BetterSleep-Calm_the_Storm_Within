@@ -10,6 +10,13 @@ import UIKit
 class HomeViewController: UIViewController {
     
     // MARK: - IBOutlets
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var headerViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     
     // MARK: - Containers
     
@@ -24,17 +31,14 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-//        Color.frame = self.view.frame
-//        self.view.layer.addSublayer(Color.BS_Gradient2)
+        //        Color.frame = self.view.frame
+        //        self.view.layer.addSublayer(Color.BS_Gradient2)
         
         // Navigation Setting
         
-        
         // Setup View
         
-        
         // Binding view
-        
         
         // Configure call back
         

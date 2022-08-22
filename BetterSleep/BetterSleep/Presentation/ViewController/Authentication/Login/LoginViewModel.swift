@@ -55,8 +55,8 @@ class LoginViewModel: BSBaseViewModel {
             self.isLoading.accept(true)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.isLoading.accept(false)
-                self.setError("Logged In")
             }
+            
             self.isSuccess.accept(true)
         } else {
             self.isSuccess.accept(false)

@@ -19,6 +19,7 @@ enum ViewControllerReference: String {
     // MARK: - Main
     /// Main Stroyboard contain the following views
     case HomeViewController
+    case BsTabViewController
     
     // MARK: - Authentication
     /// Authentication Stroyboard contain the following views
