@@ -144,4 +144,14 @@ extension UIView {
         shakeGroup.duration = duration
         self.layer.add(shakeGroup, forKey: "shakeIt")
     }
+    
+    func dropShadow(scale: Bool = true) {
+           layer.masksToBounds = false
+           layer.shadowColor = UIColor.black.cgColor
+           layer.shadowOpacity = 1
+           layer.shadowOffset = .zero
+           layer.shadowRadius = 1
+           layer.shouldRasterize = true
+           layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+       }
 }

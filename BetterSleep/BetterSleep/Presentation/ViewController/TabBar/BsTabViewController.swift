@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum TabBar {
+enum TabBar: Int {
     case HOME
     case SLEEP
     case STATITICS
@@ -22,13 +22,10 @@ class BsTabViewController: UITabBarController {
     // MARK: - Instances
     
     // MARK: - Variables
+    var shadowView = CardView()
     
     // MARK: - Constants
-    var shadowOffsetWidth: Int = 0
-    var shadowOffsetHeight: Int = 10
-    var shadowColor: UIColor? = UIColor.lightGray
-    var shadowOpacity: Float = 0.5
-    var corners: CGFloat =  Constants.appCornerRadius
+    let cornerRadius = 50
     
     // MARK: - View LifeCycle
     override func viewDidLoad() {
@@ -36,8 +33,16 @@ class BsTabViewController: UITabBarController {
         
         // Do any additional setup after loading the view.
         
-        tabBar.round(CGFloat(Constants.tabBarHeight/2))
-        tabBar.standardAppearance.shadowColor = .black
+        // Making top right and left corners round
+        setCorners()
+        
+        // Adding Shadow View
+        addShadow()
+        
+        // colors for selected and unselected tabs
+        tabBar.tintColor = .white
+        tabBar.unselectedItemTintColor = BSColors.BS_Purple
+     
         // Navigation Setting
         
         // Setup View
@@ -51,7 +56,27 @@ class BsTabViewController: UITabBarController {
     // MARK: - Navigation / IBActions
     
     // MARK: - Custom Funtions
+    func addShadow() {
+        shadowView.frame = CGRect(x: self.tabBar.frame.minX,
+                                   y: self.tabBar.frame.minY - self.tabBar.frame.height + 65,
+                                   width: self.tabBar.frame.width + 10,
+                                   height:  self.tabBar.frame.height)
+        
+        shadowView.backgroundColor = .clear
+        shadowView.shadowColor = UIColor.black
+        shadowView.corners = cornerRadius
+        view.addSubview(shadowView)
+        view.bringSubviewToFront(tabBar)
+    }
     
+    func setCorners() {
+        let path = UIBezierPath(roundedRect:tabBar.bounds,
+                                byRoundingCorners: [.topRight, .topLeft],
+                                cornerRadii: CGSize(width: cornerRadius, height:  cornerRadius))
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = path.cgPath
+        tabBar.layer.mask = maskLayer
+    }
 }
 // MARK: - View Extensions
 class CustomTabBar : UITabBar {
