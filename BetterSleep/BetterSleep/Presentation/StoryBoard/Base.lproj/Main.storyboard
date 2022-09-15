@@ -6,7 +6,6 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -37,38 +36,22 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vc4-Au-7pR">
                                 <rect key="frame" x="20" y="259" width="374" height="637"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hfk-ah-oep">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vRj-ML-kq2">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="637"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YVq-ax-TDw">
-                                            <size key="itemSize" width="128" height="128"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8h9-aK-jNk">
-                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eMo-vG-2ss">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </collectionViewCellContentView>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
+                                    </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Hfk-ah-oep" secondAttribute="bottom" id="488-10-bha"/>
-                                    <constraint firstAttribute="trailing" secondItem="Hfk-ah-oep" secondAttribute="trailing" id="6hI-nc-byz"/>
-                                    <constraint firstItem="Hfk-ah-oep" firstAttribute="leading" secondItem="vc4-Au-7pR" secondAttribute="leading" id="C5B-1p-NYw"/>
-                                    <constraint firstItem="Hfk-ah-oep" firstAttribute="top" secondItem="vc4-Au-7pR" secondAttribute="top" id="Yjr-dI-M5J"/>
+                                    <constraint firstAttribute="trailing" secondItem="vRj-ML-kq2" secondAttribute="trailing" id="c0h-5v-k0K"/>
+                                    <constraint firstAttribute="bottom" secondItem="vRj-ML-kq2" secondAttribute="bottom" id="cj3-Jf-cjl"/>
+                                    <constraint firstItem="vRj-ML-kq2" firstAttribute="leading" secondItem="vc4-Au-7pR" secondAttribute="leading" id="nrD-jD-9PW"/>
+                                    <constraint firstItem="vRj-ML-kq2" firstAttribute="top" secondItem="vc4-Au-7pR" secondAttribute="top" id="oL5-vy-aY3"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" name="BS_Dark_Blue"/>
+                        <color key="backgroundColor" name="BS_Dark_Purple"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vc4-Au-7pR" secondAttribute="trailing" constant="20" id="5ca-iN-YMn"/>
                             <constraint firstAttribute="bottom" secondItem="vc4-Au-7pR" secondAttribute="bottom" id="KLB-FJ-YLv"/>
@@ -82,9 +65,9 @@
                     <navigationItem key="navigationItem" id="Kmx-Ng-Er4"/>
                     <connections>
                         <outlet property="bottomView" destination="vc4-Au-7pR" id="uNY-tw-gOD"/>
-                        <outlet property="collectionView" destination="Hfk-ah-oep" id="g1q-63-iD7"/>
                         <outlet property="headerView" destination="4rI-kZ-jyd" id="odJ-Gt-YQk"/>
                         <outlet property="headerViewHeight" destination="gN8-tE-wir" id="UEM-LW-HLU"/>
+                        <outlet property="tableView" destination="vRj-ML-kq2" id="fHM-gv-GjK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -99,7 +82,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DtV-ka-GhQ" customClass="CustomTabBar" customModule="BetterSleep" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" name="BS_Dark_Blue"/>
+                        <color key="backgroundColor" name="BS_Dark_Purple"/>
                     </tabBar>
                     <connections>
                         <segue destination="lAk-Id-98o" kind="relationship" relationship="viewControllers" id="7rc-wK-biA"/>
@@ -214,7 +197,7 @@
         <image name="sleep picture" width="500" height="234.5"/>
         <image name="statistics icon-selected" width="48" height="48"/>
         <image name="statistics icon-unselected" width="48" height="49"/>
-        <namedColor name="BS_Dark_Blue">
+        <namedColor name="BS_Dark_Purple">
             <color red="0.14509803921568629" green="0.090196078431372548" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">

@@ -64,7 +64,7 @@ class BsTabViewController: UITabBarController {
         
         shadowView.backgroundColor = .clear
         shadowView.shadowColor = UIColor.black
-        shadowView.corners = cornerRadius
+        shadowView.corners = CGFloat(cornerRadius)
         view.addSubview(shadowView)
         view.bringSubviewToFront(tabBar)
     }

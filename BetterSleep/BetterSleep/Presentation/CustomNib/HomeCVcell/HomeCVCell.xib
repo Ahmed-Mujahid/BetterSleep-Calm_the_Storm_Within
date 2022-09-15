@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HomeCVCell" customModule="BetterSleep" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="143" height="153"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="143" height="153"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mRW-qo-PDO" customClass="CardView" customModule="BetterSleep" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="143" height="153"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medidateCategory" translatesAutoresizingMaskIntoConstraints="NO" id="d6X-MW-VhO">
+                                <rect key="frame" x="0.0" y="0.0" width="143" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="aDU-fQ-REU"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGg-TK-QUw">
+                                <rect key="frame" x="5" y="112" width="133" height="19"/>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="BS_Dark_Purple"/>
+                        <constraints>
+                            <constraint firstItem="d6X-MW-VhO" firstAttribute="top" secondItem="mRW-qo-PDO" secondAttribute="top" id="GwL-th-1gK"/>
+                            <constraint firstItem="d6X-MW-VhO" firstAttribute="leading" secondItem="mRW-qo-PDO" secondAttribute="leading" id="PbZ-v8-7zW"/>
+                            <constraint firstItem="KGg-TK-QUw" firstAttribute="leading" secondItem="mRW-qo-PDO" secondAttribute="leading" constant="5" id="akC-Tr-z1O"/>
+                            <constraint firstItem="KGg-TK-QUw" firstAttribute="top" secondItem="d6X-MW-VhO" secondAttribute="bottom" constant="12" id="v6C-0d-1qI"/>
+                            <constraint firstAttribute="trailing" secondItem="KGg-TK-QUw" secondAttribute="trailing" constant="5" id="vuG-BH-5UA"/>
+                            <constraint firstAttribute="trailing" secondItem="d6X-MW-VhO" secondAttribute="trailing" id="ynJ-zY-rKT"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="corners">
+                                <real key="value" value="25"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="mRW-qo-PDO" secondAttribute="trailing" id="8kq-fa-9bQ"/>
+                <constraint firstItem="mRW-qo-PDO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="QAT-q5-rl9"/>
+                <constraint firstItem="mRW-qo-PDO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qpQ-37-GTF"/>
+                <constraint firstAttribute="bottom" secondItem="mRW-qo-PDO" secondAttribute="bottom" id="xLg-8L-40l"/>
+            </constraints>
+            <size key="customSize" width="143" height="153"/>
+            <connections>
+                <outlet property="cellImage" destination="d6X-MW-VhO" id="4je-qR-BXB"/>
+                <outlet property="cellLbl" destination="KGg-TK-QUw" id="iIK-lt-4G1"/>
+                <outlet property="mainView" destination="mRW-qo-PDO" id="srm-8d-f7m"/>
+            </connections>
+            <point key="canvasLocation" x="205.07246376811597" y="128.90625"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="medidateCategory" width="134" height="108"/>
+        <namedColor name="BS_Dark_Purple">
+            <color red="0.14509803921568629" green="0.090196078431372548" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

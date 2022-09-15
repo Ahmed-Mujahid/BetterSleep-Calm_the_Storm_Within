@@ -7,20 +7,18 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BSBaseViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var headerViewHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var bottomView: UIView!
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-    
+    @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Containers
     
     // MARK: - Instances
+    var viewModel = HomeViewModel()
     
     // MARK: - Variables
     
@@ -31,14 +29,15 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        //        Color.frame = self.view.frame
-        //        self.view.layer.addSublayer(Color.BS_Gradient2)
+        tableView.confirmRx(self, disposeBag)
+        tableView.register(HomeTVcell.identifier)
         
         // Navigation Setting
         
         // Setup View
         
         // Binding view
+        bindTableView()
         
         // Configure call back
         
@@ -49,3 +48,14 @@ class HomeViewController: UIViewController {
     
 }
 // MARK: - View Extensions
+extension HomeViewController {
+    private func bindTableView() {
+        viewModel.homeItem
+            .bind(to: tableView.rx.items(dataSource: viewModel.dataSource))
+            .disposed(by: disposeBag)
+    }
+}
+
+extension HomeViewController: UITableViewDelegate {
+    
+}
