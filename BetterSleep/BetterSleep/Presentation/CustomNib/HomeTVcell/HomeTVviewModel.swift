@@ -9,13 +9,10 @@ import Foundation
 import RxRelay
 
 class HomeTVviewModel: BSBaseViewModel {
-    var homeItem: BehaviorRelay<[HomeItem]>
-    var isBind = false
-    
-   override init() {
-       homeItem = BehaviorRelay(value: [HomeItem(title: "", icon: UIImage())])
-    }
-    
+    // MARK: - Relau
+    var homeItem: BehaviorRelay<[HomeItem]> = BehaviorRelay(value: [])
+  
+    // MARK: - init
     init(item: [HomeItem]) {
         homeItem = BehaviorRelay(value: item)
     }

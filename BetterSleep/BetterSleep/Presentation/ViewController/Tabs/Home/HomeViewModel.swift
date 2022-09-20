@@ -26,9 +26,13 @@ struct HomeSection {
     let items: [HomeItem]
     let header: String
     
-    init(items: [HomeItem], header: String) {
-        self.items = items
-        self.header = header
+}
+
+extension HomeSection: SectionModelType {
+    typealias Item = HomeItem
+    
+    init(original: Self, items: [Self.Item]) {
+        self = original
     }
 }
 
@@ -42,11 +46,16 @@ class HomeViewModel: BSBaseViewModel {
     
     // MARK: - init
     override init() {
-        var homeSection = [HomeSection]()
+        homeItem = BehaviorRelay(value: [])
+    }
+    
+    // MARK: - Methods
+    func fetchData() {
+        
         let musicItem: [HomeItem] = [
             HomeItem(title: "Music1", icon: BSImages.BS_Music1),
-            HomeItem(title: "Music2", icon: BSImages.BS_Music1),
-            HomeItem(title: "Music3", icon: BSImages.BS_Music1)
+            HomeItem(title: "Music2", icon: BSImages.BS_Music2),
+            HomeItem(title: "Music3", icon: BSImages.BS_Music3)
         ]
         
         let podCaseItem: [HomeItem] = [
@@ -62,21 +71,14 @@ class HomeViewModel: BSBaseViewModel {
             HomeItem(title: "Yoga", icon: BSImages.BS_Yoga)
         ]
         
+        var homeSection = [HomeSection]()
         homeSection.append(HomeSection(items: musicItem, header: "Music"))
-        homeSection.append(HomeSection(items: podCaseItem, header: "Podcast"))
-        homeSection.append(HomeSection(items: categoryItem, header: "Categories"))
+        //        homeSection.append(HomeSection(items: podCaseItem, header: "Podcast"))
+        //        homeSection.append(HomeSection(items: categoryItem, header: "Categories"))
         
         // Initialising Relay
         homeItem = BehaviorRelay(value: homeSection)
-       
+        
     }
     // MARK: - methods
-}
-
-extension HomeSection: SectionModelType {
-    typealias Item = HomeItem
-    
-    init(original: Self, items: [Self.Item]) {
-        self = original
-    }
 }

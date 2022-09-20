@@ -16,12 +16,15 @@ class HomeTVcell: UITableViewCell {
     
     // MARK: - IBOutlets
     @IBOutlet weak var cellCv: UICollectionView!
+    var count = 0
     
     // MARK: - Variables
     var viewModel: HomeTVviewModel? {
         didSet {
-//            bindCollectionView()
+            //            bindCollectionView()
             print("HomeTVviewModel")
+            print(viewModel?.homeItem.value.count)
+            
         }
     }
     
@@ -31,26 +34,39 @@ class HomeTVcell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        cellCv.delegate = self
+        cellCv.dataSource = self
+        cellCv.register(HomeCVCell.identifier)
+        cellCv.updateFLow(5, 5, true)
+        
     }
     
     // MARK: - IBActions
     
     // MARK: - Custom Functions
     
-    func bindCollectionView() {
-        
-        if  !(viewModel?.isBind ?? false) {
-            viewModel?.homeItem.observe(on: MainScheduler.instance)
-                .bind(to: cellCv.rx.items(cellIdentifier: HomeCVCell.identifier, cellType: HomeCVCell.self)) { row, data, cell in
-                    // Cell Data
-                    cell.viewModel = HomeCVcellViewModel(title: data.title, image: data.icon)
+}
 
-                }.disposed(by: DisposeBag())
-        
-                
-            print("isBind: \(viewModel?.isBind)")
-            print("CollectionView is binding")
-            viewModel?.isBind = true
-        }
+extension HomeTVcell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print( viewModel?.homeItem.value.count ?? 0)
+        return viewModel?.homeItem.value.count ?? 0
     }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCVCell.identifier, for: indexPath) as? HomeCVCell else { return UICollectionViewCell() }
+        if let data = viewModel?.homeItem.value[indexPath.item] {
+            cell.viewModel = HomeCVcellViewModel(title: data.title, image: data.icon)
+        }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width / 3, height: collectionView.frame.height)
+    }
+    
 }

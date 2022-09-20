@@ -9,27 +9,28 @@ import Foundation
 import RxDataSources
 import RxCocoa
 import RxSwift
+typealias HomeItemDataSource = RxTableViewSectionedReloadDataSource
 
 struct HomeItemDS {
-    typealias DataSource = RxTableViewSectionedReloadDataSource
-    
-    static func dataSource() -> DataSource<HomeSection> {
-        return .init { ds, collectionView, indexPath, item in
-            guard let cell = collectionView.dequeueReusableCell(withIdentifier: HomeTVcell.identifier, for: indexPath) as? HomeTVcell else { return UITableViewCell() }
+       
+    static func dataSource() ->  HomeItemDataSource<HomeSection> {
+        return .init(configureCell: { ds, tableView, indexPath, item -> UITableViewCell in
             
-            let items = ds[indexPath.row].items
-            cell.viewModel
-            cell.viewModel = HomeTVviewModel(item: item)
-            cell.bindCollectionView()
+            // Cell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTVcell.identifier, for: indexPath) as? HomeTVcell else { return UITableViewCell() }
+           
+            // ViewModel
+            let sectionItems = ds.sectionModels[indexPath.section].items
             
-//            if !cell.viewModel?.homeItem.value.isEmpty {
-//                item.
-//                    .bind(to: tableView.rx.items(dataSource: viewModel.dataSource))
-//                    .disposed(by: disposeBag)
-//            }
+            print("sectionModels count: \(ds.sectionModels.count)")
+            print("sectionItems: \(sectionItems)")
+            cell.viewModel = HomeTVviewModel(item: sectionItems)
+            cell.cellCv.reloadData()
+            
+            // Return Cell
             return cell
-        } titleForHeaderInSection: { ds, row in
-            return ds[row].header
-        }
+        }, titleForHeaderInSection: { ds, row in
+            return ds.sectionModels[row].header
+        })
     }
 }

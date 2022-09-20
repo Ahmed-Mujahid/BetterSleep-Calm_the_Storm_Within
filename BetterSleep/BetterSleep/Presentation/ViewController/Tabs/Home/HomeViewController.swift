@@ -31,6 +31,7 @@ class HomeViewController: BSBaseViewController {
         // Do any additional setup after loading the view.
         tableView.confirmRx(self, disposeBag)
         tableView.register(HomeTVcell.identifier)
+        viewModel.fetchData()
         
         // Navigation Setting
         
@@ -57,5 +58,7 @@ extension HomeViewController {
 }
 
 extension HomeViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        150.0
+    }
 }
