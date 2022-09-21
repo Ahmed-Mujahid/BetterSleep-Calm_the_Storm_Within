@@ -19,7 +19,8 @@ extension UITableView {
     
     func confirmRx(_ view: UIViewController, _ disposeBag: DisposeBag) {
         if let delegate = view as? UIScrollViewDelegate {
-            self.rx.setDelegate(delegate).disposed(by: disposeBag)
+            self.rx.setDelegate(delegate)
+                .disposed(by: disposeBag)
         }
         self.refreshControl?.tintColor = .clear
         self.refreshControl?.backgroundColor = .clear
