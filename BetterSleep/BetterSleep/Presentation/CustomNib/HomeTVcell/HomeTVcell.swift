@@ -34,8 +34,6 @@ class HomeTVcell: UITableViewCell {
         // Initialization code
         cellCv.delegate = self
         cellCv.register(HomeCVCell.identifier)
-        cellCv.updateFLow(5, 5, true)
-        
     }
     
     // MARK: - IBActions
@@ -44,35 +42,35 @@ class HomeTVcell: UITableViewCell {
     private func bindCollectionView() {
     
         viewModel?.homeItem
-            .bind(to: cellCv.rx.items(cellIdentifier: HomeCVCell.identifier,
-                                              cellType: HomeCVCell.self)) { indexPath, data, cell in
-                cell.viewModel = HomeCVcellViewModel(title: data.title, image: data.icon)
-                
+            .bind(to: cellCv.rx.items(cellIdentifier: HomeCVCell.identifier, cellType: HomeCVCell.self)) { indexPath, data, cell in
+                cell.viewModel = HomeCVcellViewModel(title: data.title,
+                                                     image: data.icon,
+                                                     isHorizontal: self.viewModel?.isHorizontal ?? true)
             }.disposed(by: disposeBag)
         
     }
 }
 
 extension HomeTVcell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        print( viewModel?.homeItem.value.count ?? 0)
-//        return viewModel?.homeItem.value.count ?? 0
-//    }
-//
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return 1
-//    }
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCVCell.identifier, for: indexPath) as? HomeCVCell else { return UICollectionViewCell() }
-//        if let data = viewModel?.homeItem.value[indexPath.item] {
-//            cell.viewModel = HomeCVcellViewModel(title: data.title, image: data.icon)
-//        }
-//        return cell
-//    }
-//
+ 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width / 3, height: collectionView.frame.height)
+        if self.viewModel?.isHorizontal ?? true {
+            return CGSize(width: (collectionView.frame.width / 3) + 20, height: collectionView.frame.height)
+        } else {
+            return CGSize(width: (collectionView.frame.width / 3) + 30, height: collectionView.frame.height - 20)
+        }
+        
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
+    {
+        let leftRight_insets = 20.0
+        
+        if self.viewModel?.isHorizontal ?? true {
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        } else {
+            return UIEdgeInsets(top: 0, left: leftRight_insets, bottom: 0, right: leftRight_insets)
+        }
+      
+    }
 }

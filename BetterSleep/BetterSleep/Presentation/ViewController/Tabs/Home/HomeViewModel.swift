@@ -70,19 +70,12 @@ class HomeViewModel: BSBaseViewModel {
             HomeItem(title: "Medidate", icon: BSImages.BS_Medidate),
             HomeItem(title: "Yoga", icon: BSImages.BS_Yoga)
         ]
-        //
-        //        var homeSection = [HomeSection]()
-        //        homeSection.append(HomeSection(items: musicItem, header: "Music"))
-        //        homeSection.append(HomeSection(items: podCaseItem, header: "Podcast"))
-        //        homeSection.append(HomeSection(items: categoryItem, header: "Categories"))
-        //
-        //
         
         var homeSection = [AdvancedTableViewSection]()
         
-        homeSection.append(.GridSection(items: [.GridTableViewItem(titles: musicItem)]))
-        homeSection.append(.GridSection(items: [.GridTableViewItem(titles: podCaseItem)]))
-        homeSection.append(.GridSection(items: [.GridTableViewItem(titles: categoryItem)]))
+        homeSection.append(.HorizontalSection(items: [.HorizontalTableViewItem(titles: musicItem)]))
+        homeSection.append(.HorizontalSection(items: [.HorizontalTableViewItem(titles: podCaseItem)]))
+        homeSection.append(.VerticalSection(items: [.VerticalTableViewItem(titles: categoryItem)]))
         
         // Initialising Relay
         homeItem = BehaviorRelay(value: homeSection)

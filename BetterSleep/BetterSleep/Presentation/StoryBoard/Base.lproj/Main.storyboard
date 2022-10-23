@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vq7-Pb-i7c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vq7-Pb-i7c">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rI-kZ-jyd">
-                                <rect key="frame" x="0.0" y="44" width="414" height="195"/>
+                                <rect key="frame" x="0.0" y="44" width="409" height="195"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sleep picture" translatesAutoresizingMaskIntoConstraints="NO" id="6Jl-1U-VzZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="195"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="409" height="195"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -34,17 +34,17 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vc4-Au-7pR">
-                                <rect key="frame" x="20" y="259" width="374" height="637"/>
+                                <rect key="frame" x="5" y="249" width="404" height="564"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vRj-ML-kq2">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="637"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vRj-ML-kq2">
+                                        <rect key="frame" x="0.0" y="0.0" width="404" height="564"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="vRj-ML-kq2" secondAttribute="bottom" id="VRp-C6-IW9"/>
                                     <constraint firstAttribute="trailing" secondItem="vRj-ML-kq2" secondAttribute="trailing" id="c0h-5v-k0K"/>
-                                    <constraint firstAttribute="bottom" secondItem="vRj-ML-kq2" secondAttribute="bottom" id="cj3-Jf-cjl"/>
                                     <constraint firstItem="vRj-ML-kq2" firstAttribute="leading" secondItem="vc4-Au-7pR" secondAttribute="leading" id="nrD-jD-9PW"/>
                                     <constraint firstItem="vRj-ML-kq2" firstAttribute="top" secondItem="vc4-Au-7pR" secondAttribute="top" id="oL5-vy-aY3"/>
                                 </constraints>
@@ -53,11 +53,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="BS_Dark_Purple"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vc4-Au-7pR" secondAttribute="trailing" constant="20" id="5ca-iN-YMn"/>
-                            <constraint firstAttribute="bottom" secondItem="vc4-Au-7pR" secondAttribute="bottom" id="KLB-FJ-YLv"/>
-                            <constraint firstItem="vc4-Au-7pR" firstAttribute="top" secondItem="4rI-kZ-jyd" secondAttribute="bottom" constant="20" id="LiM-79-DEO"/>
-                            <constraint firstItem="vc4-Au-7pR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="LrQ-ST-7A1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4rI-kZ-jyd" secondAttribute="trailing" id="T6Z-oy-bDN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vc4-Au-7pR" secondAttribute="trailing" constant="5" id="5ca-iN-YMn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vc4-Au-7pR" secondAttribute="bottom" id="KLB-FJ-YLv"/>
+                            <constraint firstItem="vc4-Au-7pR" firstAttribute="top" secondItem="4rI-kZ-jyd" secondAttribute="bottom" constant="10" id="LiM-79-DEO"/>
+                            <constraint firstItem="vc4-Au-7pR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="LrQ-ST-7A1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4rI-kZ-jyd" secondAttribute="trailing" constant="5" id="T6Z-oy-bDN"/>
                             <constraint firstItem="4rI-kZ-jyd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UCH-F6-gsq"/>
                             <constraint firstItem="4rI-kZ-jyd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aZv-cv-2HN"/>
                         </constraints>

@@ -12,6 +12,7 @@ struct BSColors {
     static let BS_Blue = UIColor(named: "BS_Blue")!
     static let BS_DarkBlue =  UIColor(named: "BS_Dark_Blue")!
     static let BS_Purple = UIColor(named: "BS_Purple")!
+    static let BS_LIGHT_Purple = UIColor(named: "BS_Light_Purple")!
     static let BS_GradientBlue = UIColor(named: "GradientBlue")!
     static let BS_GradientGreen = UIColor(named: "GradientGreen")!
     static let BS_GradientPurpleDark = UIColor(named: "GradientPurpleDark")!

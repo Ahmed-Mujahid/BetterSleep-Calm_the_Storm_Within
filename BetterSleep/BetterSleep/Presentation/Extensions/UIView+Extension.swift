@@ -87,6 +87,19 @@ extension UIView {
         self.layer.masksToBounds = true
     }
     
+    func roundTop(radius: CGFloat) {
+        let topLeft: UIRectCorner = .topLeft
+        let topRight: UIRectCorner = .topRight
+        round([topRight, topLeft], radius: radius)
+       
+    }
+    
+    func roundBottem(radius: CGFloat) {
+        let bottomLeft: UIRectCorner = .bottomLeft
+        let bottomRight: UIRectCorner = .bottomRight
+        round([bottomLeft, bottomRight], radius: radius)
+    }
+    
     func round(_ corners: UIRectCorner, radius: CGFloat) {
         if #available(iOS 11.0, *) {
             clipsToBounds = true

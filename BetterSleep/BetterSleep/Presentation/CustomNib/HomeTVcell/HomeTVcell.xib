@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,8 +17,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="174"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rME-Zd-L7i">
-                        <rect key="frame" x="0.0" y="15" width="320" height="159"/>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rME-Zd-L7i">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="174"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Gpw-cv-tcZ">
                             <size key="itemSize" width="128" height="128"/>
@@ -32,7 +32,7 @@
                 <constraints>
                     <constraint firstItem="rME-Zd-L7i" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="7hA-lt-0hQ"/>
                     <constraint firstAttribute="trailing" secondItem="rME-Zd-L7i" secondAttribute="trailing" id="SyS-Qr-oGl"/>
-                    <constraint firstItem="rME-Zd-L7i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="hxv-VR-OBd"/>
+                    <constraint firstItem="rME-Zd-L7i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hxv-VR-OBd"/>
                     <constraint firstAttribute="bottom" secondItem="rME-Zd-L7i" secondAttribute="bottom" id="oGZ-E9-5mk"/>
                 </constraints>
             </tableViewCellContentView>

@@ -40,5 +40,13 @@ class HomeCVCell: UICollectionViewCell {
     func prepareCell() {
         cellLbl.text = viewModel?.title
         cellImage.image = viewModel?.image
+        
+        if (viewModel?.isHorizontal ?? true) {
+            cellImage.roundTop(radius: 25)
+        } else {
+            cellImage.round(10)
+        }
+        
+        mainView.backgroundColor = (viewModel?.isHorizontal ?? true) ? BSColors.BS_LIGHT_Purple : .clear
     }
 }

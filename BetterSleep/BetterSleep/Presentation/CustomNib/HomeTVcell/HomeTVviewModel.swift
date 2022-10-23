@@ -11,9 +11,11 @@ import RxRelay
 class HomeTVviewModel: BSBaseViewModel {
     // MARK: - Relau
     var homeItem: BehaviorRelay<[HomeItem]> = BehaviorRelay(value: [])
-  
+    var isHorizontal: Bool
+    
     // MARK: - init
-    init(item: [HomeItem]) {
+    init(item: [HomeItem], isHorizontal: Bool) {
         homeItem = BehaviorRelay(value: item)
+        self.isHorizontal = isHorizontal
     }
 }
