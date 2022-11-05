@@ -12,7 +12,7 @@ import RxSwift
 extension UITableView {
     func confirm(_ view: UIViewController) {
         self.delegate = view as? UITableViewDelegate
-        self.dataSource = view as? UITableViewDataSource
+//        self.dataSource = view as? UITableViewDataSource
         self.refreshControl?.tintColor = .clear
         self.refreshControl?.backgroundColor = .clear
     }

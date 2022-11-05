@@ -75,10 +75,15 @@ class HomeViewModel: BSBaseViewModel {
         
         homeSection.append(.HorizontalSection(items: [.HorizontalTableViewItem(titles: musicItem)]))
         homeSection.append(.HorizontalSection(items: [.HorizontalTableViewItem(titles: podCaseItem)]))
+        homeSection.append(.HorizontalSection(items: [.HorizontalTableViewItem(titles: musicItem)]))
+        homeSection.append(.HorizontalSection(items: [.HorizontalTableViewItem(titles: podCaseItem)]))
+        homeSection.append(.HorizontalSection(items: [.HorizontalTableViewItem(titles: musicItem)]))
+        homeSection.append(.HorizontalSection(items: [.HorizontalTableViewItem(titles: podCaseItem)]))
         homeSection.append(.VerticalSection(items: [.VerticalTableViewItem(titles: categoryItem)]))
         
         // Initialising Relay
         homeItem = BehaviorRelay(value: homeSection)
+        self.isSuccess.accept(true)
     }
     // MARK: - methods
 }

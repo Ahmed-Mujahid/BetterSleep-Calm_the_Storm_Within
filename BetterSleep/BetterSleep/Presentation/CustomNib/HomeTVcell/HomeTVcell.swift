@@ -41,7 +41,8 @@ class HomeTVcell: UITableViewCell {
     // MARK: - Custom Functions
     private func bindCollectionView() {
     
-        viewModel?.homeItem
+        viewModel?
+            .homeItem
             .bind(to: cellCv.rx.items(cellIdentifier: HomeCVCell.identifier, cellType: HomeCVCell.self)) { indexPath, data, cell in
                 cell.viewModel = HomeCVcellViewModel(title: data.title,
                                                      image: data.icon,
@@ -55,9 +56,11 @@ extension HomeTVcell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayo
  
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if self.viewModel?.isHorizontal ?? true {
-            return CGSize(width: (collectionView.frame.width / 3) + 20, height: collectionView.frame.height)
+            return CGSize(width: (collectionView.frame.width / 3) + 20,
+                          height: collectionView.frame.height)
         } else {
-            return CGSize(width: (collectionView.frame.width / 3) + 30, height: collectionView.frame.height - 20)
+            return CGSize(width: (collectionView.frame.width / 3) + 30,
+                          height: collectionView.frame.height / 2)
         }
         
     }

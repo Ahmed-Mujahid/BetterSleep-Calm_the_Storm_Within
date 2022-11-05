@@ -14,6 +14,8 @@ class HomeViewController: BSBaseViewController {
     @IBOutlet weak var headerViewHeight: NSLayoutConstraint!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var mainViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     // MARK: - Containers
     
@@ -21,6 +23,7 @@ class HomeViewController: BSBaseViewController {
     var viewModel = HomeViewModel()
     
     // MARK: - Variables
+    var height = 220
     
     // MARK: - Constants
     
@@ -32,6 +35,7 @@ class HomeViewController: BSBaseViewController {
         tableView.confirmRx(self, disposeBag)
         tableView.register(HomeTVcell.identifier)
         tableView.separatorStyle = .none
+        tableView.isScrollEnabled = false
         
         viewModel.fetchData()
         
@@ -43,11 +47,44 @@ class HomeViewController: BSBaseViewController {
         bindTableView()
         
         // Configure call back
+        configureServiceCallBacks()
         
     }
     // MARK: - Navigation / IBActions
     
     // MARK: - Custom Funtions
+    /// isLoading: Displays HUD from API called to end
+    /// isSuccess: a succes message if API
+    private func configureServiceCallBacks() {
+        
+        // success
+        viewModel.isSuccess
+            .asObservable()
+            .filter { $0 }.bind { success in
+                if success {
+                    self.adjustScrollHeight()
+                }
+            }.disposed(by: disposeBag)
+        
+    }
+    
+    private func adjustScrollHeight() {
+        
+        for ds in viewModel.dataSource.sectionModels {
+            switch ds.items.first {
+            case .HorizontalTableViewItem(titles: let homeItem):
+                height += (homeItem.count * 60)
+                
+            case .VerticalTableViewItem(titles: let homeItem):
+                height += (homeItem.count * 110)
+                
+            case .none:
+                height = 210
+            }
+        }
+    
+        mainViewHeight.constant = CGFloat(height)
+    }
     
 }
 // MARK: - View Extensions
@@ -61,7 +98,14 @@ extension HomeViewController {
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        150.0
+        let sections = viewModel.dataSource[indexPath.section].items
+        switch sections.first {
+        case .HorizontalTableViewItem(titles: _): return  150.0
+        case .VerticalTableViewItem(titles: let homeItem): return  CGFloat(homeItem.count * 70)
+        case .none:  return  150.0
+           
+        }
+       
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -84,46 +128,5 @@ extension HomeViewController: UITableViewDelegate {
         headerView.addSubview(sectionLabel)
         
         return headerView
-    }
-}
-
-extension HomeViewController: UIScrollViewDelegate {
-    
-    func adjustTopView(_ height: CGFloat) {
-        view.layoutIfNeeded()
-        headerViewHeight.constant = height
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        // checks if srollview of tableview is scrolled
-        if let item = scrollView as? UITableView {
-            if item != tableView {
-                return
-            }
-            
-            // Getting frame size for table view
-            let viewoffset = tableView.frame.size.height + tableView.frame.origin.y
-            
-            // on specific value adjust top View
-            if scrollView.contentOffset.y > 10 {
-                
-                adjustTopView(0)
-                
-            } else if scrollView.contentOffset.y <= 50 {
-                
-                adjustTopView(200)
-                
-            } else if viewoffset < scrollView.contentOffset.y {
-                
-                // expand the header
-                adjustTopView(200)
-                
-            }
-            
-            // Animating while expanding top view
-            UIView.animate(withDuration: 0.7, delay: 0, options: [.allowUserInteraction], animations: {
-                self.view.layoutIfNeeded()
-            }, completion: nil)
-        }
     }
 }

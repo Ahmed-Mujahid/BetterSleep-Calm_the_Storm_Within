@@ -17,69 +17,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rI-kZ-jyd">
-                                <rect key="frame" x="0.0" y="44" width="409" height="195"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKT-x3-Gv9">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sleep picture" translatesAutoresizingMaskIntoConstraints="NO" id="6Jl-1U-VzZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="409" height="195"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="6Jl-1U-VzZ" secondAttribute="bottom" id="bNA-ds-1ix"/>
-                                    <constraint firstAttribute="trailing" secondItem="6Jl-1U-VzZ" secondAttribute="trailing" id="bWn-Gc-PPp"/>
-                                    <constraint firstItem="6Jl-1U-VzZ" firstAttribute="top" secondItem="4rI-kZ-jyd" secondAttribute="top" id="bxt-hL-HuA"/>
-                                    <constraint firstItem="6Jl-1U-VzZ" firstAttribute="leading" secondItem="4rI-kZ-jyd" secondAttribute="leading" id="g5v-f7-tnF"/>
-                                    <constraint firstAttribute="height" constant="195" id="gN8-tE-wir"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vc4-Au-7pR">
-                                <rect key="frame" x="5" y="249" width="404" height="564"/>
-                                <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vRj-ML-kq2">
-                                        <rect key="frame" x="0.0" y="0.0" width="404" height="564"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ifo-9Y-Vyt">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rI-kZ-jyd">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sleep picture" translatesAutoresizingMaskIntoConstraints="NO" id="6Jl-1U-VzZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="6Jl-1U-VzZ" secondAttribute="trailing" id="5Oh-5R-GhM"/>
+                                                    <constraint firstAttribute="height" constant="200" id="Bi4-QD-krJ"/>
+                                                    <constraint firstItem="6Jl-1U-VzZ" firstAttribute="leading" secondItem="4rI-kZ-jyd" secondAttribute="leading" id="LLk-4P-VW4"/>
+                                                    <constraint firstItem="6Jl-1U-VzZ" firstAttribute="top" secondItem="4rI-kZ-jyd" secondAttribute="top" id="cTU-XA-iXr"/>
+                                                    <constraint firstAttribute="bottom" secondItem="6Jl-1U-VzZ" secondAttribute="bottom" id="ud9-z1-vi5"/>
+                                                </constraints>
+                                            </view>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vRj-ML-kq2">
+                                                <rect key="frame" x="0.0" y="210" width="414" height="10"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </tableView>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </tableView>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="vRj-ML-kq2" secondAttribute="trailing" id="6kx-Kv-w9v"/>
+                                            <constraint firstAttribute="bottom" secondItem="vRj-ML-kq2" secondAttribute="bottom" id="CQR-uo-7VV"/>
+                                            <constraint firstItem="vRj-ML-kq2" firstAttribute="top" secondItem="4rI-kZ-jyd" secondAttribute="bottom" constant="10" id="RIX-WX-zWU"/>
+                                            <constraint firstItem="4rI-kZ-jyd" firstAttribute="leading" secondItem="Ifo-9Y-Vyt" secondAttribute="leading" id="ZZb-gA-Mhd"/>
+                                            <constraint firstAttribute="trailing" secondItem="4rI-kZ-jyd" secondAttribute="trailing" id="baW-YF-dsm"/>
+                                            <constraint firstItem="4rI-kZ-jyd" firstAttribute="top" secondItem="Ifo-9Y-Vyt" secondAttribute="top" id="l4M-dj-k5s"/>
+                                            <constraint firstAttribute="height" constant="220" id="qf7-VE-n3j"/>
+                                            <constraint firstItem="vRj-ML-kq2" firstAttribute="leading" secondItem="Ifo-9Y-Vyt" secondAttribute="leading" id="wgW-TS-VKd"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="vRj-ML-kq2" secondAttribute="bottom" id="VRp-C6-IW9"/>
-                                    <constraint firstAttribute="trailing" secondItem="vRj-ML-kq2" secondAttribute="trailing" id="c0h-5v-k0K"/>
-                                    <constraint firstItem="vRj-ML-kq2" firstAttribute="leading" secondItem="vc4-Au-7pR" secondAttribute="leading" id="nrD-jD-9PW"/>
-                                    <constraint firstItem="vRj-ML-kq2" firstAttribute="top" secondItem="vc4-Au-7pR" secondAttribute="top" id="oL5-vy-aY3"/>
+                                    <constraint firstItem="Ifo-9Y-Vyt" firstAttribute="centerX" secondItem="SKT-x3-Gv9" secondAttribute="centerX" id="AVM-Oc-oU9"/>
+                                    <constraint firstItem="Ifo-9Y-Vyt" firstAttribute="leading" secondItem="SKT-x3-Gv9" secondAttribute="leading" id="bEp-D1-0p7"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ifo-9Y-Vyt" secondAttribute="bottom" id="n1j-vb-de2"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ifo-9Y-Vyt" secondAttribute="trailing" id="onH-7U-Fvv"/>
+                                    <constraint firstItem="Ifo-9Y-Vyt" firstAttribute="top" secondItem="SKT-x3-Gv9" secondAttribute="top" id="usF-yd-CW7"/>
                                 </constraints>
-                            </view>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="BS_Dark_Purple"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vc4-Au-7pR" secondAttribute="trailing" constant="5" id="5ca-iN-YMn"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vc4-Au-7pR" secondAttribute="bottom" id="KLB-FJ-YLv"/>
-                            <constraint firstItem="vc4-Au-7pR" firstAttribute="top" secondItem="4rI-kZ-jyd" secondAttribute="bottom" constant="10" id="LiM-79-DEO"/>
-                            <constraint firstItem="vc4-Au-7pR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="LrQ-ST-7A1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4rI-kZ-jyd" secondAttribute="trailing" constant="5" id="T6Z-oy-bDN"/>
-                            <constraint firstItem="4rI-kZ-jyd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UCH-F6-gsq"/>
-                            <constraint firstItem="4rI-kZ-jyd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aZv-cv-2HN"/>
+                            <constraint firstItem="SKT-x3-Gv9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0AN-Bn-cbN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SKT-x3-Gv9" secondAttribute="trailing" id="WJ1-sF-vco"/>
+                            <constraint firstItem="SKT-x3-Gv9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rj1-Mw-MZG"/>
+                            <constraint firstAttribute="bottom" secondItem="SKT-x3-Gv9" secondAttribute="bottom" constant="83" id="s07-cb-0FC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Kmx-Ng-Er4"/>
                     <connections>
-                        <outlet property="bottomView" destination="vc4-Au-7pR" id="uNY-tw-gOD"/>
                         <outlet property="headerView" destination="4rI-kZ-jyd" id="odJ-Gt-YQk"/>
-                        <outlet property="headerViewHeight" destination="gN8-tE-wir" id="UEM-LW-HLU"/>
+                        <outlet property="headerViewHeight" destination="Bi4-QD-krJ" id="oK6-Ky-k1k"/>
+                        <outlet property="mainViewHeight" destination="qf7-VE-n3j" id="GmN-SB-dmK"/>
+                        <outlet property="scrollView" destination="SKT-x3-Gv9" id="NPB-dT-fVm"/>
                         <outlet property="tableView" destination="vRj-ML-kq2" id="fHM-gv-GjK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-778" y="1552"/>
+            <point key="canvasLocation" x="-778.26086956521749" y="1551.5625"/>
         </scene>
         <!--Bs Tab View Controller-->
         <scene sceneID="s9y-YO-jcv">
             <objects>
                 <tabBarController storyboardIdentifier="BsTabViewController" automaticallyAdjustsScrollViewInsets="NO" id="vq7-Pb-i7c" customClass="BsTabViewController" customModule="BetterSleep" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DtV-ka-GhQ" customClass="CustomTabBar" customModule="BetterSleep" customModuleProvider="target">
+                    <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DtV-ka-GhQ" customClass="CustomTabBar" customModule="BetterSleep" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="BS_Dark_Purple"/>
@@ -121,7 +135,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="GIl-8i-Jv1"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BS_Dark_Purple"/>
                     </view>
                     <navigationItem key="navigationItem" id="j5l-5j-ZwT"/>
                 </viewController>
@@ -137,7 +151,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="3FJ-Dv-yQT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BS_Dark_Purple"/>
                     </view>
                     <navigationItem key="navigationItem" id="179-lj-S73"/>
                 </viewController>

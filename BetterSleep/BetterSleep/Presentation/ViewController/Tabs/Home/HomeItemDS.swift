@@ -72,7 +72,7 @@ struct HomeItemDS {
                 // Vertical Cells
             case .VerticalTableViewItem(titles: let titles):
                 cell.viewModel = HomeTVviewModel(item: titles, isHorizontal: false)
-                cell.cellCv.updateFLow(5, 15, false)
+                cell.cellCv.updateFLow(5, 5, false)
                 
             }
             

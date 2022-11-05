@@ -42,7 +42,8 @@ class BsTabViewController: UITabBarController {
         // colors for selected and unselected tabs
         tabBar.tintColor = .white
         tabBar.unselectedItemTintColor = BSColors.BS_Purple
-     
+        self.tabBar.backgroundColor = BSColors.BS_DARK_Purple
+        
         // Navigation Setting
         
         // Setup View
