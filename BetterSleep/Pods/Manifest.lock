@@ -4,6 +4,7 @@ PODS:
   - DynamicBlurView (4.1.0)
   - FittedSheets (2.4.2)
   - FSCalendar (2.8.4)
+  - HGCircularSlider (2.2.0)
   - IQKeyboardManagerSwift (6.5.10)
   - Kingfisher (7.2.2)
   - MBProgressHUD (1.2.0)
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - Alamofire
   - FittedSheets
   - FSCalendar
+  - HGCircularSlider
   - IQKeyboardManagerSwift
   - Kingfisher
   - MBProgressHUD
@@ -43,6 +45,7 @@ SPEC REPOS:
     - DynamicBlurView
     - FittedSheets
     - FSCalendar
+    - HGCircularSlider
     - IQKeyboardManagerSwift
     - Kingfisher
     - MBProgressHUD
@@ -60,6 +63,7 @@ SPEC CHECKSUMS:
   DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
   FittedSheets: 661408776eb4ff514a31da75b3600bd7222b2b3d
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
+  HGCircularSlider: afb1942743a2df156dcc7a3500216e523e14266b
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
   Kingfisher: 184d4d1a8c36666e663caf8e08abe87898595c53
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
@@ -71,6 +75,6 @@ SPEC CHECKSUMS:
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SwiftLint: f80f1be7fa96d30e0aa68e58d45d4ea1ccaac519
 
-PODFILE CHECKSUM: 4e515e79f5845f6bb98be3b84875422f86a9d2ec
+PODFILE CHECKSUM: 890fb8833c51e1d96841aabf8b83028cc6d2257c
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.11.2

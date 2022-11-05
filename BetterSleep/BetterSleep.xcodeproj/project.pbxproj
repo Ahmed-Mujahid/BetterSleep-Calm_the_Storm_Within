@@ -106,6 +106,7 @@
 		8BF0CEE928A839D900EEC2A4 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0CEE828A839D900EEC2A4 /* SignUpViewModel.swift */; };
 		EE4AE4260BD2F278D62947EE /* Pods_BetterSleep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E270B0E850866EC7A3A112 /* Pods_BetterSleep.framework */; };
 		F23BBD6C96B6976E68A83EB0 /* Pods_BetterSleep_BetterSleepUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA5D3CB010C050D4874DFF9 /* Pods_BetterSleep_BetterSleepUITests.framework */; };
+		F418429B2916C6CB00164817 /* SleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418429A2916C6CB00164817 /* SleepViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -234,6 +235,7 @@
 		8BF0CEE628A839C400EEC2A4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8BF0CEE828A839D900EEC2A4 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		E9C36590DCEC71EFBF9D3895 /* Pods-BetterSleepTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterSleepTests.debug.xcconfig"; path = "Target Support Files/Pods-BetterSleepTests/Pods-BetterSleepTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F418429A2916C6CB00164817 /* SleepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepViewController.swift; sourceTree = "<group>"; };
 		F598246ED180B75906A401DE /* Pods-BetterSleepTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterSleepTests.release.xcconfig"; path = "Target Support Files/Pods-BetterSleepTests/Pods-BetterSleepTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -625,6 +627,7 @@
 		8BEFEE0028B8EA42004CB01A /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				F41842992916C6AD00164817 /* Sleep */,
 				8BEFEDFF28B8EA3A004CB01A /* Home */,
 			);
 			path = Tabs;
@@ -650,6 +653,14 @@
 				8B9C195F28A94B1F0094EAF7 /* SignUpValidator.swift */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		F41842992916C6AD00164817 /* Sleep */ = {
+			isa = PBXGroup;
+			children = (
+				F418429A2916C6CB00164817 /* SleepViewController.swift */,
+			);
+			path = Sleep;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -995,6 +1006,7 @@
 				8B9C195A28A91B4A0094EAF7 /* TypeAliase.swift in Sources */,
 				8BF0CEE028A81FC300EEC2A4 /* LoginViewController.swift in Sources */,
 				8B9C195E28A94AE50094EAF7 /* SignUpRequestDto.swift in Sources */,
+				F418429B2916C6CB00164817 /* SleepViewController.swift in Sources */,
 				8B098B9628A6DEB500E84A00 /* WelcomeViewController.swift in Sources */,
 				8B7F18F128996FBF00C9CBFB /* HomeViewController.swift in Sources */,
 				8B895EAB28BFCCE000C07A67 /* HomeItemDS.swift in Sources */,

@@ -35,6 +35,9 @@ target 'BetterSleep' do
   # Pod for images
    pod 'Alamofire'
    
+   # Pod for images
+   pod 'HGCircularSlider'
+   
   target 'BetterSleepTests' do
     inherit! :search_paths
     # Pods for testing

@@ -85,5 +85,6 @@ class HomeViewModel: BSBaseViewModel {
         homeItem = BehaviorRelay(value: homeSection)
         self.isSuccess.accept(true)
     }
+    
     // MARK: - methods
 }

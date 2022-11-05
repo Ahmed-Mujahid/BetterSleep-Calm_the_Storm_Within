@@ -20,6 +20,7 @@ enum ViewControllerReference: String {
     /// Main Stroyboard contain the following views
     case HomeViewController
     case BsTabViewController
+    case SleepViewController
     
     // MARK: - Authentication
     /// Authentication Stroyboard contain the following views
