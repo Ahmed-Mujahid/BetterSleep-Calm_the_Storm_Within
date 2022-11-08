@@ -94,6 +94,7 @@
 		8B9C195C28A92F1C0094EAF7 /* BS_Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C195B28A92F1C0094EAF7 /* BS_Images.swift */; };
 		8B9C195E28A94AE50094EAF7 /* SignUpRequestDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C195D28A94AE50094EAF7 /* SignUpRequestDto.swift */; };
 		8B9C196028A94B1F0094EAF7 /* SignUpValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C195F28A94B1F0094EAF7 /* SignUpValidator.swift */; };
+		8BB46995291A2CF0009E7769 /* HomeDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB46994291A2CF0009E7769 /* HomeDetail.storyboard */; };
 		8BEFEE0228B8EA5C004CB01A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEFEE0128B8EA5C004CB01A /* HomeViewModel.swift */; };
 		8BF0CED728A8176C00EEC2A4 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0CED628A8176C00EEC2A4 /* WelcomeViewModel.swift */; };
 		8BF0CEDA28A817AC00EEC2A4 /* Reactive+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0CED828A817AC00EEC2A4 /* Reactive+Helper.swift */; };
@@ -224,6 +225,7 @@
 		8B9C195B28A92F1C0094EAF7 /* BS_Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BS_Images.swift; sourceTree = "<group>"; };
 		8B9C195D28A94AE50094EAF7 /* SignUpRequestDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequestDto.swift; sourceTree = "<group>"; };
 		8B9C195F28A94B1F0094EAF7 /* SignUpValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpValidator.swift; sourceTree = "<group>"; };
+		8BB46994291A2CF0009E7769 /* HomeDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeDetail.storyboard; sourceTree = "<group>"; };
 		8BEFEE0128B8EA5C004CB01A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		8BF0CED628A8176C00EEC2A4 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		8BF0CED828A817AC00EEC2A4 /* Reactive+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reactive+Helper.swift"; sourceTree = "<group>"; };
@@ -476,6 +478,7 @@
 				8B7F18BA289966D700C9CBFB /* LaunchScreen.storyboard */,
 				8B7F18EE28996F8900C9CBFB /* Storyboards.swift */,
 				8B814C0728A2F028000AB670 /* Authentication.storyboard */,
+				8BB46994291A2CF0009E7769 /* HomeDetail.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -813,6 +816,7 @@
 				8B814C4328A2F184000AB670 /* Montserrat-ExtraLight.otf in Resources */,
 				8B814C7228A302F7000AB670 /* Roboto-Thin.ttf in Resources */,
 				8B814C6F28A302F7000AB670 /* Roboto-LightItalic.ttf in Resources */,
+				8BB46995291A2CF0009E7769 /* HomeDetail.storyboard in Resources */,
 				8B814C3928A2F184000AB670 /* Montserrat-Bold.otf in Resources */,
 				8B814C7028A302F7000AB670 /* Roboto-Medium.ttf in Resources */,
 				8B814C6C28A302F7000AB670 /* Roboto-Light.ttf in Resources */,
