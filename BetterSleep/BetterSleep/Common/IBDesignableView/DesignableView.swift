@@ -165,3 +165,17 @@ extension UIView {
                       height: size.height + topInset + bottomInset)
     }
 }
+
+@IBDesignable
+extension UITextField {
+    @IBInspectable var placeHolderCustomColor: UIColor? {
+        set {
+            let attPlaceholderText = NSAttributedString(string: self.placeholder ?? "",
+                                                        attributes: [NSAttributedString.Key.foregroundColor: newValue ?? .black])
+            self.attributedPlaceholder = attPlaceholderText
+        }
+        get {
+            return nil
+        }
+    }
+}

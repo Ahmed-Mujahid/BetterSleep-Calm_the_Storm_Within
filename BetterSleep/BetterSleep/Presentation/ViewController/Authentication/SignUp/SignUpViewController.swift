@@ -108,7 +108,7 @@ extension SignUpViewController {
             .`do`(onNext: { _ in
                 
             }).subscribe(onNext: { [unowned self] in
-                self.navigationController?.popToRootViewController(animated: true)
+                self.navigationController?.popViewController(animated: true)
                 
             }).disposed(by: disposeBag)
         

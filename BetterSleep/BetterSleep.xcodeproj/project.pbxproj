@@ -107,6 +107,7 @@
 		EE4AE4260BD2F278D62947EE /* Pods_BetterSleep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E270B0E850866EC7A3A112 /* Pods_BetterSleep.framework */; };
 		F23BBD6C96B6976E68A83EB0 /* Pods_BetterSleep_BetterSleepUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA5D3CB010C050D4874DFF9 /* Pods_BetterSleep_BetterSleepUITests.framework */; };
 		F418429B2916C6CB00164817 /* SleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418429A2916C6CB00164817 /* SleepViewController.swift */; };
+		F4CD4E3129D35B1300197A55 /* UITextFeild + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD4E3029D35B1300197A55 /* UITextFeild + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,6 +237,7 @@
 		8BF0CEE828A839D900EEC2A4 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		E9C36590DCEC71EFBF9D3895 /* Pods-BetterSleepTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterSleepTests.debug.xcconfig"; path = "Target Support Files/Pods-BetterSleepTests/Pods-BetterSleepTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F418429A2916C6CB00164817 /* SleepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepViewController.swift; sourceTree = "<group>"; };
+		F4CD4E3029D35B1300197A55 /* UITextFeild + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextFeild + Extension.swift"; sourceTree = "<group>"; };
 		F598246ED180B75906A401DE /* Pods-BetterSleepTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterSleepTests.release.xcconfig"; path = "Target Support Files/Pods-BetterSleepTests/Pods-BetterSleepTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -502,6 +504,7 @@
 				8B814C7828A3079F000AB670 /* UIView+Extension.swift */,
 				8BF0CED828A817AC00EEC2A4 /* Reactive+Helper.swift */,
 				8BF0CED928A817AC00EEC2A4 /* RxArray.swift */,
+				F4CD4E3029D35B1300197A55 /* UITextFeild + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -980,6 +983,7 @@
 				8B3E3AAD28C9FA420034D309 /* HomeCVCell.swift in Sources */,
 				8BEFEE0228B8EA5C004CB01A /* HomeViewModel.swift in Sources */,
 				8B9C195C28A92F1C0094EAF7 /* BS_Images.swift in Sources */,
+				F4CD4E3129D35B1300197A55 /* UITextFeild + Extension.swift in Sources */,
 				8BF0CEDA28A817AC00EEC2A4 /* Reactive+Helper.swift in Sources */,
 				8B3E3AB028C9FA7A0034D309 /* HomeCVcellViewModel.swift in Sources */,
 				8BF0CED728A8176C00EEC2A4 /* WelcomeViewModel.swift in Sources */,

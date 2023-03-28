@@ -9,8 +9,8 @@ import UIKit
 import HGCircularSlider
 
 class SleepViewController: UIViewController {
+   
     // MARK: - IBOutlets
-    
     @IBOutlet weak var goodNightLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var startSleepingBtn: UIButton!
@@ -20,8 +20,9 @@ class SleepViewController: UIViewController {
     @IBOutlet weak var alarmTime: UILabel!
     @IBOutlet weak var timerView: UIView!
     
-    
     // MARK: - Variables
+    var timer : Timer?
+    var i = 0
     
     // MARK: - Constants
     
@@ -41,23 +42,17 @@ class SleepViewController: UIViewController {
     }
     
     @IBAction func startSleppingBtnTapped(_ sender: UIButton) {
-      
-        UIView.animate(withDuration: 1, delay: 0.0, options: .curveEaseIn, animations: {
-                
-               // HERE
-            self.astronoutImge.transform = CGAffineTransform.identity.scaledBy(x: 1.5, y: 1.5) // Scale your image
-
-         }) { (finished) in
-             UIView.animate(withDuration: 1, animations: {
-               
-              self.astronoutImge.transform = CGAffineTransform.identity // undo in 1 seconds
-
-           })
-        }
-       
+        self.timer =  Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:#selector(self.animateAstronout), userInfo: nil, repeats: true)
+        
     }
     
     // MARK: - Custom Funtions
+   @objc func animateAstronout() {
+       i += 1
+       UIView.animate(withDuration: 1, delay: 0.0, options: .curveEaseIn, animations: { [self] in
+           self.astronoutImge.transform = (self.i % 2 == 0) ? CGAffineTransform.identity.scaledBy(x: 1.2, y: 1.2) : CGAffineTransform.identity // Scale your image
+        })
+    }
 }
 
 // MARK: - View Extensions
