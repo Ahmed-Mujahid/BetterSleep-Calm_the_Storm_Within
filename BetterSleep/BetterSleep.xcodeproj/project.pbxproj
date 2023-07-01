@@ -370,8 +370,6 @@
 			children = (
 				8B7F18EB28996DC700C9CBFB /* Resources */,
 				8B7F18E428996D5F00C9CBFB /* Presentation */,
-				8B7F18E328996D4E00C9CBFB /* DataAccessLayer */,
-				8B7F18E228996D4700C9CBFB /* DTO */,
 				8B7F18E128996D3B00C9CBFB /* Common */,
 				8B7F18E028996D1D00C9CBFB /* Application */,
 				8B7F18DF28996D0400C9CBFB /* AppConfig */,
@@ -424,23 +422,6 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		8B7F18E228996D4700C9CBFB /* DTO */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DTO;
-			sourceTree = "<group>";
-		};
-		8B7F18E328996D4E00C9CBFB /* DataAccessLayer */ = {
-			isa = PBXGroup;
-			children = (
-				8B7F18E728996D7E00C9CBFB /* PresistenceStorage */,
-				8B7F18E628996D7400C9CBFB /* Network */,
-				8B7F18E528996D6B00C9CBFB /* Repository */,
-			);
-			path = DataAccessLayer;
-			sourceTree = "<group>";
-		};
 		8B7F18E428996D5F00C9CBFB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,27 +431,6 @@
 				8B7F18E828996D9D00C9CBFB /* StoryBoard */,
 			);
 			path = Presentation;
-			sourceTree = "<group>";
-		};
-		8B7F18E528996D6B00C9CBFB /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
-		8B7F18E628996D7400C9CBFB /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		8B7F18E728996D7E00C9CBFB /* PresistenceStorage */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PresistenceStorage;
 			sourceTree = "<group>";
 		};
 		8B7F18E828996D9D00C9CBFB /* StoryBoard */ = {
