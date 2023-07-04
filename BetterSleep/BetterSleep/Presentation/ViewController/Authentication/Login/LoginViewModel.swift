@@ -12,8 +12,8 @@ class LoginViewModel: BSBaseViewModel {
     // MARK: - Relays
     var title: BehaviorRelay<String>
     var subTitle: BehaviorRelay<String>
-    var email: BehaviorRelay<String>
-    var pasword: BehaviorRelay<String>
+    var email: BehaviorRelay<String> 
+    var pasword: BehaviorRelay<String>  
     var forgotPassword: BehaviorRelay<String>
     var dontHaveAccount: BehaviorRelay<NSAttributedString>
     var inValidCredential: BehaviorRelay<InvalidCredentials>
@@ -33,6 +33,7 @@ class LoginViewModel: BSBaseViewModel {
         dontHaveAccount = BehaviorRelay(value: NSAttributedString("DON’T HAVE AN ACCOUNT? \\SIGN UP"))
         inValidCredential = BehaviorRelay(value: .none)
         requestDto = LoginRequestDTO()
+      
     }
     
     // MARK: - Methods
@@ -50,14 +51,14 @@ class LoginViewModel: BSBaseViewModel {
     }
     
     func authenticate() {
-       
         if validate() {
             self.isLoading.accept(true)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.isLoading.accept(false)
+                self.isSuccess.accept(true)
             }
             
-            self.isSuccess.accept(true)
+            
         } else {
             self.isSuccess.accept(false)
         }

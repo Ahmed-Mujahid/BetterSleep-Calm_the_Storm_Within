@@ -68,7 +68,11 @@ class HomeViewModel: BSBaseViewModel {
             HomeItem(title: "Sleep", icon: BSImages.BS_Sleep),
             HomeItem(title: "Relax", icon: BSImages.BS_Relax),
             HomeItem(title: "Medidate", icon: BSImages.BS_Medidate),
-            HomeItem(title: "Yoga", icon: BSImages.BS_Yoga)
+            HomeItem(title: "Yoga", icon: BSImages.BS_Yoga),
+            HomeItem(title: "Sleep1", icon: BSImages.BS_Sleep),
+            HomeItem(title: "Relax1", icon: BSImages.BS_Relax),
+            HomeItem(title: "Medidate1", icon: BSImages.BS_Medidate),
+            HomeItem(title: "Yoga1", icon: BSImages.BS_Yoga)
         ]
         
         var homeSection = [AdvancedTableViewSection]()

@@ -99,10 +99,10 @@ extension WelcomeViewController {
                 
             }).subscribe(onNext: { [unowned self] in
                 emailView.applyEfect()
-                guard let view = BetterSleepManager.shared.navigateView(viewRef: .LoginViewController, storyboard: .Authentication) as? LoginViewController else { return }
-                self.navigationController?.pushViewController(view, animated: false)
-//                guard let view = BetterSleepManager.shared.navigateView(viewRef: .BsTabViewController, storyboard: .Main) as? BsTabViewController else { return }
-//                self.navigationController?.pushViewController(view, animated: true)
+//                guard let view = BetterSleepManager.shared.navigateView(viewRef: .LoginViewController, storyboard: .Authentication) as? LoginViewController else { return }
+//                self.navigationController?.pushViewController(view, animated: false)
+                guard let view = BetterSleepManager.shared.navigateView(viewRef: .BsTabViewController, storyboard: .Main) as? BsTabViewController else { return }
+                self.navigationController?.pushViewController(view, animated: true)
             }).disposed(by: disposeBag)
     }
     

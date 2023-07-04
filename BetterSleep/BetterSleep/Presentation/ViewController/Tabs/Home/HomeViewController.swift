@@ -12,10 +12,10 @@ class HomeViewController: BSBaseViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var headerViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var mainViewHeight: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollMainView: UIView!
     
     // MARK: - Containers
     
@@ -23,7 +23,7 @@ class HomeViewController: BSBaseViewController {
     var viewModel = HomeViewModel()
     
     // MARK: - Variables
-    var height = 220
+    var height = 20
     
     // MARK: - Constants
     
@@ -36,6 +36,9 @@ class HomeViewController: BSBaseViewController {
         tableView.register(HomeTVcell.identifier)
         tableView.separatorStyle = .none
         tableView.isScrollEnabled = false
+        tableView.backgroundColor = .red
+        
+        scrollView.delegate = self
         
         viewModel.fetchData()
         
@@ -76,13 +79,13 @@ class HomeViewController: BSBaseViewController {
                 height += (homeItem.count * 60)
                 
             case .VerticalTableViewItem(titles: let homeItem):
-                height += (homeItem.count * 110)
+                height += (homeItem.count * 70)
                 
             case .none:
-                height = 210
+                height = 0
             }
         }
-    
+        height += viewModel.dataSource.sectionModels.count * 42 // header height
         mainViewHeight.constant = CGFloat(height)
     }
     
@@ -98,14 +101,20 @@ extension HomeViewController {
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
         let sections = viewModel.dataSource[indexPath.section].items
         switch sections.first {
-        case .HorizontalTableViewItem(titles: _): return  150.0
-        case .VerticalTableViewItem(titles: let homeItem): return  CGFloat(homeItem.count * 70)
-        case .none:  return  150.0
-           
+        case .HorizontalTableViewItem(titles: _):
+            return  150.0
+            
+        case .VerticalTableViewItem(titles: let homeItem):
+            return  CGFloat(homeItem.count * 75)
+            
+        case .none:
+            return  150.0
+            
         }
-       
+        
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -129,4 +138,29 @@ extension HomeViewController: UITableViewDelegate {
         
         return headerView
     }
+}
+extension HomeViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == self.scrollView {
+           
+//            let offset_y = scrollView.contentOffset.y
+//
+//            print("\(offset_y)")
+//            if offset_y > 0.0 {
+//                UIView.animate(withDuration: 1) {[unowned self] in
+//                    headerView.transform = .identity
+//                }
+//
+//            } else if offset_y < 0.0 {
+//                let yRatio = (offset_y * -1)/100
+//                UIView.animate(withDuration: 1) { [unowned self] in
+//                    print("(offset_y * -1) = \(yRatio)")
+//                    headerView.transform = CGAffineTransform(scaleX: 1 , y: yRatio)
+//                }
+//            }
+        }
+    }
+    
+    
+    
 }

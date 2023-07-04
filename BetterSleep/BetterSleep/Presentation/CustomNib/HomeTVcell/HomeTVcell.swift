@@ -33,6 +33,7 @@ class HomeTVcell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         cellCv.delegate = self
+        cellCv.alwaysBounceVertical = false
         cellCv.register(HomeCVCell.identifier)
     }
     
@@ -55,12 +56,17 @@ class HomeTVcell: UITableViewCell {
 extension HomeTVcell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
  
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+       let totalHomeItem = viewModel?.homeItem.value.count ?? 0
+        
         if self.viewModel?.isHorizontal ?? true {
             return CGSize(width: (collectionView.frame.width / 3) + 20,
                           height: collectionView.frame.height)
         } else {
+            let halfItems = totalHomeItem  / 2
+            let verticalCellHeight = collectionView.frame.height /  CGFloat(halfItems)
+            
             return CGSize(width: (collectionView.frame.width / 3) + 30,
-                          height: collectionView.frame.height / 2)
+                          height: verticalCellHeight)
         }
         
     }

@@ -63,6 +63,12 @@ class LoginViewController: BSBaseViewController {
         bindText()
         bindTF()
         
+        //TODO: - remove below 4 line
+        viewModel.requestDto.email.accept("abc@gmail.com")
+        viewModel.requestDto.password.accept("Qwerty@123")
+        emailTF.text = "abc@gmail.com"
+        passwordTF.text = "Qwerty@123"
+        
         // Subcribe
         subcribeInvalidCredentials()
         
