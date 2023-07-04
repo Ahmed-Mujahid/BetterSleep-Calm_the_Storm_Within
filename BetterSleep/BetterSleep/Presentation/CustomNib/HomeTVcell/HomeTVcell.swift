@@ -16,10 +16,11 @@ class HomeTVcell: UITableViewCell {
     
     // MARK: - IBOutlets
     @IBOutlet weak var cellCv: UICollectionView!
-    var count = 0
-    let disposeBag = DisposeBag()
+    
     
     // MARK: - Variables
+    let disposeBag = DisposeBag()
+    var clickHandler: ((HomeItem) -> Void)?
     var viewModel: HomeTVviewModel? {
         didSet {
             bindCollectionView()
@@ -40,7 +41,7 @@ class HomeTVcell: UITableViewCell {
     
     // MARK: - Custom Functions
     private func bindCollectionView() {
-    
+        
         viewModel?
             .homeItem
             .bind(to: cellCv.rx.items(cellIdentifier: HomeCVCell.identifier, cellType: HomeCVCell.self)) { indexPath, data, cell in
@@ -49,13 +50,27 @@ class HomeTVcell: UITableViewCell {
                                                      isHorizontal: self.viewModel?.isHorizontal ?? true)
             }.disposed(by: disposeBag)
         
+        // Model Selected
+        cellCv.rx
+            .modelSelected(HomeItem.self)
+            .subscribe(onNext: { [unowned self] (data) in
+                guard let completion = self.clickHandler else {return}
+                completion(data)
+                
+            }).disposed(by: disposeBag)
+        
     }
+    
+    func watchForClickHandler(completion: @escaping (HomeItem) -> Void) {
+        self.clickHandler = completion
+    }
+    
 }
 
 extension HomeTVcell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
- 
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-       let totalHomeItem = viewModel?.homeItem.value.count ?? 0
+        let totalHomeItem = viewModel?.homeItem.value.count ?? 0
         
         if self.viewModel?.isHorizontal ?? true {
             return CGSize(width: (collectionView.frame.width / 3) + 20,
@@ -79,6 +94,6 @@ extension HomeTVcell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayo
         } else {
             return UIEdgeInsets(top: 0, left: leftRight_insets, bottom: 0, right: leftRight_insets)
         }
-      
+        
     }
 }

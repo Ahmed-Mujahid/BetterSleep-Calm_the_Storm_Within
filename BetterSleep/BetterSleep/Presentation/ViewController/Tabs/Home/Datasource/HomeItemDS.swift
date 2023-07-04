@@ -78,6 +78,15 @@ struct HomeItemDS {
                 cell.cellCv.isScrollEnable(isEnable: false)
             }
             
+            cell.watchForClickHandler {  data in
+                print("data \(data)")
+                if let vc = cell.getOwningViewController() as? HomeViewController {
+                    guard let homeDetailVc = BetterSleepManager.shared.navigateView(viewRef: .HomeDetailViewController, storyboard: .HomeDetail) as? HomeDetailViewController else { return }
+                    homeDetailVc.viewModel = HomeDetailViewModel(item: data)
+                    vc.present(homeDetailVc, animated: true)
+                }
+            }
+            
             // Return Cell
             return cell
         })

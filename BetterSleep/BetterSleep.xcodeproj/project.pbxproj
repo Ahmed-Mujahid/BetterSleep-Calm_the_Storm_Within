@@ -109,6 +109,9 @@
 		A7B9103D1F154A98EDBCF62A /* Pods_BetterSleep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5785248BC1F3E5BC559F4C /* Pods_BetterSleep.framework */; };
 		F418429B2916C6CB00164817 /* SleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418429A2916C6CB00164817 /* SleepViewController.swift */; };
 		F4CD4E3129D35B1300197A55 /* UITextFeild + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD4E3029D35B1300197A55 /* UITextFeild + Extension.swift */; };
+		F655B6062A54B021002B54BE /* UIResponder + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655B6052A54B021002B54BE /* UIResponder + Extension.swift */; };
+		F655B6082A54B105002B54BE /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655B6072A54B105002B54BE /* HomeDetailViewController.swift */; };
+		F655B60D2A54B704002B54BE /* HomeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655B60C2A54B704002B54BE /* HomeDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,6 +243,9 @@
 		F418429A2916C6CB00164817 /* SleepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepViewController.swift; sourceTree = "<group>"; };
 		F42B3C2F03B777C219E0A86A /* Pods_BetterSleep_BetterSleepUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetterSleep_BetterSleepUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4CD4E3029D35B1300197A55 /* UITextFeild + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextFeild + Extension.swift"; sourceTree = "<group>"; };
+		F655B6052A54B021002B54BE /* UIResponder + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder + Extension.swift"; sourceTree = "<group>"; };
+		F655B6072A54B105002B54BE /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
+		F655B60C2A54B704002B54BE /* HomeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewModel.swift; sourceTree = "<group>"; };
 		FC3888DA6752A9BA3963B412 /* Pods-BetterSleep-BetterSleepUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterSleep-BetterSleepUITests.debug.xcconfig"; path = "Target Support Files/Pods-BetterSleep-BetterSleepUITests/Pods-BetterSleep-BetterSleepUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -458,6 +464,7 @@
 				8BF0CED828A817AC00EEC2A4 /* Reactive+Helper.swift */,
 				8BF0CED928A817AC00EEC2A4 /* RxArray.swift */,
 				F4CD4E3029D35B1300197A55 /* UITextFeild + Extension.swift */,
+				F655B6052A54B021002B54BE /* UIResponder + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -573,9 +580,9 @@
 		8BEFEDFF28B8EA3A004CB01A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				8B7F18F028996FBF00C9CBFB /* HomeViewController.swift */,
-				8BEFEE0128B8EA5C004CB01A /* HomeViewModel.swift */,
-				8B895EAA28BFCCE000C07A67 /* HomeItemDS.swift */,
+				F655B60B2A54B6AC002B54BE /* Datasource */,
+				F655B60A2A54B69A002B54BE /* ViewController */,
+				F655B6092A54B686002B54BE /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -627,6 +634,32 @@
 				F418429A2916C6CB00164817 /* SleepViewController.swift */,
 			);
 			path = Sleep;
+			sourceTree = "<group>";
+		};
+		F655B6092A54B686002B54BE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8BEFEE0128B8EA5C004CB01A /* HomeViewModel.swift */,
+				F655B60C2A54B704002B54BE /* HomeDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F655B60A2A54B69A002B54BE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8B7F18F028996FBF00C9CBFB /* HomeViewController.swift */,
+				F655B6072A54B105002B54BE /* HomeDetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F655B60B2A54B6AC002B54BE /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				8B895EAA28BFCCE000C07A67 /* HomeItemDS.swift */,
+			);
+			path = Datasource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -949,8 +982,10 @@
 				8B9C195C28A92F1C0094EAF7 /* BS_Images.swift in Sources */,
 				F4CD4E3129D35B1300197A55 /* UITextFeild + Extension.swift in Sources */,
 				8BF0CEDA28A817AC00EEC2A4 /* Reactive+Helper.swift in Sources */,
+				F655B6062A54B021002B54BE /* UIResponder + Extension.swift in Sources */,
 				8B3E3AB028C9FA7A0034D309 /* HomeCVcellViewModel.swift in Sources */,
 				8BF0CED728A8176C00EEC2A4 /* WelcomeViewModel.swift in Sources */,
+				F655B6082A54B105002B54BE /* HomeDetailViewController.swift in Sources */,
 				8B814C5728A2FE8A000AB670 /* CardView.swift in Sources */,
 				8B9C195828A91AF10094EAF7 /* AlertHandler.swift in Sources */,
 				8B7F18EF28996F8900C9CBFB /* Storyboards.swift in Sources */,
@@ -960,6 +995,7 @@
 				8B94651428A7A67800D3C457 /* BSBaseViewController.swift in Sources */,
 				8BF0CEE228A81FDB00EEC2A4 /* LoginViewModel.swift in Sources */,
 				8B3E3AA628C9EACD0034D309 /* HomeTVviewModel.swift in Sources */,
+				F655B60D2A54B704002B54BE /* HomeDetailViewModel.swift in Sources */,
 				8B7F18ED28996E3800C9CBFB /* BetterSleepManager.swift in Sources */,
 				8B7F18B0289966D500C9CBFB /* AppDelegate.swift in Sources */,
 				8B9C195128A9125F0094EAF7 /* LoginRequestDTO.swift in Sources */,

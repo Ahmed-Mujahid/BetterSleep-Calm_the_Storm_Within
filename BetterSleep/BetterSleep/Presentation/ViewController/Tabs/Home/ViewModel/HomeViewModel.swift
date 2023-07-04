@@ -13,13 +13,24 @@ import RxCocoa
 import SwiftUI
 
 struct HomeItem {
+    // MARK: - PROPERTIES
     let title: String
     let icon: UIImage
+    let detail: String
     
-    init(title: String, icon: UIImage) {
+    // MARK: - INITIALSERS
+    init() {
+        title = ""
+        icon = UIImage()
+        detail = ""
+    }
+    
+    init(title: String, icon: UIImage, detail: String = "") {
         self.title = title
         self.icon = icon
+        self.detail = detail
     }
+    
 }
 
 struct HomeSection {

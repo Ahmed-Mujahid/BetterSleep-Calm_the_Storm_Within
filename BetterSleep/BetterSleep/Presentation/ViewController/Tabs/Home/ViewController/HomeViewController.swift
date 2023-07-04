@@ -11,7 +11,6 @@ class HomeViewController: BSBaseViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var headerViewHeight: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var mainViewHeight: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -31,19 +30,14 @@ class HomeViewController: BSBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        tableView.confirmRx(self, disposeBag)
-        tableView.register(HomeTVcell.identifier)
-        tableView.separatorStyle = .none
-        tableView.isScrollEnabled = false
+        // TableView configuration
+        tableViewCofig()
         
+        // scrollView configuration
         scrollView.delegate = self
         
+        // fetching data
         viewModel.fetchData()
-        
-        // Navigation Setting
-        
-        // Setup View
         
         // Binding view
         bindTableView()
@@ -86,6 +80,13 @@ class HomeViewController: BSBaseViewController {
         }
         height += viewModel.dataSource.sectionModels.count * 42 // header height
         mainViewHeight.constant = CGFloat(height)
+    }
+    
+    func tableViewCofig(){
+        tableView.confirmRx(self, disposeBag)
+        tableView.register(HomeTVcell.identifier)
+        tableView.separatorStyle = .none
+        tableView.isScrollEnabled = false
     }
     
 }
@@ -137,29 +138,4 @@ extension HomeViewController: UITableViewDelegate {
         
         return headerView
     }
-}
-extension HomeViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView == self.scrollView {
-           
-//            let offset_y = scrollView.contentOffset.y
-//
-//            print("\(offset_y)")
-//            if offset_y > 0.0 {
-//                UIView.animate(withDuration: 1) {[unowned self] in
-//                    headerView.transform = .identity
-//                }
-//
-//            } else if offset_y < 0.0 {
-//                let yRatio = (offset_y * -1)/100
-//                UIView.animate(withDuration: 1) { [unowned self] in
-//                    print("(offset_y * -1) = \(yRatio)")
-//                    headerView.transform = CGAffineTransform(scaleX: 1 , y: yRatio)
-//                }
-//            }
-        }
-    }
-    
-    
-    
 }

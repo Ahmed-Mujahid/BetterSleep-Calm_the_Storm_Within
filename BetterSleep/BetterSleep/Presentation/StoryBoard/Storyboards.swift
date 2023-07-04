@@ -11,6 +11,7 @@ import Foundation
 enum StoryboardReference: String {
     case Main
     case Authentication
+    case HomeDetail
 }
 
 // MARK: - View Controller Reference
@@ -27,4 +28,9 @@ enum ViewControllerReference: String {
     case WelcomeViewController
     case LoginViewController
     case SignUpViewController
+    
+    // MARK: - HomeDetail
+    /// HomeDetail Stroyboard contain the following views
+    case HomeDetailViewController
+  
 }
