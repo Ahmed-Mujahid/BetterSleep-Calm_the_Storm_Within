@@ -36,7 +36,6 @@ class HomeViewController: BSBaseViewController {
         tableView.register(HomeTVcell.identifier)
         tableView.separatorStyle = .none
         tableView.isScrollEnabled = false
-        tableView.backgroundColor = .red
         
         scrollView.delegate = self
         
