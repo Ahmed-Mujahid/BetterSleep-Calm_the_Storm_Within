@@ -33,7 +33,6 @@ class HomeTVcell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         cellCv.delegate = self
-        cellCv.alwaysBounceVertical = false
         cellCv.register(HomeCVCell.identifier)
     }
     

@@ -42,7 +42,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKT-x3-Gv9">
-                                <rect key="frame" x="0.0" y="205" width="414" height="608"/>
+                                <rect key="frame" x="0.0" y="205" width="414" height="691"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ifo-9Y-Vyt">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
@@ -80,7 +80,7 @@
                             <constraint firstItem="4rI-kZ-jyd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fr7-J3-8br"/>
                             <constraint firstItem="4rI-kZ-jyd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jyQ-VA-ge8"/>
                             <constraint firstItem="4rI-kZ-jyd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mAC-Cq-ck9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SKT-x3-Gv9" secondAttribute="bottom" id="s07-cb-0FC"/>
+                            <constraint firstAttribute="bottom" secondItem="SKT-x3-Gv9" secondAttribute="bottom" id="s07-cb-0FC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Kmx-Ng-Er4"/>

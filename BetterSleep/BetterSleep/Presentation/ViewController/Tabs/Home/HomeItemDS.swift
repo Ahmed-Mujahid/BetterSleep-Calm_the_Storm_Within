@@ -68,13 +68,14 @@ struct HomeItemDS {
             case .HorizontalTableViewItem(titles: let titles):
                 cell.viewModel = HomeTVviewModel(item: titles, isHorizontal: true)
                 cell.cellCv.updateFLow(15, 15, true)
+                cell.cellCv.isScrollEnable(isEnable: true)
                 
                 // Vertical Cells
             case .VerticalTableViewItem(titles: let titles):
                 cell.viewModel = HomeTVviewModel(item: titles, isHorizontal: false)
                 cell.cellCv.updateFLow(5, 5, false)
-                
-                
+                cell.cellCv.alwaysBounceVertical = false
+                cell.cellCv.isScrollEnable(isEnable: false)
             }
             
             // Return Cell
