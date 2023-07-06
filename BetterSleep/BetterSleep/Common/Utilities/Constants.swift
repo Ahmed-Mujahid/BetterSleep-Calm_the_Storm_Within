@@ -32,4 +32,12 @@ struct Constants {
     static let WaringStr = ""
     static let InfoStr = "Info!"
     static let ErrorStr = ""
+    
+    // Keys
+    static let userData = "userData"
+    static let accessToken = "accessToken"
+    static let refreshToken = "refreshToken"
+    static let email = "ahmed@gmail.com"
+    static let password = "qwerty123"
+    static let isLogin = "isLogin"
 }

@@ -37,6 +37,7 @@ class HomeViewController: BSBaseViewController {
         scrollView.delegate = self
         
         // fetching data
+        viewModel.fetchCategories()
         viewModel.fetchData()
         
         // Binding view

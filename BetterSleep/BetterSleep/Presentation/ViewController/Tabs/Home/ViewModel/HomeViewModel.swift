@@ -54,6 +54,8 @@ class HomeViewModel: BSBaseViewModel {
     
     // MARK: - Variable
     let dataSource = HomeItemDS.dataSource()
+    let repository = SleepMediationRepository()
+    var categories: SleepMediation?
     
     // MARK: - init
     override init() {
@@ -61,6 +63,14 @@ class HomeViewModel: BSBaseViewModel {
     }
     
     // MARK: - Methods
+    
+    func fetchCategories() {
+        repository.fetchCategory { success, message, model in
+            self.categories = model as? SleepMediation
+            print("categories: \(self.categories)")
+        }
+    }
+    
     func fetchData() {
         
         let musicItem: [HomeItem] = [

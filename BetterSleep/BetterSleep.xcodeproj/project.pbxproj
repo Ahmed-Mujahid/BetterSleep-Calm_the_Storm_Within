@@ -112,6 +112,33 @@
 		F655B6062A54B021002B54BE /* UIResponder + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655B6052A54B021002B54BE /* UIResponder + Extension.swift */; };
 		F655B6082A54B105002B54BE /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655B6072A54B105002B54BE /* HomeDetailViewController.swift */; };
 		F655B60D2A54B704002B54BE /* HomeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655B60C2A54B704002B54BE /* HomeDetailViewModel.swift */; };
+		F69874502A5735E900B71CF1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F698744F2A5735E900B71CF1 /* NetworkManager.swift */; };
+		F69874532A57371400B71CF1 /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874522A57371400B71CF1 /* Headers.swift */; };
+		F69874562A5737EF00B71CF1 /* AlomofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874552A5737EF00B71CF1 /* AlomofireManager.swift */; };
+		F698745A2A57382E00B71CF1 /* AlamofireLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874592A57382E00B71CF1 /* AlamofireLogger.swift */; };
+		F698745C2A57396000B71CF1 /* MonitorNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F698745B2A57396000B71CF1 /* MonitorNetwork.swift */; };
+		F698745F2A573A0200B71CF1 /* AppDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F698745E2A573A0200B71CF1 /* AppDefaults.swift */; };
+		F69874612A573D3900B71CF1 /* Dictionary + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874602A573D3900B71CF1 /* Dictionary + Extension.swift */; };
+		F69874632A573D6000B71CF1 /* URL + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874622A573D6000B71CF1 /* URL + Extension.swift */; };
+		F69874A72A5743BF00B71CF1 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874A62A5743BF00B71CF1 /* EndPoint.swift */; };
+		F69874A92A5743D400B71CF1 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874A82A5743D400B71CF1 /* EndPointType.swift */; };
+		F69874AB2A5743E100B71CF1 /* ApiUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874AA2A5743E100B71CF1 /* ApiUrl.swift */; };
+		F69874AD2A5743F000B71CF1 /* RequestedUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874AC2A5743F000B71CF1 /* RequestedUrl.swift */; };
+		F69874AF2A5745F100B71CF1 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874AE2A5745F100B71CF1 /* AppConfiguration.swift */; };
+		F69874BD2A57545200B71CF1 /* Hits.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874B02A57545100B71CF1 /* Hits.swift */; };
+		F69874BE2A57545200B71CF1 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874B12A57545100B71CF1 /* Images.swift */; };
+		F69874BF2A57545200B71CF1 /* Providers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874B22A57545100B71CF1 /* Providers.swift */; };
+		F69874C02A57545200B71CF1 /* Beacondata.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874B32A57545100B71CF1 /* Beacondata.swift */; };
+		F69874C12A57545200B71CF1 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874B42A57545100B71CF1 /* Artist.swift */; };
+		F69874C22A57545200B71CF1 /* Tracks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874B52A57545100B71CF1 /* Tracks.swift */; };
+		F69874C32A57545200B71CF1 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874B62A57545100B71CF1 /* Track.swift */; };
+		F69874C42A57545200B71CF1 /* Hub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874B72A57545100B71CF1 /* Hub.swift */; };
+		F69874C52A57545200B71CF1 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874B82A57545100B71CF1 /* Share.swift */; };
+		F69874C62A57545200B71CF1 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874B92A57545100B71CF1 /* Actions.swift */; };
+		F69874C72A57545200B71CF1 /* SleepMediation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874BA2A57545100B71CF1 /* SleepMediation.swift */; };
+		F69874C82A57545200B71CF1 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874BB2A57545100B71CF1 /* Options.swift */; };
+		F69874C92A57545200B71CF1 /* Artists.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874BC2A57545100B71CF1 /* Artists.swift */; };
+		F69874CB2A5754B400B71CF1 /* SleepMediationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874CA2A5754B400B71CF1 /* SleepMediationRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -246,6 +273,33 @@
 		F655B6052A54B021002B54BE /* UIResponder + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder + Extension.swift"; sourceTree = "<group>"; };
 		F655B6072A54B105002B54BE /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
 		F655B60C2A54B704002B54BE /* HomeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewModel.swift; sourceTree = "<group>"; };
+		F698744F2A5735E900B71CF1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F69874522A57371400B71CF1 /* Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headers.swift; sourceTree = "<group>"; };
+		F69874552A5737EF00B71CF1 /* AlomofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlomofireManager.swift; sourceTree = "<group>"; };
+		F69874592A57382E00B71CF1 /* AlamofireLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireLogger.swift; sourceTree = "<group>"; };
+		F698745B2A57396000B71CF1 /* MonitorNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorNetwork.swift; sourceTree = "<group>"; };
+		F698745E2A573A0200B71CF1 /* AppDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefaults.swift; sourceTree = "<group>"; };
+		F69874602A573D3900B71CF1 /* Dictionary + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary + Extension.swift"; sourceTree = "<group>"; };
+		F69874622A573D6000B71CF1 /* URL + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL + Extension.swift"; sourceTree = "<group>"; };
+		F69874A62A5743BF00B71CF1 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		F69874A82A5743D400B71CF1 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		F69874AA2A5743E100B71CF1 /* ApiUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUrl.swift; sourceTree = "<group>"; };
+		F69874AC2A5743F000B71CF1 /* RequestedUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestedUrl.swift; sourceTree = "<group>"; };
+		F69874AE2A5745F100B71CF1 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		F69874B02A57545100B71CF1 /* Hits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hits.swift; sourceTree = "<group>"; };
+		F69874B12A57545100B71CF1 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		F69874B22A57545100B71CF1 /* Providers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Providers.swift; sourceTree = "<group>"; };
+		F69874B32A57545100B71CF1 /* Beacondata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beacondata.swift; sourceTree = "<group>"; };
+		F69874B42A57545100B71CF1 /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		F69874B52A57545100B71CF1 /* Tracks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tracks.swift; sourceTree = "<group>"; };
+		F69874B62A57545100B71CF1 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		F69874B72A57545100B71CF1 /* Hub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hub.swift; sourceTree = "<group>"; };
+		F69874B82A57545100B71CF1 /* Share.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
+		F69874B92A57545100B71CF1 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		F69874BA2A57545100B71CF1 /* SleepMediation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepMediation.swift; sourceTree = "<group>"; };
+		F69874BB2A57545100B71CF1 /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		F69874BC2A57545100B71CF1 /* Artists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artists.swift; sourceTree = "<group>"; };
+		F69874CA2A5754B400B71CF1 /* SleepMediationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepMediationRepository.swift; sourceTree = "<group>"; };
 		FC3888DA6752A9BA3963B412 /* Pods-BetterSleep-BetterSleepUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterSleep-BetterSleepUITests.debug.xcconfig"; path = "Target Support Files/Pods-BetterSleep-BetterSleepUITests/Pods-BetterSleep-BetterSleepUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -301,7 +355,6 @@
 		8B098B9328A6DE8400E84A00 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				8B9C194F28A912420094EAF7 /* CommonRequestDto */,
 				8BF0CEE528A839AE00EEC2A4 /* SignUp */,
 				8BF0CEDE28A81FAD00EEC2A4 /* Login */,
 				8B098B9428A6DE9600E84A00 /* Welcome */,
@@ -364,11 +417,14 @@
 		8B7F18AE289966D500C9CBFB /* BetterSleep */ = {
 			isa = PBXGroup;
 			children = (
+				F69874A52A5743A700B71CF1 /* Repository */,
+				F69874512A57368C00B71CF1 /* DTO */,
+				F698744D2A57359B00B71CF1 /* Domain */,
 				8B7F18EB28996DC700C9CBFB /* Resources */,
 				8B7F18E428996D5F00C9CBFB /* Presentation */,
 				8B7F18E128996D3B00C9CBFB /* Common */,
 				8B7F18E028996D1D00C9CBFB /* Application */,
-				8B7F18DF28996D0400C9CBFB /* AppConfig */,
+				8B7F18DF28996D0400C9CBFB /* Manager */,
 				8B7F18BD289966D700C9CBFB /* Info.plist */,
 			);
 			path = BetterSleep;
@@ -391,12 +447,13 @@
 			path = BetterSleepUITests;
 			sourceTree = "<group>";
 		};
-		8B7F18DF28996D0400C9CBFB /* AppConfig */ = {
+		8B7F18DF28996D0400C9CBFB /* Manager */ = {
 			isa = PBXGroup;
 			children = (
 				8B7F18EC28996E3800C9CBFB /* BetterSleepManager.swift */,
+				F698745B2A57396000B71CF1 /* MonitorNetwork.swift */,
 			);
-			path = AppConfig;
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		8B7F18E028996D1D00C9CBFB /* Application */ = {
@@ -404,6 +461,7 @@
 			children = (
 				8B7F18B1289966D500C9CBFB /* SceneDelegate.swift */,
 				8B7F18AF289966D500C9CBFB /* AppDelegate.swift */,
+				F69874AE2A5745F100B71CF1 /* AppConfiguration.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -465,6 +523,8 @@
 				8BF0CED928A817AC00EEC2A4 /* RxArray.swift */,
 				F4CD4E3029D35B1300197A55 /* UITextFeild + Extension.swift */,
 				F655B6052A54B021002B54BE /* UIResponder + Extension.swift */,
+				F69874602A573D3900B71CF1 /* Dictionary + Extension.swift */,
+				F69874622A573D6000B71CF1 /* URL + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -484,6 +544,7 @@
 				8B814C5928A2FF62000AB670 /* Constants.swift */,
 				8B7F18F32899A01400C9CBFB /* BS_Colors.swift */,
 				8B9C195B28A92F1C0094EAF7 /* BS_Images.swift */,
+				F69874522A57371400B71CF1 /* Headers.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -550,13 +611,6 @@
 				8B814C5628A2FE8A000AB670 /* DesignableView.swift */,
 			);
 			path = IBDesignableView;
-			sourceTree = "<group>";
-		};
-		8B9C194F28A912420094EAF7 /* CommonRequestDto */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CommonRequestDto;
 			sourceTree = "<group>";
 		};
 		8B9C195628A91AE40094EAF7 /* Helpers */ = {
@@ -660,6 +714,81 @@
 				8B895EAA28BFCCE000C07A67 /* HomeItemDS.swift */,
 			);
 			path = Datasource;
+			sourceTree = "<group>";
+		};
+		F698744D2A57359B00B71CF1 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F698745D2A5739F200B71CF1 /* PresistenceStorage */,
+				F698744E2A5735BD00B71CF1 /* NetworkManager */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F698744E2A5735BD00B71CF1 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				F69874542A5737DE00B71CF1 /* NetworkUtil */,
+				F698744F2A5735E900B71CF1 /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		F69874512A57368C00B71CF1 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				F69874BA2A57545100B71CF1 /* SleepMediation.swift */,
+				F69874B92A57545100B71CF1 /* Actions.swift */,
+				F69874B42A57545100B71CF1 /* Artist.swift */,
+				F69874BC2A57545100B71CF1 /* Artists.swift */,
+				F69874B32A57545100B71CF1 /* Beacondata.swift */,
+				F69874B02A57545100B71CF1 /* Hits.swift */,
+				F69874B72A57545100B71CF1 /* Hub.swift */,
+				F69874B12A57545100B71CF1 /* Images.swift */,
+				F69874BB2A57545100B71CF1 /* Options.swift */,
+				F69874B22A57545100B71CF1 /* Providers.swift */,
+				F69874B82A57545100B71CF1 /* Share.swift */,
+				F69874B62A57545100B71CF1 /* Track.swift */,
+				F69874B52A57545100B71CF1 /* Tracks.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		F69874542A5737DE00B71CF1 /* NetworkUtil */ = {
+			isa = PBXGroup;
+			children = (
+				F69874552A5737EF00B71CF1 /* AlomofireManager.swift */,
+				F69874592A57382E00B71CF1 /* AlamofireLogger.swift */,
+			);
+			path = NetworkUtil;
+			sourceTree = "<group>";
+		};
+		F698745D2A5739F200B71CF1 /* PresistenceStorage */ = {
+			isa = PBXGroup;
+			children = (
+				F698745E2A573A0200B71CF1 /* AppDefaults.swift */,
+			);
+			path = PresistenceStorage;
+			sourceTree = "<group>";
+		};
+		F69874A52A5743A700B71CF1 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				F69874CC2A5762C400B71CF1 /* SleepMediation */,
+				F69874A62A5743BF00B71CF1 /* EndPoint.swift */,
+				F69874A82A5743D400B71CF1 /* EndPointType.swift */,
+				F69874AA2A5743E100B71CF1 /* ApiUrl.swift */,
+				F69874AC2A5743F000B71CF1 /* RequestedUrl.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		F69874CC2A5762C400B71CF1 /* SleepMediation */ = {
+			isa = PBXGroup;
+			children = (
+				F69874CA2A5754B400B71CF1 /* SleepMediationRepository.swift */,
+			);
+			path = SleepMediation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -973,14 +1102,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F698745A2A57382E00B71CF1 /* AlamofireLogger.swift in Sources */,
 				8B814C7928A3079F000AB670 /* UIView+Extension.swift in Sources */,
 				8B3E3A9728C9AF230034D309 /* UICollectionView+Extension.swift in Sources */,
+				F69874C42A57545200B71CF1 /* Hub.swift in Sources */,
+				F69874C82A57545200B71CF1 /* Options.swift in Sources */,
 				8B814C5828A2FE8A000AB670 /* DesignableView.swift in Sources */,
 				8B9C195328A912A60094EAF7 /* LoginValidator.swift in Sources */,
+				F69874C22A57545200B71CF1 /* Tracks.swift in Sources */,
+				F69874BD2A57545200B71CF1 /* Hits.swift in Sources */,
+				F69874502A5735E900B71CF1 /* NetworkManager.swift in Sources */,
 				8B3E3AAD28C9FA420034D309 /* HomeCVCell.swift in Sources */,
 				8BEFEE0228B8EA5C004CB01A /* HomeViewModel.swift in Sources */,
 				8B9C195C28A92F1C0094EAF7 /* BS_Images.swift in Sources */,
 				F4CD4E3129D35B1300197A55 /* UITextFeild + Extension.swift in Sources */,
+				F69874AD2A5743F000B71CF1 /* RequestedUrl.swift in Sources */,
 				8BF0CEDA28A817AC00EEC2A4 /* Reactive+Helper.swift in Sources */,
 				F655B6062A54B021002B54BE /* UIResponder + Extension.swift in Sources */,
 				8B3E3AB028C9FA7A0034D309 /* HomeCVcellViewModel.swift in Sources */,
@@ -992,24 +1128,44 @@
 				8B3E3AA828C9F3200034D309 /* UITableView+Extension.swift in Sources */,
 				8B0913DC28B0CE550076B9F1 /* BsTabViewController.swift in Sources */,
 				8BF0CEDB28A817AC00EEC2A4 /* RxArray.swift in Sources */,
+				F69874C92A57545200B71CF1 /* Artists.swift in Sources */,
+				F698745F2A573A0200B71CF1 /* AppDefaults.swift in Sources */,
+				F69874532A57371400B71CF1 /* Headers.swift in Sources */,
+				F69874C62A57545200B71CF1 /* Actions.swift in Sources */,
+				F69874632A573D6000B71CF1 /* URL + Extension.swift in Sources */,
 				8B94651428A7A67800D3C457 /* BSBaseViewController.swift in Sources */,
+				F69874AF2A5745F100B71CF1 /* AppConfiguration.swift in Sources */,
 				8BF0CEE228A81FDB00EEC2A4 /* LoginViewModel.swift in Sources */,
+				F69874AB2A5743E100B71CF1 /* ApiUrl.swift in Sources */,
+				F69874A72A5743BF00B71CF1 /* EndPoint.swift in Sources */,
+				F69874C72A57545200B71CF1 /* SleepMediation.swift in Sources */,
 				8B3E3AA628C9EACD0034D309 /* HomeTVviewModel.swift in Sources */,
+				F69874CB2A5754B400B71CF1 /* SleepMediationRepository.swift in Sources */,
 				F655B60D2A54B704002B54BE /* HomeDetailViewModel.swift in Sources */,
+				F69874562A5737EF00B71CF1 /* AlomofireManager.swift in Sources */,
 				8B7F18ED28996E3800C9CBFB /* BetterSleepManager.swift in Sources */,
 				8B7F18B0289966D500C9CBFB /* AppDelegate.swift in Sources */,
 				8B9C195128A9125F0094EAF7 /* LoginRequestDTO.swift in Sources */,
 				8B7F18B2289966D500C9CBFB /* SceneDelegate.swift in Sources */,
 				8B7F18F42899A01400C9CBFB /* BS_Colors.swift in Sources */,
+				F69874BE2A57545200B71CF1 /* Images.swift in Sources */,
+				F69874C32A57545200B71CF1 /* Track.swift in Sources */,
 				8BF0CEE928A839D900EEC2A4 /* SignUpViewModel.swift in Sources */,
+				F698745C2A57396000B71CF1 /* MonitorNetwork.swift in Sources */,
 				8B9C195528A913060094EAF7 /* String+Extension.swift in Sources */,
 				8B3E3AA328C9EA100034D309 /* HomeTVcell.swift in Sources */,
 				8B9C196028A94B1F0094EAF7 /* SignUpValidator.swift in Sources */,
 				8BF0CEDD28A817FA00EEC2A4 /* BSBaseViewModel.swift in Sources */,
 				8BF0CEE728A839C400EEC2A4 /* SignUpViewController.swift in Sources */,
+				F69874C52A57545200B71CF1 /* Share.swift in Sources */,
 				8B9C195A28A91B4A0094EAF7 /* TypeAliase.swift in Sources */,
+				F69874A92A5743D400B71CF1 /* EndPointType.swift in Sources */,
+				F69874C12A57545200B71CF1 /* Artist.swift in Sources */,
+				F69874C02A57545200B71CF1 /* Beacondata.swift in Sources */,
 				8BF0CEE028A81FC300EEC2A4 /* LoginViewController.swift in Sources */,
 				8B9C195E28A94AE50094EAF7 /* SignUpRequestDto.swift in Sources */,
+				F69874612A573D3900B71CF1 /* Dictionary + Extension.swift in Sources */,
+				F69874BF2A57545200B71CF1 /* Providers.swift in Sources */,
 				F418429B2916C6CB00164817 /* SleepViewController.swift in Sources */,
 				8B098B9628A6DEB500E84A00 /* WelcomeViewController.swift in Sources */,
 				8B7F18F128996FBF00C9CBFB /* HomeViewController.swift in Sources */,
@@ -1189,12 +1345,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 40160B7831EB4CA6137218A2 /* Pods-BetterSleep.debug.xcconfig */;
 			buildSettings = {
+				API_BASE_URL = "https://shazam.p.rapidapi.com/";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PL5U3N3RR2;
 				GENERATE_INFOPLIST_FILE = YES;
+				IMAGE_BASE_URL = "https://is1-ssl.mzstatic.com/image/thumb";
 				INFOPLIST_FILE = BetterSleep/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Better Sleep ";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
@@ -1224,12 +1382,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B6005DD528B822621C4A153B /* Pods-BetterSleep.release.xcconfig */;
 			buildSettings = {
+				API_BASE_URL = "https://shazam.p.rapidapi.com/";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PL5U3N3RR2;
 				GENERATE_INFOPLIST_FILE = YES;
+				IMAGE_BASE_URL = "https://is1-ssl.mzstatic.com/image/thumb";
 				INFOPLIST_FILE = BetterSleep/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Better Sleep ";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";

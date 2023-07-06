@@ -3,4 +3,118 @@
    uuid = "BD07D62A-0DAD-43E2-90E8-0F1943E4A694"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D7420549-13F6-4F21-A28B-07F758B5DA21"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetterSleep/Domain/NetworkManager/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "request(_:_:_:isAuthReq:isJosnEncoded:for:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D7420549-13F6-4F21-A28B-07F758B5DA21 - d5adad0b8ccf337e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, SwiftyJSON.JSON) -&gt; () in closure #2 (Alamofire.DataResponse&lt;&#x3c4;_0_0, Alamofire.AFError&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Bool&gt;) -&gt; () in BetterSleep.NetworkManager.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(_: Swift.String, _: Alamofire.HTTPMethod, _: Swift.Dictionary&lt;Swift.String, Any&gt;, isAuthReq: Swift.Bool, isJosnEncoded: Swift.Bool, for: &#x3c4;_0_0.Type, completion: (Swift.Bool, SwiftyJSON.JSON) -&gt; ()) -&gt; ()"
+                  moduleName = "BetterSleep"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedmujahid/Documents/Projects/XcodeProjects/Projects/BetterSleep_CalmTheStormWithin/BetterSleep/BetterSleep/Domain/NetworkManager/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "D7420549-13F6-4F21-A28B-07F758B5DA21 - 60a8b10255ee552d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.String, Swift.Optional&lt;&#x3c4;_0_0&gt;) -&gt; () in closure #1 (Alamofire.DataResponse&lt;&#x3c4;_0_0, Alamofire.AFError&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Bool&gt;) -&gt; () in BetterSleep.NetworkManager.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(_: Swift.String, _: Alamofire.HTTPMethod, _: Swift.Dictionary&lt;Swift.String, Any&gt;, isAuthReq: Swift.Bool, isJosnEncoded: Swift.Bool, for: &#x3c4;_0_0.Type, completion: (Swift.Bool, Swift.String, Swift.Optional&lt;&#x3c4;_0_0&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "BetterSleep"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedmujahid/Documents/Projects/XcodeProjects/Projects/BetterSleep_CalmTheStormWithin/BetterSleep/BetterSleep/Domain/NetworkManager/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7856A076-D43F-433C-9B32-D06CA3D8A9C5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetterSleep/Repository/SleepMediation/SleepMediationRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "fetchCategory(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7856A076-D43F-433C-9B32-D06CA3D8A9C5 - 6ed5f6ae6565b222"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, SwiftyJSON.JSON) -&gt; () in BetterSleep.SleepMediationRepository.fetchCategory(completion: (Swift.Bool, Swift.String, Swift.Optional&lt;SwiftyJSON.JSON&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "BetterSleep"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedmujahid/Documents/Projects/XcodeProjects/Projects/BetterSleep_CalmTheStormWithin/BetterSleep/BetterSleep/Repository/SleepMediation/SleepMediationRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "7856A076-D43F-433C-9B32-D06CA3D8A9C5 - 8fbdc8ec6e50567"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.String, Swift.Optional&lt;BetterSleep.SleepMediation&gt;) -&gt; () in BetterSleep.SleepMediationRepository.fetchCategory(completion: (Swift.Bool, Swift.String, Swift.Optional&lt;BetterSleep.SleepMediation&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "BetterSleep"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedmujahid/Documents/Projects/XcodeProjects/Projects/BetterSleep_CalmTheStormWithin/BetterSleep/BetterSleep/Repository/SleepMediation/SleepMediationRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "116">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ED88388E-C33C-48FC-9C6E-874C7E221003"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetterSleep/Presentation/ViewController/Tabs/Home/ViewModel/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "fetchCategories()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

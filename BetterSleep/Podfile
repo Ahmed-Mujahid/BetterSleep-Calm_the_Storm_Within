@@ -30,11 +30,14 @@ target 'BetterSleep' do
   # Pod for popups
   pod 'PopupDialog'
   
-  # Pod for images
+  # Pod for Networking
    pod 'Alamofire'
    
    # Pod for images
    pod 'HGCircularSlider'
+   
+   # Pod for Json
+   pod 'SwiftyJSON'
    
   target 'BetterSleepTests' do
     inherit! :search_paths
