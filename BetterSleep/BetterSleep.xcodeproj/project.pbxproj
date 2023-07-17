@@ -109,6 +109,9 @@
 		A7B9103D1F154A98EDBCF62A /* Pods_BetterSleep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5785248BC1F3E5BC559F4C /* Pods_BetterSleep.framework */; };
 		F418429B2916C6CB00164817 /* SleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418429A2916C6CB00164817 /* SleepViewController.swift */; };
 		F4CD4E3129D35B1300197A55 /* UITextFeild + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CD4E3029D35B1300197A55 /* UITextFeild + Extension.swift */; };
+		F606653B2A5AD9F900D8E780 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F606653A2A5AD9F900D8E780 /* Utility.swift */; };
+		F606653D2A5AF28C00D8E780 /* UINotification + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F606653C2A5AF28C00D8E780 /* UINotification + extension.swift */; };
+		F606653F2A5B436500D8E780 /* UIImage + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F606653E2A5B436500D8E780 /* UIImage + extension.swift */; };
 		F655B6062A54B021002B54BE /* UIResponder + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655B6052A54B021002B54BE /* UIResponder + Extension.swift */; };
 		F655B6082A54B105002B54BE /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655B6072A54B105002B54BE /* HomeDetailViewController.swift */; };
 		F655B60D2A54B704002B54BE /* HomeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655B60C2A54B704002B54BE /* HomeDetailViewModel.swift */; };
@@ -270,6 +273,9 @@
 		F418429A2916C6CB00164817 /* SleepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepViewController.swift; sourceTree = "<group>"; };
 		F42B3C2F03B777C219E0A86A /* Pods_BetterSleep_BetterSleepUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetterSleep_BetterSleepUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4CD4E3029D35B1300197A55 /* UITextFeild + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextFeild + Extension.swift"; sourceTree = "<group>"; };
+		F606653A2A5AD9F900D8E780 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		F606653C2A5AF28C00D8E780 /* UINotification + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINotification + extension.swift"; sourceTree = "<group>"; };
+		F606653E2A5B436500D8E780 /* UIImage + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + extension.swift"; sourceTree = "<group>"; };
 		F655B6052A54B021002B54BE /* UIResponder + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder + Extension.swift"; sourceTree = "<group>"; };
 		F655B6072A54B105002B54BE /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
 		F655B60C2A54B704002B54BE /* HomeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewModel.swift; sourceTree = "<group>"; };
@@ -525,6 +531,8 @@
 				F655B6052A54B021002B54BE /* UIResponder + Extension.swift */,
 				F69874602A573D3900B71CF1 /* Dictionary + Extension.swift */,
 				F69874622A573D6000B71CF1 /* URL + Extension.swift */,
+				F606653C2A5AF28C00D8E780 /* UINotification + extension.swift */,
+				F606653E2A5B436500D8E780 /* UIImage + extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -545,6 +553,7 @@
 				8B7F18F32899A01400C9CBFB /* BS_Colors.swift */,
 				8B9C195B28A92F1C0094EAF7 /* BS_Images.swift */,
 				F69874522A57371400B71CF1 /* Headers.swift */,
+				F606653A2A5AD9F900D8E780 /* Utility.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1115,6 +1124,7 @@
 				8B3E3AAD28C9FA420034D309 /* HomeCVCell.swift in Sources */,
 				8BEFEE0228B8EA5C004CB01A /* HomeViewModel.swift in Sources */,
 				8B9C195C28A92F1C0094EAF7 /* BS_Images.swift in Sources */,
+				F606653B2A5AD9F900D8E780 /* Utility.swift in Sources */,
 				F4CD4E3129D35B1300197A55 /* UITextFeild + Extension.swift in Sources */,
 				F69874AD2A5743F000B71CF1 /* RequestedUrl.swift in Sources */,
 				8BF0CEDA28A817AC00EEC2A4 /* Reactive+Helper.swift in Sources */,
@@ -1133,6 +1143,8 @@
 				F69874532A57371400B71CF1 /* Headers.swift in Sources */,
 				F69874C62A57545200B71CF1 /* Actions.swift in Sources */,
 				F69874632A573D6000B71CF1 /* URL + Extension.swift in Sources */,
+				F606653F2A5B436500D8E780 /* UIImage + extension.swift in Sources */,
+				F606653D2A5AF28C00D8E780 /* UINotification + extension.swift in Sources */,
 				8B94651428A7A67800D3C457 /* BSBaseViewController.swift in Sources */,
 				F69874AF2A5745F100B71CF1 /* AppConfiguration.swift in Sources */,
 				8BF0CEE228A81FDB00EEC2A4 /* LoginViewModel.swift in Sources */,

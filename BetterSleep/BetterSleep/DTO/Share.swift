@@ -13,6 +13,8 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 struct Share : Codable {
+   
+    
 	let subject : String?
 	let text : String?
 	let href : String?
@@ -21,7 +23,28 @@ struct Share : Codable {
 	let html : String?
 	let avatar : String?
 	let snapchat : String?
-
+    
+    init() {
+        self.subject = Constants.blankValue
+        self.text = Constants.blankValue
+        self.href = Constants.blankValue
+        self.image = Constants.blankValue
+        self.twitter = Constants.blankValue
+        self.html = Constants.blankValue
+        self.avatar = Constants.blankValue
+        self.snapchat = Constants.blankValue
+    }
+    
+    init(subject: String? = nil, text: String? = nil, href: String? = nil, image: String? = nil, twitter: String? = nil, html: String? = nil, avatar: String? = nil, snapchat: String? = nil) {
+        self.subject = subject
+        self.text = text
+        self.href = href
+        self.image = image
+        self.twitter = twitter
+        self.html = html
+        self.avatar = avatar
+        self.snapchat = snapchat
+    }
 	enum CodingKeys: String, CodingKey {
 
 		case subject = "subject"

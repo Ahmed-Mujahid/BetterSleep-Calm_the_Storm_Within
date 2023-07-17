@@ -67,32 +67,30 @@ class NetworkManager: NSObject {
                 
                 if isJosnEncoded {
                     
-//                    // Check URL
-//                    guard let requestedURL = URL(string: url) else {
-//                        return
-//                    }
-//
-//                    // URL Request
-//                    var urlRequest = URLRequest(url: requestedURL)
-//                    urlRequest.httpBody = params.toJson
-//                    urlRequest.httpMethod = method.rawValue
-//
-//                    // Headers
-//                    if isAuthReq {
-//                        urlRequest.addValue(AppDefaults.shared.getToken(), forHTTPHeaderField:  Headers.auth)
-//                    }
-//
-//                    urlRequest.addValue(Headers.JsonEncoded, forHTTPHeaderField:  Headers.contentType)
-//                    urlRequest.addValue(Headers.versionValue, forHTTPHeaderField:  Headers.version)
-//
-//                    // Alamofire request
-//                    self.alamofireManager.session.request(urlRequest).validate(statusCode: 200..<600).responseJSON { (response) in
-//                        self.manageResponses(response) { (success, result) in
-//
-//                            // completion
-//                            completion(success, result)
-//                        }
-//                    }
+                    // Check URL
+                    guard let requestedURL = URL(string: url) else {
+                        return
+                    }
+
+                    // URL Request
+                    var urlRequest = URLRequest(url: requestedURL)
+                    urlRequest.httpBody = params.toJson
+                    urlRequest.httpMethod = method.rawValue
+
+                    // Headers
+                    if isAuthReq {
+                        urlRequest.addValue(AppDefaults.shared.getToken(), forHTTPHeaderField:  Headers.auth)
+                    }
+
+                    urlRequest.addValue(Headers.JsonEncoded, forHTTPHeaderField:  Headers.contentType)
+                    urlRequest.addValue(Headers.versionValue, forHTTPHeaderField:  Headers.version)
+
+                    // Alamofire request
+                    self.alamofireManager.session.request(urlRequest).validate(statusCode: 200..<600).responseDecodable(of: type) { (response) in
+                        self.manageResponses(for: response) { success, message, result  in
+                            completion(success, message, result)
+                        }
+                    }
                 } else {
                     
                     self.alamofireManager
@@ -104,26 +102,52 @@ class NetworkManager: NSObject {
                                 completion(success, message, result)
                             }
                         }
-                    
-                    //                    self.alamofireManager.session.request(url, method: method, parameters: params, encoding: URLEncoding.default, headers: self.addAuthHeaders(isAuthReq).1).validate(statusCode: 200..<600).responseJSON { (response) in
-                    //                        self.manageResponses(response) { (success, result) in
-                    //
-                    //                            // completion
-                    //                            completion(success, result)
-                    //                        }
-                    //                    }
                 }
             } else {
                 // if internet is not available
                 let params = ["message": "INTERNET_ERRORMESSAGE"]
-                let json = JSON(params)
                 completion(false, "INTERNET_ERRORMESSAGE", nil)
                 
             }
         }
     }
     
-    
+    func download(_ url: String, _ method: HTTPMethod = .get, _ params: Params = Params(), isAuthReq: Bool = false, completion: @escaping CompletionNetwork) {
+        
+//        if !Reachability.shared.isReachable {
+//            let params = ["message": "INTERNET_ERRORMESSAGE"]
+//            completion(false, "INTERNET_ERRORMESSAGE", nil)
+//        }
+//
+        // print(params.toJsonString)
+        
+        // Download Destination
+        let destination: DownloadRequest.Destination = { _, _ in
+            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            print(documentsURL)
+            return (documentsURL, [.removePreviousFile, .createIntermediateDirectories])
+        }
+        
+        alamofireManager.session.download(url, method: method, encoding: JSONEncoding.default, to: destination)
+            .downloadProgress(queue: DispatchQueue.global(qos: .utility)) { progress in
+                print("progress: \(progress)")
+                DispatchQueue.main.async {
+                    let Progress = [Constants.downloadProgress: progress.fractionCompleted]
+                    NotificationCenter.default.post(name: .downloadProgress, object: nil, userInfo: Progress)
+                }
+            }.response { response in
+                if response.error == nil, let docPath = response.fileURL {
+                    let josn = JSON([Constants.docPath: docPath.path])
+                    completion(true, josn)
+                } else {
+                    if let message = response.error?.localizedDescription {
+                        print(message)
+                        let josn = JSON(["MESSAGE": message])
+                        completion(false, josn)
+                    }
+                }
+            }
+    }
     private func manageResponses(_ response: AFDataResponse<Any>, completion: @escaping CompletionNetwork) {
         print("Status Code: \(response.response?.statusCode ?? 200)")
         

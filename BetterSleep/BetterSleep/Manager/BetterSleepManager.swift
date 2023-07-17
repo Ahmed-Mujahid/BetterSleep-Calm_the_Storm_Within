@@ -31,7 +31,7 @@ class BetterSleepManager: NSObject {
     
     // App Variables
     var buildVarient: Build = .Development
-   
+    var filePath = ""
     // MARK: - Init
     override init() {
         appDelegate = UIApplication.shared.delegate as? AppDelegate

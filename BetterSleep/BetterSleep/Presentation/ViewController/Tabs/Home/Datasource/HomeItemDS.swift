@@ -61,8 +61,8 @@ struct HomeItemDS {
             
             // Cell
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTVcell.identifier, for: indexPath) as? HomeTVcell else { return UITableViewCell() }
-            
-            switch ds[indexPath] {
+            let section = ds[indexPath]
+            switch section {
                 
                 // Horizontal Cells
             case .HorizontalTableViewItem(titles: let titles):
@@ -72,6 +72,7 @@ struct HomeItemDS {
                 
                 // Vertical Cells
             case .VerticalTableViewItem(titles: let titles):
+                
                 cell.viewModel = HomeTVviewModel(item: titles, isHorizontal: false)
                 cell.cellCv.updateFLow(5, 5, false)
                 cell.cellCv.alwaysBounceVertical = false
@@ -83,7 +84,8 @@ struct HomeItemDS {
                 if let vc = cell.getOwningViewController() as? HomeViewController {
                     guard let homeDetailVc = BetterSleepManager.shared.navigateView(viewRef: .HomeDetailViewController, storyboard: .HomeDetail) as? HomeDetailViewController else { return }
                     homeDetailVc.viewModel = HomeDetailViewModel(item: data)
-                    vc.present(homeDetailVc, animated: true)
+                   let sheetController = Utility.openSheet(homeDetailVc)
+                    vc.present(sheetController, animated: true)
                 }
             }
             

@@ -40,4 +40,6 @@ struct Constants {
     static let email = "ahmed@gmail.com"
     static let password = "qwerty123"
     static let isLogin = "isLogin"
+    static let downloadProgress = "downloadProgress"
+    static let docPath = "docPath"
 }

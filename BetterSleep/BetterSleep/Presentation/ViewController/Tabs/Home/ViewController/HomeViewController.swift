@@ -115,7 +115,6 @@ extension HomeViewController: UITableViewDelegate {
             return  150.0
             
         }
-        
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

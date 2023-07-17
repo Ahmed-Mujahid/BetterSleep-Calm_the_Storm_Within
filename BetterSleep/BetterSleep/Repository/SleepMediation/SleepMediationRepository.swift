@@ -11,7 +11,7 @@ import SwiftyJSON
 
 final class SleepMediationRepository {
     
-    func fetchCategory(completion: @escaping GenericModelCompletion<SleepMediation>) {
+    func fetchCategory(completion: @escaping GenericModelCompletion<[HomeItem]>) {
         
         // Request Intercepter
         let endpoint = EndPointEnum.category
@@ -31,15 +31,49 @@ final class SleepMediationRepository {
                                       isJosnEncoded: endpoint.isJSONEncoded,
                                       for: SleepMediation.self) { (success, message, response) in
             if success {
-                
+               var item = [HomeItem]()
+                if let hits = response?.tracks?.hits {
+                    for hit in hits {
+                        let title = (hit.track?.title ?? "") + "-" + (hit.track?.subtitle ?? "")
+                        let icon = hit.track?.images?.background
+                        let url = hit.track?.hub?.actions?.last?.uri
+                        item.append(HomeItem(title: title,
+                                             icon: icon ?? "",
+                                             url: url ?? ""))
+                    }
+                }
                 // Completion
-                return completion(true, "", response)
+                return completion(true, "", item)
                 
             } else {
                 // Completion
                 completion(false,"", nil)
             }
         }
+    }
+    
+    func fetchMusic(for url: String?, completion: @escaping GenericModelCompletion<Any>) {
+     
+        
+        // Check if url is not nil
+        guard var requestedURL = url else {
+            return completion(false, "PLEASE_PROVIDE_URL", nil)
+        }
+      
+        
+        // Network Request
+        NetworkManager.shared.download(requestedURL) { success, response in
+            if success {
+                
+                // Completion
+                completion(true, "", response[Constants.docPath].stringValue)
+                
+            } else {
+                // Completion
+                completion(false, response["MESSAGE"].stringValue, nil)
+            }
+        }
+      
     }
     
 

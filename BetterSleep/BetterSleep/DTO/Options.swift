@@ -13,6 +13,8 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 struct Options : Codable {
+
+    
 	let caption : String?
 	let actions : [Actions]?
 	let beacondata : Beacondata?
@@ -22,7 +24,31 @@ struct Options : Codable {
 	let overflowimage : String?
 	let colouroverflowimage : Bool?
 	let providername : String?
-
+    
+    init() {
+        self.caption = Constants.blankValue
+       self.actions = [Actions]()
+       self.beacondata = Beacondata()
+       self.image = Constants.blankValue
+       self.type = Constants.blankValue
+       self.listcaption = Constants.blankValue
+       self.overflowimage = Constants.blankValue
+       self.colouroverflowimage = Constants.falseValue
+       self.providername = Constants.blankValue
+   }
+    
+     init(caption: String? = nil, actions: [Actions]? = nil, beacondata: Beacondata? = nil, image: String? = nil, type: String? = nil, listcaption: String? = nil, overflowimage: String? = nil, colouroverflowimage: Bool? = nil, providername: String? = nil) {
+        self.caption = caption
+        self.actions = actions
+        self.beacondata = beacondata
+        self.image = image
+        self.type = type
+        self.listcaption = listcaption
+        self.overflowimage = overflowimage
+        self.colouroverflowimage = colouroverflowimage
+        self.providername = providername
+    }
+    
 	enum CodingKeys: String, CodingKey {
 
 		case caption = "caption"

@@ -13,23 +13,42 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 struct Images : Codable {
+   
 	let overflow : String?
 	let defaultImage : String?
+    let background: String?
+    
+    init() {
+        self.overflow = Constants.blankValue
+        self.defaultImage = Constants.blankValue
+        self.background = Constants.blankValue
+    }
 
+    
+    init(overflow: String? = nil, defaultImage: String? = nil, background: String? = nil) {
+        self.overflow = overflow
+        self.defaultImage = defaultImage
+        self.background = background
+    }
+
+    
 	enum CodingKeys: String, CodingKey {
 
 		case overflow = "overflow"
 		case defaultImage = "default"
+        case background = "background"
 	}
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(self.overflow, forKey: .overflow)
         try container.encodeIfPresent(self.defaultImage, forKey: .defaultImage)
+        try container.encodeIfPresent(self.background, forKey: .background)
     }
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		overflow = try values.decodeIfPresent(String.self, forKey: .overflow)
         defaultImage = try values.decodeIfPresent(String.self, forKey: .defaultImage)
+        background = try values.decodeIfPresent(String.self, forKey: .background)
 	}
 
 }

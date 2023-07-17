@@ -13,10 +13,23 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 struct Actions : Codable {
+    
+    
 	let name : String?
 	let type : String?
 	let uri : String?
-
+    
+    init() {
+        self.name = Constants.blankValue
+       self.type = Constants.blankValue
+       self.uri = Constants.blankValue
+   }
+    
+     init(name: String? = nil, type: String? = nil, uri: String? = nil) {
+        self.name = name
+        self.type = type
+        self.uri = uri
+    }
 	enum CodingKeys: String, CodingKey {
 
 		case name = "name"

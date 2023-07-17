@@ -39,7 +39,7 @@ class HomeCVCell: UICollectionViewCell {
     // MARK: - Custom Functions
     func prepareCell() {
         cellLbl.text = viewModel?.title
-        cellImage.image = viewModel?.image
+        cellImage.setImage(viewModel?.image ?? "")
         
         if (viewModel?.isHorizontal ?? true) {
             cellImage.roundTop(radius: 25)

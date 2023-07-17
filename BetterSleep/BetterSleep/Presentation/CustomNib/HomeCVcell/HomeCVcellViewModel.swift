@@ -10,15 +10,15 @@ import UIKit
 
 class HomeCVcellViewModel: BSBaseViewModel {
     var title: String
-    var image: UIImage
+    var image: String
     var isHorizontal: Bool
     override init() {
         title = ""
-        image = UIImage()
+        image = ""
         isHorizontal = false
     }
     
-    init(title: String, image: UIImage, isHorizontal: Bool) {
+    init(title: String, image: String, isHorizontal: Bool) {
         self.title = title
         self.image = image
         self.isHorizontal = isHorizontal

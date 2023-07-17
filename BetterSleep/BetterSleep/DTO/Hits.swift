@@ -14,20 +14,29 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 import Foundation
 struct Hits : Codable {
 	let artist : Artist?
-
+    let track: Track?
+    
+    init() {
+        artist = nil
+        track = nil
+    }
+    
 	enum CodingKeys: String, CodingKey {
 
 		case artist = "artist"
+        case track = "track"
 	}
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(self.artist, forKey: .artist)
+        try container.encodeIfPresent(self.track, forKey: .track)
     }
     
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		artist = try values.decodeIfPresent(Artist.self, forKey: .artist)
+        track = try values.decodeIfPresent(Track.self, forKey: .track)
 	}
 
 }

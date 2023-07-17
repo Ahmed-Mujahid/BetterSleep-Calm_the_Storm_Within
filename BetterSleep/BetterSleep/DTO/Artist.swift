@@ -28,6 +28,22 @@ struct Artist : Codable {
 		case adamid = "adamid"
 	}
     
+     init() {
+         self.avatar = Constants.blankValue
+        self.name = Constants.blankValue
+        self.verified = Constants.falseValue
+        self.weburl = Constants.blankValue
+        self.adamid = Constants.blankValue
+    }
+    
+    init(avatar: String? = nil, name: String? = nil, verified: Bool? = nil, weburl: String? = nil, adamid: String? = nil) {
+        self.avatar = avatar
+        self.name = name
+        self.verified = verified
+        self.weburl = weburl
+        self.adamid = adamid
+    }
+    
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(self.avatar, forKey: .avatar)

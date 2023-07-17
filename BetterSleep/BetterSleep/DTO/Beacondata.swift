@@ -12,12 +12,21 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Beacondata : Codable {
+struct Beacondata: Codable {
 	let type : String?
 	let providername : String?
-
+    
+    init() {
+        self.type = Constants.blankValue
+        self.providername = Constants.blankValue
+    }
+    
+    init(type: String? = nil, providername: String? = nil) {
+        self.type = type
+        self.providername = providername
+    }
+    
 	enum CodingKeys: String, CodingKey {
-
 		case type = "type"
 		case providername = "providername"
 	}

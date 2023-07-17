@@ -13,6 +13,8 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 struct Hub : Codable {
+   
+    
 	let type : String?
 	let image : String?
 	let actions : [Actions]?
@@ -21,6 +23,26 @@ struct Hub : Codable {
 	let explicit : Bool?
 	let displayname : String?
 
+    init() {
+        self.type = Constants.blankValue
+       self.image = Constants.blankValue
+       self.actions = [Actions]()
+       self.options = [Options]()
+       self.providers = [Providers]()
+       self.explicit = Constants.falseValue
+       self.displayname = Constants.blankValue
+   }
+    
+     init(type: String? = nil, image: String? = nil, actions: [Actions]? = nil, options: [Options]? = nil, providers: [Providers]? = nil, explicit: Bool? = nil, displayname: String? = nil) {
+        self.type = type
+        self.image = image
+        self.actions = actions
+        self.options = options
+        self.providers = providers
+        self.explicit = explicit
+        self.displayname = displayname
+    }
+    
 	enum CodingKeys: String, CodingKey {
 
 		case type = "type"

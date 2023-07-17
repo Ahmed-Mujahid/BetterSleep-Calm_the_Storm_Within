@@ -24,6 +24,7 @@ class HomeTVcell: UITableViewCell {
     var viewModel: HomeTVviewModel? {
         didSet {
             bindCollectionView()
+            cellCv.reloadData()
         }
     }
     
