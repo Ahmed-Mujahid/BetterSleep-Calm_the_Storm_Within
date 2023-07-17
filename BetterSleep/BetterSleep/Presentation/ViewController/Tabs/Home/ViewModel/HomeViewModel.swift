@@ -6,11 +6,101 @@
 //
 
 import Foundation
-import UIKit
-import RxDataSources
 import RxSwift
 import RxCocoa
-import SwiftUI
+
+enum SongCategory: String, CaseIterable {
+    case SLEEP_MEDITATION = "Sleep Mediation"
+    case RELAX = "Relax"
+    case PEACE_FULL = "Peace Full"
+//    case NATURE = "Nature"
+//    case SEA_WAVES = "Sea Waves"
+//    case AMBIENT_MUSIC = "Ambient music"
+}
+
+class HomeViewModel: BSBaseViewModel {
+    
+    // MARK: - Relay
+    var homeSection: BehaviorRelay<[HomeSection]>
+    var section = [HomeSection]()
+    
+    // MARK: - Variable
+    var categories: SleepMediation?
+    
+    // MARK: - Constants
+    let dispatchGroup = DispatchGroup()
+    let repository = SleepMediationRepository()
+    // MARK: - init
+    override init() {
+        homeSection = BehaviorRelay(value: [])
+    }
+    
+    // MARK: - Methods
+    func fetchSong(by category: String, isHorizontal: Bool = true, completion: @escaping GenericCompletion) {
+       print("categor: \(category)")
+        repository.fetchSong(by: category) { success, message, model in
+//            self.isLoading.accept(false)
+            if success {
+                if let homeItem = model {
+                    var section =  self.section
+                    var item = HomeSection()
+                    if isHorizontal {
+                        item = HomeSection(items: .HorizontalTableViewItem(titles: homeItem), header: category)
+                    } else {
+                        item = HomeSection(items: .VerticalTableViewItem(titles: homeItem), header: category)
+                    }
+               
+                    section.append(item)
+                    self.section = section
+                }
+                
+                self.isSuccess.accept(true)
+            } else {
+                self.setMessage(message)
+            }
+            completion()
+        }
+    }
+    
+    func fetchAllSong() {
+        self.isLoading.accept(true)
+        
+        dispatchGroup.enter()
+        dispatchGroup.enter()
+        dispatchGroup.enter()
+        
+        for category in SongCategory.allCases {
+            self.fetchSong(by: category.rawValue) {
+                self.dispatchGroup.leave()
+            }
+        }
+        
+        dispatchGroup.notify(queue: .main, execute: {
+            self.homeSection.accept(self.section)
+            self.isLoading.accept(false)
+            self.isSuccess.accept(true)
+         })
+    }
+    
+    func downloadSong(){
+        let hits = self.categories?.tracks?.hits?.first
+        
+        
+        self.repository.fetchMusic(for: hits?.track?.hub?.actions?.last?.uri) { _, _, path in
+            if let url = path as? String {
+                BetterSleepManager.shared.filePath = url
+                
+            }
+            print("downloded path \(path ?? "")")
+        }
+    }
+}
+
+enum AdvancedTableViewItem {
+    /// Represents a cell with a collection view inside
+    case HorizontalTableViewItem(titles: [HomeItem])
+    case VerticalTableViewItem(titles: [HomeItem])
+}
 
 struct HomeItem {
     // MARK: - PROPERTIES
@@ -37,100 +127,18 @@ struct HomeItem {
 }
 
 struct HomeSection {
-    let items: [HomeItem]
+  
+    let items: AdvancedTableViewItem
     let header: String
     
-}
-
-extension HomeSection: SectionModelType {
-    typealias Item = HomeItem
-    
-    init(original: Self, items: [Self.Item]) {
-        self = original
-    }
-}
-
-class HomeViewModel: BSBaseViewModel {
-    
-    // MARK: - Relay
-    var homeItem: BehaviorRelay<[AdvancedTableViewSection]>
-    
-    // MARK: - Variable
-    let dataSource = HomeItemDS.dataSource()
-    let repository = SleepMediationRepository()
-    var categories: SleepMediation?
-    
-    // MARK: - init
-    override init() {
-        homeItem = BehaviorRelay(value: [])
+    init() {
+        items = .HorizontalTableViewItem(titles: [HomeItem]())
+        header = Constants.blankValue
     }
     
-    // MARK: - Methods
-    
-    func fetchCategories() {
-        var homeSection = [AdvancedTableViewSection]()
-        
-        repository.fetchCategory { success, message, model in
-            if let item = model {
-                var homeSection = [AdvancedTableViewSection]()
-                homeSection.append(.HorizontalSection(items: [.HorizontalTableViewItem(titles: item)]))
-                self.homeItem.accept(homeSection)
-            }
-        }
+    init(items: AdvancedTableViewItem, header: String) {
+        self.items = items
+        self.header = header
     }
     
-    func downloadSong(){
-        let hits = self.categories?.tracks?.hits?.first
-        
-        
-        self.repository.fetchMusic(for: hits?.track?.hub?.actions?.last?.uri) { _, _, path in
-            if let url = path as? String {
-                BetterSleepManager.shared.filePath = url
-                
-            }
-            print("downloded path \(path ?? "")")
-        }
-    }
-    
-    func fetchData() {
-//
-//        let musicItem: [HomeItem] = [
-//            HomeItem(title: "Music1", icon: BSImages.BS_Music1),
-//            HomeItem(title: "Music2", icon: BSImages.BS_Music2),
-//            HomeItem(title: "Music3", icon: BSImages.BS_Music3)
-//        ]
-//
-//        let podCaseItem: [HomeItem] = [
-//            HomeItem(title: "Podcast1", icon: BSImages.BS_Podcast1),
-//            HomeItem(title: "Podcast2", icon: BSImages.BS_Podcast2),
-//            HomeItem(title: "Podcast3", icon: BSImages.BS_Podcast3)
-//        ]
-//
-//        let categoryItem: [HomeItem] = [
-//            HomeItem(title: "Sleep", icon: BSImages.BS_Sleep),
-//            HomeItem(title: "Relax", icon: BSImages.BS_Relax),
-//            HomeItem(title: "Medidate", icon: BSImages.BS_Medidate),
-//            HomeItem(title: "Yoga", icon: BSImages.BS_Yoga),
-//            HomeItem(title: "Sleep1", icon: BSImages.BS_Sleep),
-//            HomeItem(title: "Relax1", icon: BSImages.BS_Relax),
-//            HomeItem(title: "Medidate1", icon: BSImages.BS_Medidate),
-//            HomeItem(title: "Yoga1", icon: BSImages.BS_Yoga)
-//        ]
-//
-//        var homeSection = [AdvancedTableViewSection]()
-//
-//        homeSection.append(.HorizontalSection(items: [.HorizontalTableViewItem(titles: musicItem)]))
-//        homeSection.append(.HorizontalSection(items: [.HorizontalTableViewItem(titles: podCaseItem)]))
-//        homeSection.append(.HorizontalSection(items: [.HorizontalTableViewItem(titles: musicItem)]))
-//        homeSection.append(.HorizontalSection(items: [.HorizontalTableViewItem(titles: podCaseItem)]))
-//        homeSection.append(.HorizontalSection(items: [.HorizontalTableViewItem(titles: musicItem)]))
-//        homeSection.append(.HorizontalSection(items: [.HorizontalTableViewItem(titles: podCaseItem)]))
-//        homeSection.append(.VerticalSection(items: [.VerticalTableViewItem(titles: categoryItem)]))
-//
-//        // Initialising Relay
-//        homeItem = BehaviorRelay(value: homeSection)
-//        self.isSuccess.accept(true)
-    }
-    
-    // MARK: - methods
 }

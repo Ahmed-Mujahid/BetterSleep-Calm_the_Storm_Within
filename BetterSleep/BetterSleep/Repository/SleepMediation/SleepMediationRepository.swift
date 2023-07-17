@@ -11,8 +11,8 @@ import SwiftyJSON
 
 final class SleepMediationRepository {
     
-    func fetchCategory(completion: @escaping GenericModelCompletion<[HomeItem]>) {
-        
+    func fetchSong(by title: String, completion: @escaping GenericModelCompletion<[HomeItem]>) {
+        print("Repository: \(title)")
         // Request Intercepter
         let endpoint = EndPointEnum.category
         
@@ -20,8 +20,8 @@ final class SleepMediationRepository {
         guard var requestedURL = endpoint.url else {
             return completion(false, "please Provide URL", nil)
         }
-       
-        requestedURL += "&term=SleepMediation"
+        
+        requestedURL += "&term=\(title.replacingOccurrences(of: " ", with: ""))"
         
         // Network Call
         NetworkManager.shared.request(requestedURL,

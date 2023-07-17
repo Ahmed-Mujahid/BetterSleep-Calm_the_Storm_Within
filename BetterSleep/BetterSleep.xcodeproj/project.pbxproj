@@ -85,7 +85,6 @@
 		8B814C7628A302F7000AB670 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B814C6A28A302F6000AB670 /* Roboto-Bold.ttf */; };
 		8B814C7728A302F7000AB670 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B814C6B28A302F7000AB670 /* Roboto-MediumItalic.ttf */; };
 		8B814C7928A3079F000AB670 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B814C7828A3079F000AB670 /* UIView+Extension.swift */; };
-		8B895EAB28BFCCE000C07A67 /* HomeItemDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B895EAA28BFCCE000C07A67 /* HomeItemDS.swift */; };
 		8B94651428A7A67800D3C457 /* BSBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B94651328A7A67800D3C457 /* BSBaseViewController.swift */; };
 		8B9C195128A9125F0094EAF7 /* LoginRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C195028A9125F0094EAF7 /* LoginRequestDTO.swift */; };
 		8B9C195328A912A60094EAF7 /* LoginValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9C195228A912A60094EAF7 /* LoginValidator.swift */; };
@@ -246,7 +245,6 @@
 		8B814C6A28A302F6000AB670 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		8B814C6B28A302F7000AB670 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
 		8B814C7828A3079F000AB670 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		8B895EAA28BFCCE000C07A67 /* HomeItemDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemDS.swift; sourceTree = "<group>"; };
 		8B94651328A7A67800D3C457 /* BSBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSBaseViewController.swift; sourceTree = "<group>"; };
 		8B9C195028A9125F0094EAF7 /* LoginRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestDTO.swift; sourceTree = "<group>"; };
 		8B9C195228A912A60094EAF7 /* LoginValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidator.swift; sourceTree = "<group>"; };
@@ -643,7 +641,6 @@
 		8BEFEDFF28B8EA3A004CB01A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				F655B60B2A54B6AC002B54BE /* Datasource */,
 				F655B60A2A54B69A002B54BE /* ViewController */,
 				F655B6092A54B686002B54BE /* ViewModel */,
 			);
@@ -715,14 +712,6 @@
 				F655B6072A54B105002B54BE /* HomeDetailViewController.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		F655B60B2A54B6AC002B54BE /* Datasource */ = {
-			isa = PBXGroup;
-			children = (
-				8B895EAA28BFCCE000C07A67 /* HomeItemDS.swift */,
-			);
-			path = Datasource;
 			sourceTree = "<group>";
 		};
 		F698744D2A57359B00B71CF1 /* Domain */ = {
@@ -1181,7 +1170,6 @@
 				F418429B2916C6CB00164817 /* SleepViewController.swift in Sources */,
 				8B098B9628A6DEB500E84A00 /* WelcomeViewController.swift in Sources */,
 				8B7F18F128996FBF00C9CBFB /* HomeViewController.swift in Sources */,
-				8B895EAB28BFCCE000C07A67 /* HomeItemDS.swift in Sources */,
 				8B814C5A28A2FF62000AB670 /* Constants.swift in Sources */,
 				8BF0CEE428A827A300EEC2A4 /* UIButton+Extesnion.swift in Sources */,
 			);
