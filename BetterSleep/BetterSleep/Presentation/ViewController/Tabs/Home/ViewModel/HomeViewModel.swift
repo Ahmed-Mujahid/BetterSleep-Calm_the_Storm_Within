@@ -13,16 +13,19 @@ enum SongCategory: String, CaseIterable {
     case SLEEP_MEDITATION = "Sleep Mediation"
     case RELAX = "Relax"
     case PEACE_FULL = "Peace Full"
-//    case NATURE = "Nature"
-//    case SEA_WAVES = "Sea Waves"
-//    case AMBIENT_MUSIC = "Ambient music"
+    case NATURE = "Nature"
+    case SEA_WAVES = "Sea Waves"
+    case AMBIENT_MUSIC = "Ambient music"
 }
 
 class HomeViewModel: BSBaseViewModel {
     
     // MARK: - Relay
+    var homeItem: BehaviorRelay<[AdvancedTableViewSection]>
+    var succusType: BehaviorRelay<SongCategory> = BehaviorRelay(value: .SLEEP_MEDITATION)
+    
     var homeSection: BehaviorRelay<[HomeSection]>
-    var section = [HomeSection]()
+    var section = [AdvancedTableViewSection]()
     
     // MARK: - Variable
     var categories: SleepMediation?
@@ -30,57 +33,49 @@ class HomeViewModel: BSBaseViewModel {
     // MARK: - Constants
     let dispatchGroup = DispatchGroup()
     let repository = SleepMediationRepository()
+    let dataSource = HomeItemDS.dataSource()
+    
     // MARK: - init
     override init() {
+        homeItem = BehaviorRelay(value: [])
         homeSection = BehaviorRelay(value: [])
     }
     
     // MARK: - Methods
-    func fetchSong(by category: String, isHorizontal: Bool = true, completion: @escaping GenericCompletion) {
-       print("categor: \(category)")
-        repository.fetchSong(by: category) { success, message, model in
-//            self.isLoading.accept(false)
+    func fetchSong(by category: SongCategory,
+                   isHorizontal: Bool = true) {
+        
+        print("category: \(category.rawValue)")
+        var tempSection = self.homeItem.value
+        
+        self.isSuccess.accept(false)
+        self.isLoading.accept(true)
+        repository.fetchSong(by: category.rawValue) { success, message, model in
+            self.isLoading.accept(false)
             if success {
                 if let homeItem = model {
-                    var section =  self.section
-                    var item = HomeSection()
                     if isHorizontal {
-                        item = HomeSection(items: .HorizontalTableViewItem(titles: homeItem), header: category)
+                        tempSection.append(.HorizontalSection(items: [.HorizontalTableViewItem(titles: homeItem)]))
                     } else {
-                        item = HomeSection(items: .VerticalTableViewItem(titles: homeItem), header: category)
+                        tempSection.append(.VerticalSection(items: [.VerticalTableViewItem(titles: homeItem)]))
                     }
-               
-                    section.append(item)
-                    self.section = section
+                    self.homeItem.accept(tempSection)
                 }
-                
+                self.succusType.accept(category)
                 self.isSuccess.accept(true)
             } else {
                 self.setMessage(message)
             }
-            completion()
         }
     }
     
-    func fetchAllSong() {
-        self.isLoading.accept(true)
-        
-        dispatchGroup.enter()
-        dispatchGroup.enter()
-        dispatchGroup.enter()
-        
-        for category in SongCategory.allCases {
-            self.fetchSong(by: category.rawValue) {
-                self.dispatchGroup.leave()
-            }
-        }
-        
-        dispatchGroup.notify(queue: .main, execute: {
-            self.homeSection.accept(self.section)
-            self.isLoading.accept(false)
-            self.isSuccess.accept(true)
-         })
-    }
+    //    func fetchAllSong() {
+    //
+    //        self.fetchSong(by: .RELAX)
+    //        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+    //            self.fetchSong(by: .SLEEP_MEDITATION)
+    //        }
+    //    }
     
     func downloadSong(){
         let hits = self.categories?.tracks?.hits?.first
@@ -94,12 +89,6 @@ class HomeViewModel: BSBaseViewModel {
             print("downloded path \(path ?? "")")
         }
     }
-}
-
-enum AdvancedTableViewItem {
-    /// Represents a cell with a collection view inside
-    case HorizontalTableViewItem(titles: [HomeItem])
-    case VerticalTableViewItem(titles: [HomeItem])
 }
 
 struct HomeItem {
@@ -127,7 +116,7 @@ struct HomeItem {
 }
 
 struct HomeSection {
-  
+    
     let items: AdvancedTableViewItem
     let header: String
     

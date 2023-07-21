@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Cell_Rx
 
 class HomeViewController: BSBaseViewController {
     
@@ -25,6 +26,7 @@ class HomeViewController: BSBaseViewController {
     var height = 20
     
     // MARK: - Constants
+    let headerHeight = 42.0
     
     // MARK: - View LifeCycle
     override func viewDidLoad() {
@@ -32,12 +34,12 @@ class HomeViewController: BSBaseViewController {
         
         // TableView configuration
         tableViewCofig()
-        
+        mainViewHeight.constant =  0.0
         // scrollView configuration
         scrollView.delegate = self
         
         // fetching data
-        viewModel.fetchAllSong()
+        viewModel.fetchSong(by: .SLEEP_MEDITATION)
         
         // Binding view
         bindTableView()
@@ -61,7 +63,30 @@ class HomeViewController: BSBaseViewController {
             .asObservable()
             .filter { $0 }.bind { success in
                 if success {
-                    self.adjustScrollHeight()
+                    
+                    let type = self.viewModel.succusType.value
+                    switch type {
+                        
+                    case .SLEEP_MEDITATION:
+                        self.viewModel.fetchSong(by: .RELAX)
+                      
+                    case .RELAX:
+                        self.viewModel.fetchSong(by: .PEACE_FULL)
+                        
+                    case .PEACE_FULL:
+                        self.viewModel.fetchSong(by: .NATURE)
+                        
+                    case .NATURE:
+                        self.viewModel.fetchSong(by: .SEA_WAVES)
+                        
+                    case .SEA_WAVES:
+                        self.viewModel.fetchSong(by: .AMBIENT_MUSIC, isHorizontal: false)
+                       
+                    case .AMBIENT_MUSIC:
+                        self.adjustScrollHeight()
+                    }
+                    
+                    
                 }
             }.disposed(by: disposeBag)
         
@@ -75,17 +100,32 @@ class HomeViewController: BSBaseViewController {
     
     private func adjustScrollHeight() {
         
-        for ds in viewModel.homeSection.value {
-            switch ds.items {
-            case .HorizontalTableViewItem(titles: let homeItem):
-                height += (homeItem.count * 60)
-                
+//        for ds in viewModel.homeSection.value {
+//            switch ds.items {
+        
+        for ds in viewModel.dataSource.sectionModels {
+            switch ds.items.first {
+
+            case .HorizontalTableViewItem(titles: _):
+                height += 150 //(homeItem.count * 60)
+                print("==> height 1 \(height)")
             case .VerticalTableViewItem(titles: let homeItem):
-                height += (homeItem.count * 70)
+                height += (homeItem.count * 75)
+                print("==> height 2 \(height)")
+            case .none:
+                height = 0
+
             }
         }
-        height += viewModel.homeSection.value.count * 42 // header height
-        mainViewHeight.constant = CGFloat(height)
+        print("==> height 3 \(height)")
+        
+        // 1200 |+ 280
+        height += viewModel.dataSource.sectionModels.count * Int(headerHeight) // header height
+        
+        print("==> height 4 \(height)")
+        mainViewHeight.constant = CGFloat(height) + headerHeight
+        
+        print("==> height 5 \(mainViewHeight.constant)")
     }
     
     func tableViewCofig(){
@@ -101,68 +141,9 @@ extension HomeViewController {
     private func bindTableView() {
         
         // Biding tableView with homeSection
-        viewModel.homeSection
-            .observe(on: mainScheduler)
-            .bind(to: tableView.rx.items(cellIdentifier: HomeTVcell.identifier, cellType: HomeTVcell.self)) { _, data, cell in
-                // Data set
-                let section = data.items
-                switch section {
-                    
-                    // Horizontal Cells
-                case .HorizontalTableViewItem(titles: let titles):
-                    cell.viewModel = HomeTVviewModel(item: titles, isHorizontal: true)
-                    cell.cellCv.updateFLow(15, 15, true)
-                    cell.cellCv.isScrollEnable(isEnable: true)
-                    
-                    // Vertical Cells
-                case .VerticalTableViewItem(titles: let titles):
-                    
-                    cell.viewModel = HomeTVviewModel(item: titles, isHorizontal: false)
-                    cell.cellCv.updateFLow(5, 5, false)
-                    cell.cellCv.alwaysBounceVertical = false
-                    cell.cellCv.isScrollEnable(isEnable: false)
-                }
-                
-                //                cell.watchForClickHandler {  data in
-                //                    print("data \(data)")
-                //                    if let vc = cell.getOwningViewController() as? HomeViewController {
-                //                        guard let homeDetailVc = BetterSleepManager.shared.navigateView(viewRef: .HomeDetailViewController, storyboard: .HomeDetail) as? HomeDetailViewController else { return }
-                //                        homeDetailVc.viewModel = HomeDetailViewModel(item: data)
-                //                       let sheetController = Utility.openSheet(homeDetailVc)
-                //                        vc.present(sheetController, animated: true)
-                //                    }
-                //                }
-            }.disposed(by: disposeBag)
-        
-        // Model Selected Selected
-        tableView.rx
-            .modelSelected(HomeItem.self)
-            .subscribe(onNext: { [unowned self] data in
-                
-                guard let homeDetailVc = BetterSleepManager.shared.navigateView(viewRef: .HomeDetailViewController, storyboard: .HomeDetail) as? HomeDetailViewController else { return }
-                homeDetailVc.viewModel = HomeDetailViewModel(item: data)
-                let sheetController = Utility.openSheet(homeDetailVc)
-                self.present(sheetController, animated: true)
-                
-                
-                
-                // Impact
-                UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
-            }).disposed(by: disposeBag)
-        
-        // ItemSelected Selected
-        //        tableView.rx
-        //            .itemSelected
-        //            .subscribe(onNext: { [unowned self] indexPath in
-        //
-        //                // Deselect
-        //                tableView.deselectRow(at: indexPath, animated: true)
-        //
-        //
-        //
-        //                // Impact
-        //                UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
-        //            }).disposed(by: disposeBag)
+        viewModel.homeItem
+            .bind(to: tableView.rx.items(dataSource: viewModel.dataSource))
+            .disposed(by: disposeBag)
         
     }
 }
@@ -170,36 +151,48 @@ extension HomeViewController {
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        let sections = viewModel.homeSection.value[indexPath.section].items
-        switch sections {
+//        let sections = viewModel.homeSection.value[indexPath.section].items
+//        switch sections {
+        let sections = viewModel.dataSource[indexPath.section].items
+        switch sections.first {
+
         case .HorizontalTableViewItem(titles: _):
-            return  150.0
+            return  150
             
         case .VerticalTableViewItem(titles: let homeItem):
             return  CGFloat(homeItem.count * 75)
             
+        case .none:
+            return  0.0
+
         }
     }
-    
+     
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return headerHeight
+//    }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         // get the title from the dataSource
-        if viewModel.homeSection.value.count > 0 {
-            let frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 42)
-            let headerView = UIView(frame: frame)
-            headerView.backgroundColor = .clear
-            
-            let sectionLabel = UILabel(frame: CGRect(x: 20, y: -20, width: view.bounds.width, height: 42))
-            
-            let header = viewModel.homeSection.value[section].header
-            sectionLabel.text = header
-            sectionLabel.textColor = .white
-            headerView.addSubview(sectionLabel)
-            return headerView
-        } else {
-            let frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 20)
-            let headerView = UIView(frame: frame)
-            return headerView
+        let frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: headerHeight)
+        let headerView = UIView(frame: frame)
+        headerView.backgroundColor = .clear
+        
+        let sectionLabel = UILabel(frame: CGRect(x: 20, y: -20, width: tableView.bounds.width, height: headerHeight))
+
+        // get the title from the dataSource
+        let sections = viewModel.dataSource[section].items
+        switch sections.first {
+        case .HorizontalTableViewItem(titles: let homeItem), .VerticalTableViewItem(titles: let homeItem):
+            sectionLabel.text =  homeItem.first?.title
+        case .none:
+            sectionLabel.text =  ""
         }
+        sectionLabel.textColor = .white
+        sectionLabel.font = UIFont(name: "Roboto-Medium", size: 16)
+        headerView.addSubview(sectionLabel)
+        
+        return headerView
+
     }
 }

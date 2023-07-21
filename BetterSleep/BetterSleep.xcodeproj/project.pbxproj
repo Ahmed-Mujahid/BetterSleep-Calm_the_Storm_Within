@@ -114,6 +114,8 @@
 		F655B6062A54B021002B54BE /* UIResponder + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655B6052A54B021002B54BE /* UIResponder + Extension.swift */; };
 		F655B6082A54B105002B54BE /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655B6072A54B105002B54BE /* HomeDetailViewController.swift */; };
 		F655B60D2A54B704002B54BE /* HomeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655B60C2A54B704002B54BE /* HomeDetailViewModel.swift */; };
+		F65D65912A6B211500FCEE90 /* BS_Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D65902A6B211500FCEE90 /* BS_Fonts.swift */; };
+		F66B10A52A6873590092AECC /* HomeItemDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66B10A42A6873590092AECC /* HomeItemDS.swift */; };
 		F69874502A5735E900B71CF1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F698744F2A5735E900B71CF1 /* NetworkManager.swift */; };
 		F69874532A57371400B71CF1 /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874522A57371400B71CF1 /* Headers.swift */; };
 		F69874562A5737EF00B71CF1 /* AlomofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874552A5737EF00B71CF1 /* AlomofireManager.swift */; };
@@ -277,6 +279,8 @@
 		F655B6052A54B021002B54BE /* UIResponder + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder + Extension.swift"; sourceTree = "<group>"; };
 		F655B6072A54B105002B54BE /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
 		F655B60C2A54B704002B54BE /* HomeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewModel.swift; sourceTree = "<group>"; };
+		F65D65902A6B211500FCEE90 /* BS_Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BS_Fonts.swift; sourceTree = "<group>"; };
+		F66B10A42A6873590092AECC /* HomeItemDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemDS.swift; sourceTree = "<group>"; };
 		F698744F2A5735E900B71CF1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F69874522A57371400B71CF1 /* Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headers.swift; sourceTree = "<group>"; };
 		F69874552A5737EF00B71CF1 /* AlomofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlomofireManager.swift; sourceTree = "<group>"; };
@@ -552,6 +556,7 @@
 				8B9C195B28A92F1C0094EAF7 /* BS_Images.swift */,
 				F69874522A57371400B71CF1 /* Headers.swift */,
 				F606653A2A5AD9F900D8E780 /* Utility.swift */,
+				F65D65902A6B211500FCEE90 /* BS_Fonts.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -641,6 +646,7 @@
 		8BEFEDFF28B8EA3A004CB01A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F66B10A32A68733D0092AECC /* Datasource */,
 				F655B60A2A54B69A002B54BE /* ViewController */,
 				F655B6092A54B686002B54BE /* ViewModel */,
 			);
@@ -712,6 +718,14 @@
 				F655B6072A54B105002B54BE /* HomeDetailViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F66B10A32A68733D0092AECC /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				F66B10A42A6873590092AECC /* HomeItemDS.swift */,
+			);
+			path = Datasource;
 			sourceTree = "<group>";
 		};
 		F698744D2A57359B00B71CF1 /* Domain */ = {
@@ -1110,6 +1124,7 @@
 				F69874C22A57545200B71CF1 /* Tracks.swift in Sources */,
 				F69874BD2A57545200B71CF1 /* Hits.swift in Sources */,
 				F69874502A5735E900B71CF1 /* NetworkManager.swift in Sources */,
+				F66B10A52A6873590092AECC /* HomeItemDS.swift in Sources */,
 				8B3E3AAD28C9FA420034D309 /* HomeCVCell.swift in Sources */,
 				8BEFEE0228B8EA5C004CB01A /* HomeViewModel.swift in Sources */,
 				8B9C195C28A92F1C0094EAF7 /* BS_Images.swift in Sources */,
@@ -1144,6 +1159,7 @@
 				F69874CB2A5754B400B71CF1 /* SleepMediationRepository.swift in Sources */,
 				F655B60D2A54B704002B54BE /* HomeDetailViewModel.swift in Sources */,
 				F69874562A5737EF00B71CF1 /* AlomofireManager.swift in Sources */,
+				F65D65912A6B211500FCEE90 /* BS_Fonts.swift in Sources */,
 				8B7F18ED28996E3800C9CBFB /* BetterSleepManager.swift in Sources */,
 				8B7F18B0289966D500C9CBFB /* AppDelegate.swift in Sources */,
 				8B9C195128A9125F0094EAF7 /* LoginRequestDTO.swift in Sources */,

@@ -11,7 +11,7 @@ target 'BetterSleep' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxDataSources'
-  
+  pod 'Cell+Rx'
   # Pod for IQ Keyboard Manager Swift
   pod 'IQKeyboardManagerSwift'
  

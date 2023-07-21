@@ -13,10 +13,12 @@ struct AlamofireLogger: EventMonitor {
     let queue = DispatchQueue(label: "BaseLogger")
     
     func requestDidResume(_ request: Request) {
-        debugPrint(request)
+//        print("******* AlamofireLogger requestDidResume **********")
+//        debugPrint(request)
     }
     
     func request<Value>(_ request: DataRequest, didParseResponse response: DataResponse<Value, AFError>) {
+        print("******* AlamofireLogger request **********")
         debugPrint(response)
     }
 }

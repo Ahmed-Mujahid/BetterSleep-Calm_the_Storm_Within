@@ -148,9 +148,8 @@ class NetworkManager: NSObject {
                 }
             }
     }
+    
     private func manageResponses(_ response: AFDataResponse<Any>, completion: @escaping CompletionNetwork) {
-        print("Status Code: \(response.response?.statusCode ?? 200)")
-        
         switch response.result {
         case .failure(let error):
             
@@ -193,8 +192,7 @@ class NetworkManager: NSObject {
     }
     
     private func manageResponses<T>(for response: DataResponse<T, AFError>, completion: @escaping GenericModelCompletion<T>) {
-        print("Status Code: \(response.response?.statusCode ?? 200)")
-        
+     
         switch response.result {
         case .failure(let error):
             

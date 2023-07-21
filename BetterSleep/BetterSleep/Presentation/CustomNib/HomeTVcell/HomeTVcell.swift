@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import SwiftUI
+import Cell_Rx
 
 class HomeTVcell: UITableViewCell {
     // MARK: - Identifier
@@ -19,9 +19,10 @@ class HomeTVcell: UITableViewCell {
     
     
     // MARK: - Variables
-    let disposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
     var clickHandler: ((HomeItem) -> Void)?
-    var viewModel: HomeTVviewModel? {
+    var viewModel: HomeTVviewModel?
+    {
         didSet {
             bindCollectionView()
             cellCv.reloadData()
@@ -34,14 +35,18 @@ class HomeTVcell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        cellCv.delegate = self
+        disposeBag = DisposeBag()
+        cellCv.rx.setDelegate(self).disposed(by: disposeBag)
+//        cellCv.delegate = self
         cellCv.register(HomeCVCell.identifier)
     }
-    
+    override func prepareForReuse() {
+        disposeBag = DisposeBag()
+    }
     // MARK: - IBActions
     
     // MARK: - Custom Functions
-    private func bindCollectionView() {
+    func bindCollectionView() {
         
         viewModel?
             .homeItem

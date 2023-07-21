@@ -22,3 +22,9 @@ extension Reactive where Base: UIView {
         }
     }
 }
+
+extension RxSwift.ObservableType where Element == Bool {
+    func toggle() -> Observable<Bool> {
+        self.map { !$0 }
+    }
+}
