@@ -115,6 +115,12 @@
 		F655B6082A54B105002B54BE /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655B6072A54B105002B54BE /* HomeDetailViewController.swift */; };
 		F655B60D2A54B704002B54BE /* HomeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655B60C2A54B704002B54BE /* HomeDetailViewModel.swift */; };
 		F65D65912A6B211500FCEE90 /* BS_Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65D65902A6B211500FCEE90 /* BS_Fonts.swift */; };
+		F65D65942A6B2E0900FCEE90 /* AmbientMusic.json in Resources */ = {isa = PBXBuildFile; fileRef = F65D65932A6B2E0900FCEE90 /* AmbientMusic.json */; };
+		F65D65962A6B2E6500FCEE90 /* SeaWaves.json in Resources */ = {isa = PBXBuildFile; fileRef = F65D65952A6B2E6500FCEE90 /* SeaWaves.json */; };
+		F65D65982A6B2F2F00FCEE90 /* Nature.json in Resources */ = {isa = PBXBuildFile; fileRef = F65D65972A6B2F2E00FCEE90 /* Nature.json */; };
+		F65D659A2A6B2F6100FCEE90 /* PeaceFull.json in Resources */ = {isa = PBXBuildFile; fileRef = F65D65992A6B2F6100FCEE90 /* PeaceFull.json */; };
+		F65D659C2A6B2FAA00FCEE90 /* Relax.json in Resources */ = {isa = PBXBuildFile; fileRef = F65D659B2A6B2FAA00FCEE90 /* Relax.json */; };
+		F65D659F2A6B2FDE00FCEE90 /* SleepMediation.json in Resources */ = {isa = PBXBuildFile; fileRef = F65D659E2A6B2FDE00FCEE90 /* SleepMediation.json */; };
 		F66B10A52A6873590092AECC /* HomeItemDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66B10A42A6873590092AECC /* HomeItemDS.swift */; };
 		F69874502A5735E900B71CF1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F698744F2A5735E900B71CF1 /* NetworkManager.swift */; };
 		F69874532A57371400B71CF1 /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69874522A57371400B71CF1 /* Headers.swift */; };
@@ -280,6 +286,12 @@
 		F655B6072A54B105002B54BE /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
 		F655B60C2A54B704002B54BE /* HomeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewModel.swift; sourceTree = "<group>"; };
 		F65D65902A6B211500FCEE90 /* BS_Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BS_Fonts.swift; sourceTree = "<group>"; };
+		F65D65932A6B2E0900FCEE90 /* AmbientMusic.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AmbientMusic.json; sourceTree = "<group>"; };
+		F65D65952A6B2E6500FCEE90 /* SeaWaves.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SeaWaves.json; sourceTree = "<group>"; };
+		F65D65972A6B2F2E00FCEE90 /* Nature.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Nature.json; sourceTree = "<group>"; };
+		F65D65992A6B2F6100FCEE90 /* PeaceFull.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PeaceFull.json; sourceTree = "<group>"; };
+		F65D659B2A6B2FAA00FCEE90 /* Relax.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Relax.json; sourceTree = "<group>"; };
+		F65D659E2A6B2FDE00FCEE90 /* SleepMediation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SleepMediation.json; sourceTree = "<group>"; };
 		F66B10A42A6873590092AECC /* HomeItemDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemDS.swift; sourceTree = "<group>"; };
 		F698744F2A5735E900B71CF1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F69874522A57371400B71CF1 /* Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headers.swift; sourceTree = "<group>"; };
@@ -425,6 +437,7 @@
 		8B7F18AE289966D500C9CBFB /* BetterSleep */ = {
 			isa = PBXGroup;
 			children = (
+				F65D65922A6B2DE000FCEE90 /* Mock */,
 				F69874A52A5743A700B71CF1 /* Repository */,
 				F69874512A57368C00B71CF1 /* DTO */,
 				F698744D2A57359B00B71CF1 /* Domain */,
@@ -720,6 +733,19 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		F65D65922A6B2DE000FCEE90 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				F65D65932A6B2E0900FCEE90 /* AmbientMusic.json */,
+				F65D65952A6B2E6500FCEE90 /* SeaWaves.json */,
+				F65D65972A6B2F2E00FCEE90 /* Nature.json */,
+				F65D65992A6B2F6100FCEE90 /* PeaceFull.json */,
+				F65D659B2A6B2FAA00FCEE90 /* Relax.json */,
+				F65D659E2A6B2FDE00FCEE90 /* SleepMediation.json */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		F66B10A32A68733D0092AECC /* Datasource */ = {
 			isa = PBXGroup;
 			children = (
@@ -916,6 +942,7 @@
 				8B814C5028A2F184000AB670 /* Montserrat-Light.otf in Resources */,
 				8B814C3F28A2F184000AB670 /* Montserrat-ExtraBold.otf in Resources */,
 				8B814C5328A2F184000AB670 /* MontserratAlternates-MediumItalic.otf in Resources */,
+				F65D659F2A6B2FDE00FCEE90 /* SleepMediation.json in Resources */,
 				8B814C0828A2F028000AB670 /* Authentication.storyboard in Resources */,
 				8B814C3328A2F184000AB670 /* MontserratAlternates-ExtraLightItalic.otf in Resources */,
 				8B814C3228A2F184000AB670 /* MontserratAlternates-Thin.otf in Resources */,
@@ -931,13 +958,18 @@
 				8B814C4F28A2F184000AB670 /* MontserratAlternates-Medium.otf in Resources */,
 				8B814C7628A302F7000AB670 /* Roboto-Bold.ttf in Resources */,
 				8B814C4C28A2F184000AB670 /* MontserratAlternates-BoldItalic.otf in Resources */,
+				F65D659A2A6B2F6100FCEE90 /* PeaceFull.json in Resources */,
 				8B814C4A28A2F184000AB670 /* MontserratAlternates-Black.otf in Resources */,
+				F65D659C2A6B2FAA00FCEE90 /* Relax.json in Resources */,
 				8B814C3728A2F184000AB670 /* Montserrat-Black.otf in Resources */,
 				8B814C7428A302F7000AB670 /* Roboto-BoldItalic.ttf in Resources */,
 				8B7F18B9289966D700C9CBFB /* Assets.xcassets in Resources */,
 				8B814C4828A2F184000AB670 /* Montserrat-Italic.otf in Resources */,
 				8B814C4228A2F184000AB670 /* Montserrat-LightItalic.otf in Resources */,
 				8B814C3828A2F184000AB670 /* Montserrat-SemiBold.otf in Resources */,
+				F65D65982A6B2F2F00FCEE90 /* Nature.json in Resources */,
+				F65D65942A6B2E0900FCEE90 /* AmbientMusic.json in Resources */,
+				F65D65962A6B2E6500FCEE90 /* SeaWaves.json in Resources */,
 				8B814C4528A2F184000AB670 /* Montserrat-ExtraBoldItalic.otf in Resources */,
 				8B814C4428A2F184000AB670 /* MontserratAlternates-SemiBoldItalic.otf in Resources */,
 				8B814C3428A2F184000AB670 /* MontserratAlternates-LightItalic.otf in Resources */,

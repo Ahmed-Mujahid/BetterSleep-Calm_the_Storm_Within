@@ -3,4 +3,86 @@
    uuid = "BD07D62A-0DAD-43E2-90E8-0F1943E4A694"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "913AB26C-F5C8-4844-BF71-2AEEAFCCE9A0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetterSleep/Presentation/ViewController/Tabs/Home/ViewController/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "configureServiceCallBacks()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1E81E007-708F-4318-9F4C-DAECFA61CBFD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetterSleep/Presentation/ViewController/Tabs/Home/ViewController/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "configureServiceCallBacks()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "617FD060-1C53-46AB-84B7-E8446C80E025"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BetterSleep/Presentation/ViewController/Tabs/Home/ViewModel/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "fetchSong(by:isHorizontal:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "617FD060-1C53-46AB-84B7-E8446C80E025 - b5a40338b09a27ee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BetterSleep.HomeViewModel.fetchSong(by: BetterSleep.SongCategory, isHorizontal: Swift.Bool) -&gt; ()"
+                  moduleName = "BetterSleep"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedmujahid/Documents/Projects/XcodeProjects/Projects/BetterSleep_CalmTheStormWithin/BetterSleep/BetterSleep/Presentation/ViewController/Tabs/Home/ViewModel/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "700">
+               </Location>
+               <Location
+                  uuid = "617FD060-1C53-46AB-84B7-E8446C80E025 - 139016f1b8605518"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.String, Swift.Optional&lt;Swift.Array&lt;BetterSleep.HomeItem&gt;&gt;) -&gt; () in BetterSleep.HomeViewModel.fetchSong(by: BetterSleep.SongCategory, isHorizontal: Swift.Bool) -&gt; ()"
+                  moduleName = "BetterSleep"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedmujahid/Documents/Projects/XcodeProjects/Projects/BetterSleep_CalmTheStormWithin/BetterSleep/BetterSleep/Presentation/ViewController/Tabs/Home/ViewModel/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

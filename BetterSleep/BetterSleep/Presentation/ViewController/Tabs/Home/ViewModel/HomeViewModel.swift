@@ -32,7 +32,7 @@ class HomeViewModel: BSBaseViewModel {
     
     // MARK: - Constants
     let dispatchGroup = DispatchGroup()
-    let repository = SleepMediationRepository()
+    let repository = SleepMediationMock()
     let dataSource = HomeItemDS.dataSource()
     
     // MARK: - init
@@ -68,14 +68,6 @@ class HomeViewModel: BSBaseViewModel {
             }
         }
     }
-    
-    //    func fetchAllSong() {
-    //
-    //        self.fetchSong(by: .RELAX)
-    //        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-    //            self.fetchSong(by: .SLEEP_MEDITATION)
-    //        }
-    //    }
     
     func downloadSong(){
         let hits = self.categories?.tracks?.hits?.first

@@ -7,6 +7,8 @@
 
 import UIKit
 import Cell_Rx
+import RxSwift
+import RxCocoa
 
 class HomeViewController: BSBaseViewController {
     
@@ -99,10 +101,6 @@ class HomeViewController: BSBaseViewController {
     }
     
     private func adjustScrollHeight() {
-        
-//        for ds in viewModel.homeSection.value {
-//            switch ds.items {
-        
         for ds in viewModel.dataSource.sectionModels {
             switch ds.items.first {
 
@@ -118,13 +116,10 @@ class HomeViewController: BSBaseViewController {
             }
         }
         print("==> height 3 \(height)")
-        
-        // 1200 |+ 280
         height += viewModel.dataSource.sectionModels.count * Int(headerHeight) // header height
-        
         print("==> height 4 \(height)")
-        mainViewHeight.constant = CGFloat(height) + headerHeight
         
+        mainViewHeight.constant = CGFloat(height) + headerHeight
         print("==> height 5 \(mainViewHeight.constant)")
     }
     

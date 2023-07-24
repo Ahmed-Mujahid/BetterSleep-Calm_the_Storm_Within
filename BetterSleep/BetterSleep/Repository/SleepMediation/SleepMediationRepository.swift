@@ -9,7 +9,12 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-final class SleepMediationRepository {
+protocol SleepMediationProtocol {
+    func fetchSong(by title: String, completion: @escaping GenericModelCompletion<[HomeItem]>)
+    func fetchMusic(for url: String?, completion: @escaping GenericModelCompletion<Any>)
+}
+
+final class SleepMediationRepository: SleepMediationProtocol {
     
     func fetchSong(by title: String, completion: @escaping GenericModelCompletion<[HomeItem]>) {
         print("Repository: \(title)")
@@ -75,6 +80,70 @@ final class SleepMediationRepository {
         }
       
     }
-    
+}
 
+final class SleepMediationMock: SleepMediationProtocol {
+   
+    func fetchSong(by title: String, completion: @escaping GenericModelCompletion<[HomeItem]>) {
+        let fileName = title.trimWordSpace()
+        print("Repository: \(fileName)")
+        var item = [HomeItem]()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            do {
+                if let bundlePath = Bundle.main.path(forResource: fileName, ofType: "json"),
+                    let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
+                     let response = try JSONDecoder().decode(SleepMediation.self, from: jsonData)
+                       print("response: \(response)")
+                        
+                         if let hits = response.tracks?.hits {
+                             for hit in hits {
+                                 let title = (hit.track?.title ?? "") + "-" + (hit.track?.subtitle ?? "")
+                                 let icon = hit.track?.images?.background
+                                 let url = hit.track?.hub?.actions?.last?.uri
+                                 item.append(HomeItem(title: title,
+                                                      icon: icon ?? "",
+                                                      url: url ?? ""))
+                             }
+                         }
+                         // Completion
+                         return completion(true, "", item)
+                    
+                } else {
+                    print("invalid File name")
+                    return completion(true, "", item)
+                  
+                }
+              } catch {
+                 print(error)
+                  // Completion
+                  return completion(false, "Given JSON is not a valid dictionary object.", nil)
+              }
+        }
+        
+        
+      
+        }
+    
+    func fetchMusic(for url: String?, completion: @escaping GenericModelCompletion<Any>) {
+     
+        // Check if url is not nil
+        guard let requestedURL = url else {
+            return completion(false, "PLEASE_PROVIDE_URL", nil)
+        }
+      
+        
+        // Network Request
+        NetworkManager.shared.download(requestedURL) { success, response in
+            if success {
+                
+                // Completion
+                completion(true, "", response[Constants.docPath].stringValue)
+                
+            } else {
+                // Completion
+                completion(false, response["MESSAGE"].stringValue, nil)
+            }
+        }
+      
+    }
 }
